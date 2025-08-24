@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"equip_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"equip_data",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Root/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

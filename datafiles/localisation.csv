@@ -1,0 +1,10 @@
+INDEX,ENGLISH,RUSSIAN
+item_rock,Rock,Камень
+item_stick,Stick,Палка
+item_workbench,Workbench,Верстак
+item_stone_axe,Stone axe,Каменный топор
+item_stone_pickaxe,Stone pickaxe,Каменная кирка
+item_stone_sword,Stone sword,Каменный мечь
+item_peg_wool,Peg wool,Мех пега
+text_weight,Weight,Вес
+text_kg,Kg,Кг

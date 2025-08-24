@@ -23,3 +23,6 @@ InventoryMaxWeight = 20;
 InventoryWeight = 0;
 InventoryOpen = false;
 Inventory = [];
+
+/// craft
+CraftOpen = false;

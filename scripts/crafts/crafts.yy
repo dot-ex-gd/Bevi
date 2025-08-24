@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"crafts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"crafts",
+  "parent":{
+    "name":"Root",
+    "path":"folders/Root.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

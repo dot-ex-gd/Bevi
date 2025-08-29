@@ -5,7 +5,8 @@ Select = 0;
 
 Update = function(){
 	crafts_init();
-	DoCraft = craft_get(work_bench.workbench, ObCharacter.Inventory);
+	var _cg = craft_get(work_bench.inventory, ObCharacter.Inventory);
+	DoCraft = _cg;
 	Textes = [];
 	
 	var _in;

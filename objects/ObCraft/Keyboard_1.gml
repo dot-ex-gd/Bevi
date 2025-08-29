@@ -35,7 +35,7 @@ switch(keyboard_lastchar){
 			var _need = global.Crafts[Select];
 			var _item = global.Crafts[Select];
 			var _container = ObCharacter.Inventory;
-			var _cont_len = array_length(ObCharacter.Inventory);
+			var _cont_len = array_length(_container);
 			
 			for(var i = 0; i < array_length(_item[craft.rec]); i += 2){
 				var _need_item = _item[craft.rec][i];
@@ -52,7 +52,11 @@ switch(keyboard_lastchar){
 					
 					if (_container[j].Item == _need_item){
 						_found ++;
+						ObCharacter.InventoryWeight -= ObCharacter.Inventory[j].Weight;
+						
 						array_delete(ObCharacter.Inventory, j, -1);
+						j--;
+						_cont_len--;
 						
 						if (_found >= _need_count) { break; }
 					}
@@ -60,6 +64,7 @@ switch(keyboard_lastchar){
 			}
 			
 			instance_create_depth(ObCharacter.x, ObCharacter.y, -ObCharacter.y, global.Crafts[Select][craft.item]);
+			Update();
 		}
 	break;
 }

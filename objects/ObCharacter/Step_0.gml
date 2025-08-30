@@ -45,10 +45,9 @@ switch(keyboard_lastchar){
 	case "e":
 		var _coll = collision_point(x, y, ObItem, 0, 1);
 		if (_coll){
-			if (InventoryWeight + _coll.Item.Weight <= InventoryMaxWeight){
-				array_push(Inventory, _coll.Item);
-				InventoryWeight += _coll.Item.Weight;
-				
+			var _ex = inventory_add(_coll.Item);
+			
+			if (_ex){
 				instance_destroy(_coll);
 			}
 		}

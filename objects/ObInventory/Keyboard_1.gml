@@ -1,42 +1,44 @@
-Update();
+var _len = array_length(ObCharacter.Inventory);
+var _dir = 0;
 
 switch(keyboard_lastchar){
 	case "q":
-		if (Select <= array_length(ObCharacter.Inventory) - 1 && ObCharacter.Inventory[Select]){
-			ObCharacter.InventoryWeight -= ObCharacter.Inventory[Select].Weight;
-			
-			instance_create_depth(ObCharacter.x, ObCharacter.y, -ObCharacter.y, ObCharacter.Inventory[Select].Item);
-			
-			array_delete(ObCharacter.Inventory, Select, -1);
-			array_delete(Textes, Select, -1);
-		}
+		ObCharacter.inventory_throw(Select);
 	break;
 	case "s":
-		Select++;
-		Select = clamp(Select, 0, array_length(Textes) - 1);
-		
-		if (Select >= MaxShow && (MaxShow + Skip <= array_length(Textes) - 1)){
-			Skip++;
-		}
+		Select += 3;
+		_dir = 3;
 	break;
 	case "w":
+		Select -= 3;
+		_dir = -3;
+	break;
+	case "a":
 		Select--;
-		Select = clamp(Select, 0, array_length(Textes) - 1);
-		
-		if (Select <= 1){
-			if (Skip){
-				Skip--;
-			}
-		}
+		_dir = -1;
+	break;
+	case "d":
+		Select++;
+		_dir = 1;
 	break;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	case "e":
+	case "E":
+	break;
 }
+
+Select = clamp(Select, 0, _len - 1);
+
+if (Select >= MaxShow){
+	if (_dir > 0){
+		Skip += _dir;
+	}
+}
+if (Select <= MaxShow){
+	if (_dir < 0){
+		Skip += _dir;
+	}
+}
+
+Skip = max(0, Skip);
+Skip = clamp(Skip, 0, _len - MaxShow);

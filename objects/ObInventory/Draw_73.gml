@@ -8,15 +8,26 @@ draw_sprite(sprite_index, 0, x, y);
 
 draw_set_font(global.FontRus);
 
-var _len = array_length(Textes);
+var _len = array_length(ObCharacter.Inventory);
+var _x = 0;
+var _y = 0;
+var _slot;
 for(var i = 0; i < min(_len, MaxShow); i++){
-	draw_text(bbox_left + 12, bbox_top + 10 + (12 * i), $"{(Select - Skip == i) ? ">" : ""}{Textes[i + Skip]}");
+	if (i == Select - Skip){
+		draw_sprite(SpUIInventorySelectCell, 0, bbox_left + 14 + (_x * 20), bbox_top + 22 + (_y * 20));
+	}
+	
+	if (i + Skip < _len){
+		_slot = ObCharacter.Inventory[i + Skip];
+		
+		if (_slot){
+			draw_sprite(_slot[$ "InvSprite"], 0, bbox_left + 14 + (_x * 20), bbox_top + 21 + (_y * 20));
+		}
+	}
+	
+	_x++;
+	if (_x == 3) { _y++; _x = 0; }
 }
 
-draw_set_halign(fa_right);
-draw_text(bbox_right, bbox_top + 10, $"{TextWeight}: {ObCharacter.InventoryWeight}{TextKG}/{ObCharacter.InventoryMaxWeight}{TextKG}");
-draw_set_halign(fa_left);
-
-if (!_len){
-	Update();
-}
+draw_text(bbox_left + 8, bbox_bottom - 6, $"{TextWeight}: {ObCharacter.InventoryWeight}{TextKG}/{ObCharacter.InventoryMaxWeight}{TextKG}");
+draw_text(bbox_left + 8, bbox_top + 5, $"{TextInventory}");

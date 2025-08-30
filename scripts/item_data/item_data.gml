@@ -2,31 +2,55 @@ global.Items = {
 	Rock : {
 		Name : "item_rock",
 		Weight : 0.1,
-		Item: ObRock
+		Item : ObRock,
+		InvSprite : SpRock,
+		Flags : [],
+		Strength : false,
 	},
 	Stick : {
 		Name : "item_stick",
 		Weight : 0.12,
-		Item: ObStick
+		Item : ObStick,
+		InvSprite : SpStick,
+		Flags : [],
+		Strength : false,
 	},
 	Workbench : {
 		Name : "item_workbench",
 		Weight : 10,
-		Item: ObWorkbench
+		Item : ObWorkbench,
+		InvSprite : SpWorkbench,
+		Flags : [],
+		Strength : false,
 	},
 	StoneAxe : {
 		Name : "item_stone_axe",
 		Weight : 1,
-		Item: ObStoneAxe
+		Item : ObStoneAxe,
+		InvSprite : SpStoneAxe,
+		Flags : [],
+		Strength : true,
+		StrengthMax : 15,
+		StrengthCur : 15,
 	},
 	StoneSword : {
 		Name : "item_stone_sword",
 		Weight : 1,
-		Item: ObStoneSword
+		Item : ObStoneSword,
+		InvSprite : SpStoneSword,
+		Flags : [],
+		Strength : true,
+		StrengthMax : 30,
+		StrengthCur : 30,
 	},
 	StonePickaxe : {
 		Name : "item_stone_pickaxe",
 		Weight : 1,
-		Item: ObStonePickaxe
+		Item : ObStonePickaxe,
+		InvSprite : SpStonePickaxe,
+		Flags : [],
+		Strength : true,
+		StrengthMax : 15,
+		StrengthCur : 15,
 	},
 }

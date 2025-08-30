@@ -1,38 +1,20 @@
 Update();
 
+var _dir = 0;
+var _len = array_length(DoCraft);
+
 switch(keyboard_lastchar){
-	case "q":
-		if (Select <= array_length(ObCharacter.Inventory) - 1 && ObCharacter.Inventory[Select]){
-			ObCharacter.InventoryWeight -= ObCharacter.Inventory[Select].Weight;
-			
-			instance_create_depth(ObCharacter.x, ObCharacter.y, -ObCharacter.y, ObCharacter.Inventory[Select].Item);
-			
-			array_delete(ObCharacter.Inventory, Select, -1);
-			array_delete(Textes, Select, -1);
-		}
-	break;
 	case "s":
 		Select++;
-		Select = clamp(Select, 0, array_length(Textes) - 1);
-		
-		if (Select >= MaxShow && (MaxShow + Skip <= array_length(Textes) - 1)){
-			Skip++;
-		}
+		_dir = 1;
 	break;
 	case "w":
 		Select--;
-		Select = clamp(Select, 0, array_length(Textes) - 1);
-		
-		if (Select <= 1){
-			if (Skip){
-				Skip--;
-			}
-		}
+		_dir = -1;
 	break;
 	case "c":
 	case "C":
 		if (DoCraft[Select]){
-			var _need = global.Crafts[Select];
 			var _item = global.Crafts[Select];
 			var _container = ObCharacter.Inventory;
 			var _cont_len = array_length(_container);
@@ -52,9 +34,9 @@ switch(keyboard_lastchar){
 					
 					if (_container[j].Item == _need_item){
 						_found ++;
-						ObCharacter.InventoryWeight -= ObCharacter.Inventory[j].Weight;
 						
-						array_delete(ObCharacter.Inventory, j, -1);
+						ObCharacter.inventory_delete(j, -1);
+						
 						j--;
 						_cont_len--;
 						
@@ -63,8 +45,24 @@ switch(keyboard_lastchar){
 				}
 			}
 			
-			instance_create_depth(ObCharacter.x, ObCharacter.y, -ObCharacter.y, global.Crafts[Select][craft.item]);
+			ObCharacter.inventory_add(global.Crafts[Select][craft.struct]);
 			Update();
 		}
 	break;
 }
+
+Select = clamp(Select, 0, _len - 1);
+
+if (Select >= MaxShow){
+	if (_dir > 0){
+		Skip += _dir;
+	}
+}
+if (Select <= MaxShow){
+	if (_dir < 0){
+		Skip += _dir;
+	}
+}
+
+Skip = max(0, Skip);
+Skip = clamp(Skip, 0, _len - MaxShow);

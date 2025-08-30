@@ -10,8 +10,8 @@
   "name":"ObCraft",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Root/Objects.yy",
+    "name":"IUI",
+    "path":"folders/Root/Objects/IUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpInventory",
-    "path":"sprites/SpInventory/SpInventory.yy",
+    "name":"SpUICraft",
+    "path":"sprites/SpUICraft/SpUICraft.yy",
   },
   "spriteMaskId":null,
   "visible":true,

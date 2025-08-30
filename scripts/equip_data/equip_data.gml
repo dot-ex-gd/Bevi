@@ -1,6 +1,5 @@
 enum equip{
-	inlarm,
-	inrarm,
+	inarm,
 	head,
 	body,
 	larm,

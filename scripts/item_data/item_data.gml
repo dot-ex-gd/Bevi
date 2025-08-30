@@ -1,3 +1,16 @@
+enum item_type{
+	pickup,
+	weapon,
+	armor,
+	workbench,
+}
+enum armor_type{
+	head,
+	body,
+	leggins,
+	boots
+}
+
 global.Items = {
 	Rock : {
 		Name : "item_rock",
@@ -6,6 +19,7 @@ global.Items = {
 		InvSprite : SpRock,
 		Flags : [],
 		Strength : false,
+		Type : item_type.pickup,
 	},
 	Stick : {
 		Name : "item_stick",
@@ -14,6 +28,7 @@ global.Items = {
 		InvSprite : SpStick,
 		Flags : [],
 		Strength : false,
+		Type : item_type.pickup,
 	},
 	Workbench : {
 		Name : "item_workbench",
@@ -22,6 +37,7 @@ global.Items = {
 		InvSprite : SpWorkbench,
 		Flags : [],
 		Strength : false,
+		Type : item_type.workbench,
 	},
 	StoneAxe : {
 		Name : "item_stone_axe",
@@ -32,6 +48,7 @@ global.Items = {
 		Strength : true,
 		StrengthMax : 15,
 		StrengthCur : 15,
+		Type : item_type.weapon,
 	},
 	StoneSword : {
 		Name : "item_stone_sword",
@@ -42,6 +59,7 @@ global.Items = {
 		Strength : true,
 		StrengthMax : 30,
 		StrengthCur : 30,
+		Type : item_type.weapon,
 	},
 	StonePickaxe : {
 		Name : "item_stone_pickaxe",
@@ -52,5 +70,6 @@ global.Items = {
 		Strength : true,
 		StrengthMax : 15,
 		StrengthCur : 15,
+		Type : item_type.weapon,
 	},
 }

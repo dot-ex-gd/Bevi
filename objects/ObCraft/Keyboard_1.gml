@@ -1,5 +1,3 @@
-Update();
-
 var _dir = 0;
 var _len = array_length(DoCraft);
 
@@ -14,6 +12,7 @@ switch(keyboard_lastchar){
 	break;
 	case "c":
 	case "C":
+		Update();
 		if (DoCraft[Select]){
 			var _item = global.Crafts[Select];
 			var _container = ObCharacter.Inventory;
@@ -64,5 +63,5 @@ if (Select <= MaxShow){
 	}
 }
 
-Skip = max(0, Skip);
 Skip = clamp(Skip, 0, _len - MaxShow);
+Skip = max(0, Skip);

@@ -65,5 +65,15 @@ OnBody = noone;
 OnLeggings = noone;
 OnFoot = noone;
 
+equip_inarm_add = function(_ind, _struct){
+	if (InArm == noone){
+		inventory_delete(_ind, -1);
+		InArm = _struct;
+	}else{
+		Inventory[_ind] = InArm;
+		InArm = _struct;
+	}
+}
+
 /// craft
 CraftOpen = false;

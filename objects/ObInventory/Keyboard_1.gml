@@ -23,7 +23,24 @@ switch(keyboard_lastchar){
 	break;
 	
 	case "e":
+		var _item = ObCharacter.Inventory[Select];
+		if (_item){
+			switch(_item[$ "Type"]){
+				case item_type.weapon:
+					ObCharacter.equip_inarm_add(Select, _item);
+				break;
+			}
+		}
+	break;
 	case "E":
+		var _item = ObCharacter.InArm;
+		if (_item){
+			var _att = ObCharacter.inventory_add(_item);
+			
+			if (_att){
+				ObCharacter.InArm = noone;
+			}
+		}
 	break;
 }
 
@@ -40,5 +57,5 @@ if (Select <= MaxShow){
 	}
 }
 
-Skip = max(0, Skip);
 Skip = clamp(Skip, 0, _len - MaxShow);
+Skip = max(0, Skip);

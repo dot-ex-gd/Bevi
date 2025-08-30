@@ -37,7 +37,8 @@ function craft_get(_workbench, _container){
 	var _can_craft = true, _need_count, _need_item, _craft_len, _already, _found, _item, i, j, k;
 	
 	for(i = 0; i < _len; i++){
-		if (global.Crafts[i][craft.wrkb] != _workbench && _workbench != work_bench.any) { array_push(_ids, false); continue; }
+		if (global.Crafts[i][craft.wrkb] != _workbench && _workbench != work_bench.any || 
+			ObCharacter.InventoryWeight + global.Crafts[i][craft.struct][$ "Weight"] > ObCharacter.InventoryMaxWeight) { array_push(_ids, false); continue; }
 		
 		_item = global.Crafts[i];
 		_craft_len = array_length(_item[craft.rec]);

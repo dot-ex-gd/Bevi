@@ -6,10 +6,23 @@ item_stone_axe,Stone axe,Каменный топор
 item_stone_pickaxe,Stone pickaxe,Каменная кирка
 item_stone_sword,Stone sword,Каменный мечь
 item_peg_wool,Peg wool,Мех пега
+item_bed,Bed,Кровать
+item_hearth_flower,Hearth flower,Сердечник
+item_hearth_flower_seed,Hearth flower seed,Семена сердечника
+item_mana_flower,Mana flower,Цветок маны
+item_mana_flower_seed,Mana flower seed,Семена цветка манф
+item_iron_ore,Iron ore,Железная руда
+item_iron_ingot,Iron ingot,Железный слиток
+item_bake,Bake,Печь
+item_bonfire,Bonfire,Костёр
+item_sand,Sand,Песок
+item_grass,Grass,Трава
+item_stone,Stone,Камень
+item_coal,Coal,Уголь
 text_weight,Weight,Вес
 text_kg,Kg,Кг
 text_x,x,х
 text_inventory,Inventory,Инвентарь
 text_craft,Craft,Создание
-item_bed,Bed,Кровать
-item_log,Log,Бревно
+
+

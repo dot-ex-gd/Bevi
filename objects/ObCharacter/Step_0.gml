@@ -3,27 +3,43 @@ switch(keyboard_lastchar){
 	case "a":
 	case "s":
 	case "d":
-		if (StepPoints >= 1){
-			if (!InventoryOpen && !CraftOpen){
-				var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft)) * TILE_SIZE;
-				var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp)) * TILE_SIZE;
+		if (!Interactive){
+			if (StepPoints >= 1){
+				if (!InventoryOpen && !CraftOpen){
+					var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft)) * TILE_SIZE;
+					var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp)) * TILE_SIZE;
 				
-				var _attack = collision_point(x + _to_x, y + _to_y, [ObEntity, ObDestroyableCollision], false, false);
+					var _attack = collision_point(x + _to_x, y + _to_y, [ObEntity, ObDestroyableCollision], false, false);
 				
-				if (!tilemap_get_at_pixel(ObWorld.TilesCollision, x + _to_x, y + _to_y) && !_attack){
-					x += _to_x;
-					y += _to_y;
+					if (!tilemap_get_at_pixel(ObWorld.TilesCollision, x + _to_x, y + _to_y) && !_attack){
+						x += _to_x;
+						y += _to_y;
 			
-					DEPTH;
-				}
+						DEPTH;
+					}
 			
-				if (_attack){
-					_attack.get_damage(1);
-				}
+					if (_attack){
+						var _damage = 1;
+						if (InArm && item_find_flag(InArm, _attack.PreferFlag)){
+							_damage = InArm[$ "Damage"];
+						}
+						
+						_attack.get_damage(_damage);
+					}
 				
-				StepPoints -= 1;
-				if (StepPoints < 1) { ObStepController.alarm[0] = ObStepController.StepTime; }
+					StepPoints -= 1;
+					if (StepPoints < 1) { ObStepController.alarm[0] = ObStepController.StepTime; }
+				}
 			}
+		}else{	// interactive
+			var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft));
+			var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp));
+			
+			InteractiveX += _to_x;
+			InteractiveY += _to_y;
+			
+			InteractiveX = clamp(InteractiveX, -1, 1);
+			InteractiveY = clamp(InteractiveY, -1, 1);
 		}
 	break;
 	case "i":
@@ -33,12 +49,18 @@ switch(keyboard_lastchar){
 		craft_open();
 	break;
 	case "e":
-		var _coll = collision_point(x, y, ObItem, 0, 1);
-		if (_coll){
-			var _ex = inventory_add(_coll.Item);
-			
-			if (_ex){
-				instance_destroy(_coll);
+		if (!InventoryOpen && !CraftOpen){
+			Interactive = !Interactive;
+		
+			if (!Interactive){
+				var _coll = collision_point(x + (InteractiveX * TILE_SIZE), y + (InteractiveY * TILE_SIZE), ObInteractive, 0, 1);
+				
+				if (_coll){
+					_coll.interactive();
+				}
+			}else{
+				InteractiveX = 0;
+				InteractiveY = 0;
 			}
 		}
 	break;

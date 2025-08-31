@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"item_data",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Root/Scripts.yy",
+    "name":"Items",
+    "path":"folders/Root/Items.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

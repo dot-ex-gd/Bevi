@@ -66,7 +66,7 @@ inventory_throw = function(_ind){
 }
 
 inventory_open = function(){
-	if (!CraftOpen) {
+	if (!CraftOpen){
 		InventoryOpen = !InventoryOpen;
 
 		if (InventoryOpen){
@@ -99,7 +99,7 @@ equip_inarm_add = function(_ind, _struct){
 CraftOpen = false;
 
 craft_open = function(){
-	if (!InventoryOpen) {
+	if (!InventoryOpen){
 		CraftOpen = !CraftOpen;
 	
 		if (CraftOpen){
@@ -109,3 +109,8 @@ craft_open = function(){
 		}
 	}
 }
+
+/// interactive
+InteractiveX = 0;
+InteractiveY = 0;
+Interactive = false;

@@ -1,13 +1,6 @@
 ///@desc	step
-with(ObEntity){
-	StepPoints += StepPointsGive;
-	
-	alarm[0] = other.StepTime;
-}
 
-with(ObCharacter){
-	StepPoints += StepPointsGive;
-}
+ObTime.time_go(1);
+ObTime.surface_update();
 
-ObDNCycle.time_go(10);
-ObDNCycle.surface_update();
+update(1);

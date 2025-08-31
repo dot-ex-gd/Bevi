@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"tiles_data",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Root/Scripts.yy",
+    "name":"Tile Sets",
+    "path":"folders/Root/Tile Sets.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

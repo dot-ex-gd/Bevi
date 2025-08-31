@@ -6,7 +6,10 @@
   ],
   "managed":true,
   "name":"ObTree",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObDestroyableCollision","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"propertyId":{"name":"Health","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"25",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObDestroyableCollision","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"propertyId":{"name":"PreferFlag","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"flags.axe",},
+  ],
   "parent":{
     "name":"Objects",
     "path":"folders/Root/Objects.yy",

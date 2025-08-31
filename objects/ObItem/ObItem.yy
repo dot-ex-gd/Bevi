@@ -12,8 +12,8 @@
     "path":"folders/Root/Items.yy",
   },
   "parentObjectId":{
-    "name":"ObCulling",
-    "path":"objects/ObCulling/ObCulling.yy",
+    "name":"ObInteractive",
+    "path":"objects/ObInteractive/ObInteractive.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

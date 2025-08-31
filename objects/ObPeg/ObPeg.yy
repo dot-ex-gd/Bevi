@@ -9,6 +9,7 @@
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"StepPointsGive","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0.5",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"MaxHealth","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"10",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"PreferFlag","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"flags.sword",},
   ],
   "parent":{
     "name":"Objects",

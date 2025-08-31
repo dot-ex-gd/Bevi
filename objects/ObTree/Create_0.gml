@@ -18,5 +18,3 @@ drop = function(){
 		instance_create_depth(x + (TILE_SIZE * _xx), y + (TILE_SIZE * _yy), 0, ObStick);
 	}
 }
-
-Health = 10;

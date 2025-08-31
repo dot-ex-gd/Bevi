@@ -123,6 +123,13 @@ for(var i = 1; i < _tile_w - 1; i++){
 					case 15:
 						_obj = ObGrass;
 					break;
+					case 16:
+					case 17:
+						_obj = ObHearthFlower;
+					break;
+					case 18:
+						_obj = ObManaFlower;
+					break;
 				}
 				
 				if (_obj)

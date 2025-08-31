@@ -25,7 +25,7 @@ enum time{
 }
 
 time_go = function(_min, _hour = 0, _day = 0){
-	var _p = (_min + (_hour * 60) + (_day * 24 * 60)) / (30);
+	var _p = lerp(0, (_min + (_hour * 60) + (_day * 24 * 60)), 0.009);
 	Minute += _min;
 	Hour += _hour;
 	Day += _day;
@@ -82,6 +82,17 @@ time_go = function(_min, _hour = 0, _day = 0){
 			ToNightK = lerp(ToNightK, 0.5, 0.02 + _p);
 		break;
 	}
+	
+	var _ux = 0, _uy = 0, _del = 20, _obj;
+	repeat(20 * ((_min) + (_hour * 60) + (_day * 24 * 60))){
+		_ux = irandom_range(-_del, _del);
+		_uy = irandom_range(-_del, _del);
+	
+		_obj = collision_point(ObCharacter.x + (_ux * TILE_SIZE), ObCharacter.y + (_uy * TILE_SIZE), ObGrowing, false, false);
+		if (_obj){
+			_obj.grow();
+		}
+	}
 }
 
 surface_update = function(){
@@ -93,11 +104,11 @@ surface_update = function(){
 	draw_clear_alpha(c_black, ToNightK);
 	gpu_set_blendmode(bm_subtract);
 	
-	draw_set_alpha(random_range(0.9, 1));
+	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 0.25, 0.25, 0, c_white, random_range(0.9, 1));
 	
-	draw_sprite(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy);
-	
-	draw_set_alpha(1);
+	with(ObBonfire){
+		draw_sprite_ext(SpLight, 0, x - _cx, y - _cy, Intensivity, Intensivity, 0, c_white, random_range(0.9, 1));
+	}
 	
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();

@@ -11,6 +11,11 @@ enum armor_type{
 	leggins,
 	boots
 }
+enum flags{
+	axe,
+	sword,
+	pickaxe
+}
 
 global.Items = {
 	Rock : {
@@ -45,33 +50,36 @@ global.Items = {
 		Weight : 1,
 		Item : ObStoneAxe,
 		InvSprite : SpStoneAxe,
-		Flags : [],
+		Flags : [flags.axe],
 		Strength : true,
 		StrengthMax : 15,
 		StrengthCur : 15,
 		Type : item_type.weapon,
+		Damage : 4,
 	},
 	StoneSword : {
 		Name : "item_stone_sword",
 		Weight : 1,
 		Item : ObStoneSword,
 		InvSprite : SpStoneSword,
-		Flags : [],
+		Flags : [flags.sword],
 		Strength : true,
 		StrengthMax : 30,
 		StrengthCur : 30,
 		Type : item_type.weapon,
+		Damage : 5,
 	},
 	StonePickaxe : {
 		Name : "item_stone_pickaxe",
 		Weight : 1,
 		Item : ObStonePickaxe,
 		InvSprite : SpStonePickaxe,
-		Flags : [],
+		Flags : [flags.pickaxe],
 		Strength : true,
 		StrengthMax : 15,
 		StrengthCur : 15,
 		Type : item_type.weapon,
+		Damage : 3,
 	},
 	PegWool : {
 		Name : "item_peg_wool",
@@ -100,4 +108,94 @@ global.Items = {
 		Strength : false,
 		Type : item_type.placeble,
 	},
+	Bonfire : {
+		Name : "item_bonfire",
+		Weight : 1,
+		Item : ObBonfire,
+		InvSprite : SpBonfire,
+		Flags : [],
+		Strength : false,
+		Type : item_type.placeble,
+	},
+	Bake : {
+		Name : "item_bake",
+		Weight : 3,
+		Item : ObBake,
+		InvSprite : SpBake,
+		Flags : [],
+		Strength : false,
+		Type : item_type.placeble,
+	},
+	Coal : {
+		Name : "item_coal",
+		Weight : 0.25,
+		Item : ObCoal,
+		InvSprite : SpCoal,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	IronOre : {
+		Name : "item_iron_ore",
+		Weight : 0.7,
+		Item : ObIronOre,
+		InvSprite : SpIronOre,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	IronIngot : {
+		Name : "item_iron_ingot",
+		Weight : 0.7,
+		Item : ObIronIngot,
+		InvSprite : SpIronIngot,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	HearthFlowerSeed : {
+		Name : "item_hearth_flower_seed",
+		Weight : 0.01,
+		Item : ObHearthFlowerSeed,
+		InvSprite : SpHearthFlowerSeed,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	ManaFlowerSeed : {
+		Name : "item_mana_flower_seed",
+		Weight : 0.005,
+		Item : ObManaFlowerSeed,
+		InvSprite : SpManaFlowerSeed,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	HearthFlowerFruit : {
+		Name : "item_hearth_flower",
+		Weight : 0.1,
+		Item : ObHearthFlowerFruit,
+		InvSprite : SpHearthFlowerFruit,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	ManaFlowerFruit : {
+		Name : "item_mana_flower",
+		Weight : 0.05,
+		Item : ObManaFlowerFruit,
+		InvSprite : SpManaFlowerFruit,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+}
+
+/// @fucn item_find_flag(item, flag)
+function item_find_flag(_item, _flag){
+	for(var i = 0; i < array_length(_item[$ "Flags"]); i++){
+		if (_item[$ "Flags"][i] == _flag) return true;
+	}
+	
+	return false;
 }

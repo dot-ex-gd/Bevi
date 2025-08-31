@@ -56,7 +56,7 @@ repeat(_tem_att){
 	show_debug_message($"tem itt: {++_itt}");
 }
 
-var _tile = 0, _str = "";
+var _tile = 0, _str = "", _txx = 0, _tyy = 0;
 for(var i = 1; i < _tile_w - 1; i++){
 	for(var j = 1; j < _tile_h - 1; j++){
 		if (_arr[# i, j] <= 1){
@@ -90,7 +90,27 @@ for(var i = 1; i < _tile_w - 1; i++){
 				
 				switch(irandom(100)){
 					case 10:
+					case 9:
+					case 8:
+					case 7:
+					case 2:
+					case 1:
 						_obj = ObTree;
+						
+						repeat(irandom(5)){
+							_txx = irandom_range(-2, 2);
+							_tyy = irandom_range(-2, 2);
+							
+							if (!collision_point(i * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _txx), j * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _tyy), ObDeco, false, false)){
+								instance_create_depth(i * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _txx), j * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _tyy), -j, ObLeafes);
+							}
+						}
+					break;
+					case 6:
+					case 5:
+					case 4:
+					case 3:
+						_obj = ObPeg;
 					break;
 					case 11:
 						_obj = ObStick;

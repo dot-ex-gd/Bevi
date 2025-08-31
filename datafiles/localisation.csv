@@ -11,3 +11,5 @@ text_kg,Kg,Кг
 text_x,x,х
 text_inventory,Inventory,Инвентарь
 text_craft,Craft,Создание
+item_bed,Bed,Кровать
+item_log,Log,Бревно

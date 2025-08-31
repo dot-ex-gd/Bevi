@@ -3,6 +3,7 @@ enum item_type{
 	weapon,
 	armor,
 	workbench,
+	placeble,
 }
 enum armor_type{
 	head,
@@ -71,5 +72,32 @@ global.Items = {
 		StrengthMax : 15,
 		StrengthCur : 15,
 		Type : item_type.weapon,
+	},
+	PegWool : {
+		Name : "item_peg_wool",
+		Weight : 0.01,
+		Item : ObPegWool,
+		InvSprite : SpPegWool,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	Log : {
+		Name : "item_log",
+		Weight : 1.2,
+		Item : ObLog,
+		InvSprite : SpLog,
+		Flags : [],
+		Strength : false,
+		Type : item_type.pickup,
+	},
+	Bed : {
+		Name : "item_bed",
+		Weight : 4,
+		Item : ObBed,
+		InvSprite : SpBedMini,
+		Flags : [],
+		Strength : false,
+		Type : item_type.placeble,
 	},
 }

@@ -13,3 +13,4 @@ Update();
 MaxShow = 4;
 
 TextCraft = text_get("text_craft");
+TextKG = text_get("text_kg");

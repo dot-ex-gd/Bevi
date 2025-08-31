@@ -6,11 +6,19 @@ StepPointsGive = 1;
 MaxHealth = 100;
 Health = 100;
 
-MaxMana = 0;
-Mana = 0;
+MaxMana = 10;
+Mana = 10;
 
 NeedXp = 100;
 Xp = 0;
+
+xp_add = function(_xp) {
+	Xp += _xp;
+	if (Xp >= NeedXp){
+		Xp -= NeedXp;
+		NeedXp *= 1.25;
+	}
+}
 
 /// movement
 MoveUp = ord("W");
@@ -56,6 +64,18 @@ inventory_throw = function(_ind){
 		inventory_delete(_ind, -1);
 	}
 }
+
+inventory_open = function(){
+	if (!CraftOpen) {
+		InventoryOpen = !InventoryOpen;
+
+		if (InventoryOpen){
+			instance_create_depth(INV_WDEL, INV_HDEL, -99999, ObInventory);
+		}else{
+			instance_destroy(ObInventory);
+		}
+	}
+}
 #endregion
 
 /// Equip
@@ -77,3 +97,15 @@ equip_inarm_add = function(_ind, _struct){
 
 /// craft
 CraftOpen = false;
+
+craft_open = function(){
+	if (!InventoryOpen) {
+		CraftOpen = !CraftOpen;
+	
+		if (CraftOpen){
+			instance_create_depth(INV_WDEL, INV_HDEL, -99999, ObCraft);
+		}else{
+			instance_destroy(ObCraft);
+		}
+	}
+}

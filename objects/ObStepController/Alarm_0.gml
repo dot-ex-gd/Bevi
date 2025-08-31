@@ -8,3 +8,6 @@ with(ObEntity){
 with(ObCharacter){
 	StepPoints += StepPointsGive;
 }
+
+ObDNCycle.time_go(10);
+ObDNCycle.surface_update();

@@ -27,7 +27,7 @@
   "origin":9,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Root/Items/Sprites.yy",
+    "path":"folders/Root/Items/Pickup/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

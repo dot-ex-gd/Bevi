@@ -25,10 +25,17 @@ switch(keyboard_lastchar){
 	case "e":
 		var _item = ObCharacter.Inventory[Select];
 		if (_item){
-			switch(_item[$ "Type"]){
-				case item_type.weapon:
-					ObCharacter.equip_inarm_add(Select, _item);
-				break;
+			
+			if (item_find_flag(_item, flags.weapon)){
+				ObCharacter.equip_inarm_add(Select, _item);
+			}
+			if (item_find_flag(_item, flags.placeble)){
+				ObCharacter.interactive_inarm(_item, interactive_type.replace);
+				ObCharacter.inventory_delete(Select, -1);
+			}
+			if (item_find_flag(_item, flags.remeltable)){
+				ObCharacter.interactive_inarm(_item, interactive_type.melt);
+				ObCharacter.inventory_delete(Select, -1);
 			}
 		}
 	break;

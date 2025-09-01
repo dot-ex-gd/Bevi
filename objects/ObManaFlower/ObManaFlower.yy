@@ -6,10 +6,7 @@
   ],
   "managed":true,
   "name":"ObManaFlower",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObDestroyableCollision","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"propertyId":{"name":"Health","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"5",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObDestroyableCollision","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"propertyId":{"name":"PreferFlag","path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"flags.sword",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Root/Objects.yy",

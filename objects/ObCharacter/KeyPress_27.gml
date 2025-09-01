@@ -5,3 +5,6 @@ if (InventoryOpen){
 if (CraftOpen){
 	craft_open();
 }
+if (InteractiveInArm){
+	interactive_abort();
+}

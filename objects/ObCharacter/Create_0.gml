@@ -21,10 +21,17 @@ xp_add = function(_xp) {
 }
 
 /// movement
-MoveUp = ord("W");
-MoveLeft = ord("A");
-MoveDown = ord("S");
-MoveRight = ord("D");
+CMoveUp = "w";
+CMoveLeft = "a";
+CMoveDown = "s";
+CMoveRight = "d";
+
+MoveUp = ord(string_upper(CMoveUp));
+MoveLeft = ord(string_upper(CMoveLeft));
+MoveDown = ord(string_upper(CMoveDown));
+MoveRight = ord(string_upper(CMoveRight));
+
+AttackMode = false;
 
 /// inventory
 InventoryMaxWeight = 20;
@@ -111,6 +118,31 @@ craft_open = function(){
 }
 
 /// interactive
+InteractiveType = interactive_type.interactive;
+InteractiveInArm = noone;
+Interactive = false;
 InteractiveX = 0;
 InteractiveY = 0;
-Interactive = false;
+
+enum interactive_type{
+	interactive,
+	dig,
+	replace,
+	melt,
+}
+
+interactive_inarm = function(_item, _type){
+	InteractiveType = _type;
+	InteractiveX = 0;
+	InteractiveY = 0;
+	
+	Interactive = true;
+	InteractiveInArm = _item;
+}
+
+interactive_abort = function(){
+	if (inventory_add(InteractiveInArm)){
+		InteractiveInArm = noone;
+		Interactive = false;
+	}
+}

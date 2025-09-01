@@ -10,15 +10,8 @@ get_damage = function(_damage){
 }
 
 SpringAtt = 0;
-spring = function(_intensivity){
-	SpringAtt = 0;
-	image_xscale = 1 + _intensivity * choose(-1, 1);
-	image_yscale = 1 + _intensivity * choose(-1, 1);
-	
-	alarm[1] = 1;
-}
 
-grow = function() { if (!is_grow()) image_index ++; }
+grow = function() { if (!is_grow()) {image_index ++; spring(0.25); }}
 is_grow = function() { return image_index == image_number - 1; }
 
-DEPTH;
+DEPTH + 1;

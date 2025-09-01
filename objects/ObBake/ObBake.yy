@@ -1,15 +1,18 @@
 {
   "$GMObject":"",
   "%Name":"ObBake",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"ObBake",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObItem","path":"objects/ObItem/ObItem.yy",},"propertyId":{"name":"Item","path":"objects/ObItem/ObItem.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.Items.Bake",},
   ],
   "parent":{
-    "name":"Items",
-    "path":"folders/Root/Items.yy",
+    "name":"Interactive",
+    "path":"folders/Root/Items/Interactive.yy",
   },
   "parentObjectId":{
     "name":"ObItem",

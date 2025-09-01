@@ -14,8 +14,8 @@
     "path":"folders/Root/Managers.yy",
   },
   "parentObjectId":{
-    "name":"ObDestroyableCollision",
-    "path":"objects/ObDestroyableCollision/ObDestroyableCollision.yy",
+    "name":"ObDestroyable",
+    "path":"objects/ObDestroyable/ObDestroyable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

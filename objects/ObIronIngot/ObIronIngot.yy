@@ -8,8 +8,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObItem","path":"objects/ObItem/ObItem.yy",},"propertyId":{"name":"Item","path":"objects/ObItem/ObItem.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.Items.IronIngot",},
   ],
   "parent":{
-    "name":"Items",
-    "path":"folders/Root/Items.yy",
+    "name":"Ore",
+    "path":"folders/Root/Items/Ore.yy",
   },
   "parentObjectId":{
     "name":"ObItem",

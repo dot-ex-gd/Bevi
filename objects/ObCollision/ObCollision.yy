@@ -13,8 +13,8 @@
     "path":"folders/Root/Managers.yy",
   },
   "parentObjectId":{
-    "name":"ObCulling",
-    "path":"objects/ObCulling/ObCulling.yy",
+    "name":"ObInstances",
+    "path":"objects/ObInstances/ObInstances.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

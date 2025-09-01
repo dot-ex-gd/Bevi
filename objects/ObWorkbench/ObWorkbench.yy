@@ -8,8 +8,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObItem","path":"objects/ObItem/ObItem.yy",},"propertyId":{"name":"Item","path":"objects/ObItem/ObItem.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.Items.Workbench",},
   ],
   "parent":{
-    "name":"Items",
-    "path":"folders/Root/Items.yy",
+    "name":"Interactive",
+    "path":"folders/Root/Items/Interactive.yy",
   },
   "parentObjectId":{
     "name":"ObItem",

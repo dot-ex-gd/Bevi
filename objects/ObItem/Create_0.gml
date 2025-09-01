@@ -1,8 +1,15 @@
 DEPTH + 16;
-interactive = function(){
-	show_debug_message("int");
+pickup = function(){
 	if (ObCharacter.inventory_add(Item)){
-		show_debug_message("des");
 		instance_destroy();
 	}
 }
+
+interactive = function(){
+	show_debug_message($"interactive not set: {object_get_name(self)}");
+}
+
+image_xscale = random(0.1);
+image_yscale = random(0.1);
+
+alarm[2] = 1;

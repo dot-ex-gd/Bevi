@@ -8,8 +8,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObItem","path":"objects/ObItem/ObItem.yy",},"propertyId":{"name":"Item","path":"objects/ObItem/ObItem.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.Items.ManaFlowerSeed",},
   ],
   "parent":{
-    "name":"Items",
-    "path":"folders/Root/Items.yy",
+    "name":"Food",
+    "path":"folders/Root/Items/Food.yy",
   },
   "parentObjectId":{
     "name":"ObItem",

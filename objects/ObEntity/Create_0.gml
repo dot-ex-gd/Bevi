@@ -8,10 +8,3 @@ _drop_base = function(){ ObCharacter.xp_add(MaxHealth div 5); }
 drop = function(){ _drop_base(); }
 
 SpringAtt = 0;
-spring = function(_intensivity){
-	SpringAtt = 0;
-	image_xscale = 1 + _intensivity * choose(-1, 1);
-	image_yscale = 1 + _intensivity * choose(-1, 1);
-	
-	alarm[1] = 1;
-}

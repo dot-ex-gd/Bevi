@@ -1,8 +1,8 @@
 StepTime = 1;
 
-update = function(_intensivity){
+update = function(_steps){
 	with(ObEntity){
-		StepPoints += StepPointsGive * _intensivity;
+		StepPoints += StepPointsGive * _steps;
 	
 		alarm[0] = other.StepTime;
 	}
@@ -12,10 +12,17 @@ update = function(_intensivity){
 	}
 
 	with(ObBonfire){
-		Intensivity -= 0.001 * _intensivity;
+		Intensivity -= 0.001 * _steps;
 		
 		if (Intensivity < 0){
 			instance_destroy();
 		}
 	}
+	
+	with(ObBake){
+		melt(_steps);
+	}
+	
+	ObTime.time_go(_steps);
+	ObTime.surface_update();
 }

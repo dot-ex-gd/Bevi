@@ -25,4 +25,6 @@ update = function(_steps){
 	
 	ObTime.time_go(_steps);
 	ObTime.surface_update();
+	
+	ObChunk.alarm[0] = 1;
 }

@@ -52,6 +52,7 @@
     {"id":{"name":"ObBed","path":"objects/ObBed/ObBed.yy",},},
     {"id":{"name":"ObBedItem","path":"objects/ObBedItem/ObBedItem.yy",},},
     {"id":{"name":"ObBonfire","path":"objects/ObBonfire/ObBonfire.yy",},},
+    {"id":{"name":"ObBonfireItem","path":"objects/ObBonfireItem/ObBonfireItem.yy",},},
     {"id":{"name":"ObCharacter","path":"objects/ObCharacter/ObCharacter.yy",},},
     {"id":{"name":"ObChunk","path":"objects/ObChunk/ObChunk.yy",},},
     {"id":{"name":"ObCoal","path":"objects/ObCoal/ObCoal.yy",},},

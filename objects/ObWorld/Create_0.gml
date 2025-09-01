@@ -108,8 +108,6 @@ for(var i = 1; i < _tile_w - 1; i++){
 					break;
 					case 6:
 					case 5:
-					case 4:
-					case 3:
 						_obj = ObPeg;
 					break;
 					case 11:

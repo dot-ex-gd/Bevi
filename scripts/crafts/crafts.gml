@@ -29,7 +29,7 @@ function crafts_init(){
 	craft_add(work_bench.inventory, [ObStick, 3, ObLog, 6, ObPegWool, 6], ObBedItem, text_get("item_bed"), global.Items.BedItem);
 	
 	craft_add(work_bench.inventory, [ObRock, 16, ObLog, 2], ObBake, text_get("item_bake"), global.Items.Bake);
-	craft_add(work_bench.inventory, [ObStick, 3, ObLog, 1], ObBonfire, text_get("item_bonfire"), global.Items.Bonfire);
+	craft_add(work_bench.inventory, [ObStick, 3, ObLog, 1], ObBonfireItem, text_get("item_bonfire"), global.Items.BonfireItem);
 }
 
 function craft_get(_workbench, _container){

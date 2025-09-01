@@ -7,5 +7,8 @@ drop = function(){
 		instance_create_depth(x, y, depth, ObCoal);
 	}
 }
+interactive = function(){
+	instance_destroy();
+}
 
 image_index = 1;

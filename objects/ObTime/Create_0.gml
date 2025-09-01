@@ -96,6 +96,7 @@ time_go = function(_min, _hour = 0, _day = 0){
 }
 
 surface_update = function(){
+	if (ToNightK < 0.02) { exit; }
 	var _cam = view_camera[0];
 	var _cx = camera_get_view_x(_cam);
 	var _cy = camera_get_view_y(_cam);

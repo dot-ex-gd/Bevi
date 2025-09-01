@@ -97,7 +97,7 @@ switch(keyboard_lastchar){
 									_time = 20;
 									_create = ObStoneTile;
 									
-									if (irandom(1000)) { _create = ObIronOre; }
+									if (!irandom(25)) { _create = ObIronOre; }
 								break;
 								case tile.sand:
 									_time = 2;

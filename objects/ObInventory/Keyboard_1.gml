@@ -25,18 +25,35 @@ switch(keyboard_lastchar){
 	case "e":
 		var _item = ObCharacter.Inventory[Select];
 		if (_item){
+			var _del = false;
 			
 			if (item_find_flag(_item, flags.weapon)){
 				ObCharacter.equip_inarm_add(Select, _item);
+				_del = true;
+			}
+			
+			if (item_find_flag(_item, flags.food)){
+				var _food = _item[$ "Food"];
+				var _len = array_length(_food);
+				
+				for(var i = 0; i < _len; i += 2){
+					if (_food[i] == food_stats.hp) { ObCharacter.health_add(_food[i + 1]); }
+					if (_food[i] == food_stats.mn) { ObCharacter.mana_add(_food[i + 1]); }
+					if (_food[i] == food_stats.xp) { ObCharacter.xp_add(_food[i + 1]); }
+				}
+				
+				_del = true;
 			}
 			if (item_find_flag(_item, flags.placeble)){
 				ObCharacter.interactive_inarm(_item, interactive_type.replace);
-				ObCharacter.inventory_delete(Select, -1);
+				_del = true;
 			}
 			if (item_find_flag(_item, flags.remeltable)){
 				ObCharacter.interactive_inarm(_item, interactive_type.melt);
-				ObCharacter.inventory_delete(Select, -1);
+				_del = true;
 			}
+			
+			if (_del) { ObCharacter.inventory_delete(Select, -1); }
 		}
 	break;
 	case "E":

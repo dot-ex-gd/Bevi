@@ -6,6 +6,12 @@ update = function(_steps){
 	
 		alarm[0] = other.StepTime;
 	}
+	with(ObEnemy){
+		AttackPoints += AttackPointsGive * _steps;
+		AttackPoints = clamp(AttackPoints, 0, AttackPointsMax);
+	
+		alarm[0] = other.StepTime;
+	}
 
 	with(ObCharacter){
 		StepPoints += StepPointsGive;

@@ -84,15 +84,25 @@ time_go = function(_min, _hour = 0, _day = 0){
 	}
 	
 	var _ux = 0, _uy = 0, _del = 20, _obj;
+	var _cx = ObCharacter.x, _cy = ObCharacter.y;
+	var _xx, _yy;
 	repeat(20 * ((_min) + (_hour * 60) + (_day * 24 * 60))){
 		_ux = irandom_range(-_del, _del);
 		_uy = irandom_range(-_del, _del);
-	
-		_obj = collision_point(ObCharacter.x + (_ux * TILE_SIZE), ObCharacter.y + (_uy * TILE_SIZE), ObGrowing, false, false);
+		_xx = _cx + (_ux * TILE_SIZE);
+		_yy = _cy + (_uy * TILE_SIZE);
+		
+		_obj = collision_point(_xx, _yy, ObGrowing, false, false);
 		if (_obj){
 			_obj.grow();
 		}
+		
+		if (Time == time.night && !irandom(1000) && instance_number(ObEnemy) < MENEMIES){
+			instance_create_depth(_xx, _yy, 0, ObEvilEye);
+		}
 	}
+	
+	surface_update();
 }
 
 surface_update = function(){

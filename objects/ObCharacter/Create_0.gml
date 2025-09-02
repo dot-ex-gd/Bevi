@@ -12,6 +12,10 @@ Mana = 10;
 NeedXp = 100;
 Xp = 0;
 
+#region methods
+get_damage = function(_damage) {
+	Health -= _damage;
+}
 xp_add = function(_xp) {
 	Xp += _xp;
 	if (Xp >= NeedXp){
@@ -19,6 +23,15 @@ xp_add = function(_xp) {
 		NeedXp *= 1.25;
 	}
 }
+health_add = function(_hp){
+	Health += _hp;
+	Health = clamp(Health, 0, MaxHealth);
+}
+mana_add = function(_mn){
+	Mana += _mn;
+	Mana = clamp(Mana, 0, MaxMana);
+}
+#endregion
 
 /// movement
 CMoveUp = "w";
@@ -46,12 +59,16 @@ inventory_delete = function(_ind, _c){
 }
 
 inventory_add = function(_item){
-	if (InventoryWeight + _item[$ "Weight"] > InventoryMaxWeight) { return 0; }
+	if (is_struct(_item)){
+		if (InventoryWeight + _item[$ "Weight"] > InventoryMaxWeight) { return 0; }
+		
+		array_push(Inventory, _item);
+		inventory_weight_upd();
+		
+		return 1;
+	}
 	
-	array_push(Inventory, _item);
-	inventory_weight_upd();
-	
-	return 1;
+	return 0;
 }
 
 inventory_weight_upd = function(){
@@ -118,7 +135,7 @@ craft_open = function(){
 }
 
 /// interactive
-InteractiveType = interactive_type.interactive;
+InteractiveType = [];
 InteractiveInArm = noone;
 Interactive = false;
 InteractiveX = 0;
@@ -130,9 +147,19 @@ enum interactive_type{
 	replace,
 	melt,
 }
+#region methods
+interactive_type_find = function(_need){
+	var _len = array_length(InteractiveType);
+	
+	for(var i = 0; i < _len; i++){
+		if (InteractiveType[i] == _need) { return true; }
+	}
+	
+	return false;
+}
 
 interactive_inarm = function(_item, _type){
-	InteractiveType = _type;
+	array_push(InteractiveType, _type);
 	InteractiveX = 0;
 	InteractiveY = 0;
 	
@@ -146,3 +173,73 @@ interactive_abort = function(){
 		Interactive = false;
 	}
 }
+
+interactive_tinteractive = function(){
+	var _x = x + (InteractiveX * TILE_SIZE);
+	var _y = y + (InteractiveY * TILE_SIZE);
+	var _coll = collision_point(_x, _y, ObInstances, 0, 1);
+	
+	if (_coll){
+		if (item_find_flag(_coll, flags.interactive)){
+			_coll.interactive();
+		}
+		if (item_find_flag(_coll, flags.pickup)){
+			_coll.pickup();
+		}
+	}
+}
+interactive_tdig = function(){
+	var _x = x + (InteractiveX * TILE_SIZE);
+	var _y = y + (InteractiveY * TILE_SIZE);
+	if (item_find_flag(InArm, flags.pickaxe)){
+		var _coll = tilemap_get_at_pixel(ObWorld.Tiles, _x, _y);
+		var _create = noone;
+		var _time = 1;
+		
+		switch(_coll){
+			case tile.grass:
+				_time = 5;
+				_create = ObGrassTile;
+			break;
+			case tile.stone:
+				_time = 20;
+				_create = ObStoneTile;
+				
+				if (!irandom(25)) { _create = ObIronOre; }
+			break;
+			case tile.sand:
+				_time = 2;
+				_create = ObSandTile;
+			break;
+		}
+		
+		if (_create){
+			ObStepController.update(_time);
+			instance_create_depth(_x, _y, 0, _create);
+		}
+	}
+}
+interactive_treplace = function(){
+	var _x = x + (InteractiveX * TILE_SIZE);
+	var _y = y + (InteractiveY * TILE_SIZE);
+	if (InteractiveInArm){
+		instance_create_depth(_x, _y, 0, InteractiveInArm[$ "Replaceble"]);
+		InteractiveInArm = noone;
+	}
+}
+interactive_tmelt = function(){
+	var _x = x + (InteractiveX * TILE_SIZE);
+	var _y = y + (InteractiveY * TILE_SIZE);
+	var _col = collision_point(_x, _y, ObBake, false, false);
+	
+	if (_col){
+		if (_col.item_add(InteractiveInArm)){
+			InteractiveInArm = noone;
+		}else{
+			interactive_abort();
+		}
+	}else{
+		interactive_abort();
+	}
+}
+#endregion

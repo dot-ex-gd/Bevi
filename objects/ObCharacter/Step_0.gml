@@ -55,85 +55,31 @@ switch(keyboard_lastchar){
 		if (!InventoryOpen && !CraftOpen){
 			Interactive = !Interactive;
 			
+			if (!InArm && !InteractiveInArm){
+				array_push(InteractiveType, interactive_type.interactive);
+			}
 			if (item_find_flag(InArm, flags.pickaxe)){
-				InteractiveType = interactive_type.dig;
+				array_push(InteractiveType, interactive_type.dig);
 			}
 			if (item_find_flag(InteractiveInArm, flags.placeble)){
-				InteractiveType = interactive_type.replace;
+				array_push(InteractiveType, interactive_type.replace);
 			}
 			if (item_find_flag(InteractiveInArm, flags.remeltable)){
-				InteractiveType = interactive_type.melt;
+				array_push(InteractiveType, interactive_type.melt);
 			}
 			
 			if (!Interactive){
-				var _x = x + (InteractiveX * TILE_SIZE);
-				var _y = y + (InteractiveY * TILE_SIZE);
-				
-				switch(InteractiveType){
-					case interactive_type.interactive:
-						var _coll = collision_point(_x, _y, ObInstances, 0, 1);
-				
-						if (_coll){
-							if (item_find_flag(_coll, flags.interactive)){
-								_coll.interactive();
-							}
-							if (item_find_flag(_coll, flags.pickup)){
-								_coll.pickup();
-							}
-						}
-					break;
-					case interactive_type.dig:
-						if (item_find_flag(InArm, flags.pickaxe)){
-							var _coll = tilemap_get_at_pixel(ObWorld.Tiles, _x, _y);
-							var _create = noone;
-							var _time = 1;
-							
-							switch(_coll){
-								case tile.grass:
-									_time = 5;
-									_create = ObGrassTile;
-								break;
-								case tile.stone:
-									_time = 20;
-									_create = ObStoneTile;
-									
-									if (!irandom(25)) { _create = ObIronOre; }
-								break;
-								case tile.sand:
-									_time = 2;
-									_create = ObSandTile;
-								break;
-							}
-							
-							if (_create){
-								ObStepController.update(_time);
-								instance_create_depth(_x, _y, 0, _create);
-							}
-						}
-					break;
-					case interactive_type.replace:
-						if (InteractiveInArm){
-							instance_create_depth(_x, _y, 0, InteractiveInArm[$ "Replaceble"]);
-							InteractiveInArm = noone;
-						}
-						
-						InteractiveType = interactive_type.interactive;
-					break;
-					case interactive_type.melt:
-						var _col = collision_point(_x, _y, ObBake, false, false);
-						
-						if (_col){
-							if (_col.item_add(InteractiveInArm)){
-								InteractiveInArm = noone;
-							}else{
-								interactive_abort();
-							}
-						}else{
-							interactive_abort();
-						}
-						
-						InteractiveType = interactive_type.interactive;
-					break;
+				if (interactive_type_find(interactive_type.interactive)){
+					interactive_tinteractive();
+				}
+				if (interactive_type_find(interactive_type.dig)){
+					interactive_tdig();
+				}
+				if (interactive_type_find(interactive_type.replace)){
+					interactive_treplace();
+				}
+				if (interactive_type_find(interactive_type.melt)){
+					interactive_tmelt();
 				}
 			}else{
 				InteractiveX = 0;

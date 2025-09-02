@@ -23,6 +23,12 @@ enum flags{
 	fuel,
 }
 
+enum food_stats{
+	hp,
+	mn,
+	xp,
+}
+
 global.Items = {
 	Rock : {
 		Name : "item_rock",
@@ -30,7 +36,6 @@ global.Items = {
 		Item : ObRock,
 		InvSprite : SpRock,
 		Flags : [flags.pickup],
-		Strength : false,
 	},
 	Stick : {
 		Name : "item_stick",
@@ -39,7 +44,6 @@ global.Items = {
 		InvSprite : SpStick,
 		Flags : [flags.pickup, flags.remeltable, flags.fuel],
 		Fuel : 1,
-		Strength : false,
 	},
 	Workbench : {
 		Name : "item_workbench",
@@ -47,7 +51,6 @@ global.Items = {
 		Item : ObWorkbench,
 		InvSprite : SpWorkbench,
 		Flags : [flags.pickup, flags.placeble, flags.workbench],
-		Strength : false,
 	},
 	StoneAxe : {
 		Name : "item_stone_axe",
@@ -55,9 +58,6 @@ global.Items = {
 		Item : ObStoneAxe,
 		InvSprite : SpStoneAxe,
 		Flags : [flags.axe, flags.pickup, flags.weapon],
-		Strength : true,
-		StrengthMax : 15,
-		StrengthCur : 15,
 		Damage : 4,
 	},
 	StoneSword : {
@@ -66,9 +66,6 @@ global.Items = {
 		Item : ObStoneSword,
 		InvSprite : SpStoneSword,
 		Flags : [flags.sword, flags.pickup, flags.weapon],
-		Strength : true,
-		StrengthMax : 30,
-		StrengthCur : 30,
 		Damage : 5,
 	},
 	StonePickaxe : {
@@ -77,9 +74,6 @@ global.Items = {
 		Item : ObStonePickaxe,
 		InvSprite : SpStonePickaxe,
 		Flags : [flags.pickaxe, flags.pickup, flags.weapon],
-		Strength : true,
-		StrengthMax : 15,
-		StrengthCur : 15,
 		Damage : 3,
 	},
 	PegWool : {
@@ -89,7 +83,6 @@ global.Items = {
 		InvSprite : SpPegWool,
 		Flags : [flags.pickup, flags.remeltable, flags.fuel],
 		Fuel : 4,
-		Strength : false,
 	},
 	Log : {
 		Name : "item_log",
@@ -98,7 +91,6 @@ global.Items = {
 		InvSprite : SpLog,
 		Flags : [flags.pickup, flags.remeltable, flags.fuel],
 		Fuel : 5,
-		Strength : false,
 	},
 	Bed : {
 		Name : "item_bed",
@@ -106,7 +98,6 @@ global.Items = {
 		Item : ObBed,
 		InvSprite : SpBed,
 		Flags : [flags.placeble, flags.interactive],
-		Strength : false,
 	},
 	BedItem : {
 		Name : "item_bed",
@@ -116,7 +107,6 @@ global.Items = {
 		Flags : [flags.pickup, flags.placeble],
 		Replaceble : ObBed,
 		ReplacebleSprite : SpBed,
-		Strength : false,
 	},
 	Bonfire : {
 		Name : "item_bonfire",
@@ -124,7 +114,6 @@ global.Items = {
 		Item : ObBonfire,
 		InvSprite : SpBonfire,
 		Flags : [flags.interactive],
-		Strength : false,
 	},
 	BonfireItem : {
 		Name : "item_bonfire",
@@ -135,7 +124,6 @@ global.Items = {
 		Replaceble : ObBonfire,
 		ReplacebleSprite : SpBonfire,
 		Fuel : 3,
-		Strength : false,
 	},
 	Bake : {
 		Name : "item_bake",
@@ -143,7 +131,8 @@ global.Items = {
 		Item : ObBake,
 		InvSprite : SpBake,
 		Flags : [flags.pickup, flags.placeble, flags.interactive],
-		Strength : false,
+		Replaceble : ObBake,
+		ReplacebleSprite : SpBake,
 	},
 	Coal : {
 		Name : "item_coal",
@@ -152,7 +141,6 @@ global.Items = {
 		InvSprite : SpCoal,
 		Flags : [flags.pickup, flags.remeltable, flags.fuel],
 		Fuel : 10,
-		Strength : false,
 	},
 	IronIngot : {
 		Name : "item_iron_ingot",
@@ -160,7 +148,6 @@ global.Items = {
 		Item : ObIronIngot,
 		InvSprite : SpIronIngot,
 		Flags : [flags.pickup],
-		Strength : false,
 	},
 	IronOre : {
 		Name : "item_iron_ore",
@@ -170,7 +157,6 @@ global.Items = {
 		Flags : [flags.pickup, flags.remeltable],
 		MeltDef : 30,
 		MeltRes : ObIronIngot,
-		Strength : false,
 	},
 	HearthFlowerSeed : {
 		Name : "item_hearth_flower_seed",
@@ -178,8 +164,9 @@ global.Items = {
 		Item : ObHearthFlowerSeed,
 		InvSprite : SpHearthFlowerSeed,
 		Flags : [flags.pickup, flags.placeble, flags.remeltable, flags.fuel],
+		Replaceble : ObHearthFlower,
+		ReplacebleSprite : SpHearthFlower,
 		Fuel : 1,
-		Strength : false,
 	},
 	ManaFlowerSeed : {
 		Name : "item_mana_flower_seed",
@@ -187,8 +174,9 @@ global.Items = {
 		Item : ObManaFlowerSeed,
 		InvSprite : SpManaFlowerSeed,
 		Flags : [flags.pickup, flags.placeble, flags.remeltable, flags.fuel],
+		Replaceble : ObManaFlower,
+		ReplacebleSprite : SpManaFlower,
 		Fuel : 1,
-		Strength : false,
 	},
 	HearthFlowerFruit : {
 		Name : "item_hearth_flower",
@@ -196,8 +184,8 @@ global.Items = {
 		Item : ObHearthFlowerFruit,
 		InvSprite : SpHearthFlowerFruit,
 		Flags : [flags.pickup, flags.food, flags.remeltable, flags.fuel],
+		Food : [food_stats.hp, 10],
 		Fuel : 1,
-		Strength : false,
 	},
 	ManaFlowerFruit : {
 		Name : "item_mana_flower",
@@ -205,8 +193,17 @@ global.Items = {
 		Item : ObManaFlowerFruit,
 		InvSprite : SpManaFlowerFruit,
 		Flags : [flags.pickup, flags.food, flags.remeltable, flags.fuel],
+		Food : [food_stats.mn, 10],
 		Fuel : 1,
-		Strength : false,
+	},
+	EvilEye : {
+		Name : "item_evil_eye",
+		Weight : 0.05,
+		Item : ObEvilEyeItem,
+		InvSprite : SpEvilEyeItem,
+		Flags : [flags.pickup, flags.food],
+		Food : [food_stats.mn, 5, food_stats.hp, 5],
+		Fuel : 1,
 	},
 	GrassTile : {
 		Name : "item_grass",
@@ -215,7 +212,6 @@ global.Items = {
 		InvSprite : SpGrassTIle,
 		Flags : [flags.pickup, flags.remeltable, flags.fuel],
 		Fuel : 1,
-		Strength : false,
 	},
 	StoneTile : {
 		Name : "item_stone",
@@ -223,7 +219,6 @@ global.Items = {
 		Item : ObStoneTile,
 		InvSprite : SpStoneTIle,
 		Flags : [flags.pickup],
-		Strength : false,
 	},
 	SandTile : {
 		Name : "item_sand",
@@ -231,7 +226,6 @@ global.Items = {
 		Item : ObSandTile,
 		InvSprite : SpSandTIle,
 		Flags : [flags.pickup],
-		Strength : false,
 	},
 }
 
@@ -249,7 +243,7 @@ function item_find_flag(_item, _flag){
 	
 	var _len = array_length(_flags);
 	
-	for(var i = 0; i < _len; ++i){
+	for(var i = 0; i < _len; i++){
 		if (_flags[i] == _flag) return true;
 	}
 	

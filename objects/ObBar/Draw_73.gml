@@ -13,10 +13,10 @@ switch(BarIndex){
 		_width = (ObCharacter.Xp / ObCharacter.NeedXp) * _sw;
 	break;
 	case 2:
-		_width = (ObCharacter.MaxHealth / ObCharacter.Health) * _sw;
+		_width = (ObCharacter.Health / ObCharacter.MaxHealth) * _sw;
 	break;
 	case 3:
-		_width = (ObCharacter.MaxMana / ObCharacter.Mana) * _sw;
+		_width = (ObCharacter.Mana / ObCharacter.MaxMana) * _sw;
 	break;
 }
 

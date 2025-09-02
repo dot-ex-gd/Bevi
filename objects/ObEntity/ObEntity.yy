@@ -11,8 +11,8 @@
   "name":"ObEntity",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Root/Managers.yy",
+    "name":"Entity",
+    "path":"folders/Root/Entity.yy",
   },
   "parentObjectId":{
     "name":"ObInstances",

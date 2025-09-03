@@ -180,10 +180,10 @@ interactive_tinteractive = function(){
 	var _coll = collision_point(_x, _y, ObInstances, 0, 1);
 	
 	if (_coll){
-		if (item_find_flag(_coll, flags.interactive)){
+		if (item_find_flag(_coll, flags.interactive) && !interactive_type_find(interactive_type.melt)){
 			_coll.interactive();
 		}
-		if (item_find_flag(_coll, flags.pickup)){
+		if (item_find_flag(_coll, flags.pickup) && !interactive_type_find(interactive_type.melt)){
 			_coll.pickup();
 		}
 	}
@@ -205,7 +205,13 @@ interactive_tdig = function(){
 				_time = 20;
 				_create = ObStoneTile;
 				
-				if (!irandom(25)) { _create = ObIronOre; }
+				if (!irandom(10)){
+					_create = ObIronOre;
+					
+					if (!irandom(3)){
+						_create = ObGoldOre;
+					}
+				}
 			break;
 			case tile.sand:
 				_time = 2;
@@ -219,7 +225,17 @@ interactive_tdig = function(){
 		}
 	}
 }
+
+interactive_can_melt = function(){
+	var _x = x + (InteractiveX * TILE_SIZE);
+	var _y = y + (InteractiveY * TILE_SIZE);
+	var _col = collision_point(_x, _y, ObBake, false, false);
+	
+	if (_col) { return true; } else { return false; }
+}
 interactive_treplace = function(){
+	if (interactive_can_melt()) { exit; }
+	
 	var _x = x + (InteractiveX * TILE_SIZE);
 	var _y = y + (InteractiveY * TILE_SIZE);
 	if (InteractiveInArm){
@@ -228,16 +244,17 @@ interactive_treplace = function(){
 	}
 }
 interactive_tmelt = function(){
+	if (!interactive_can_melt()){
+		interactive_abort();
+		exit;
+	}
+	
 	var _x = x + (InteractiveX * TILE_SIZE);
 	var _y = y + (InteractiveY * TILE_SIZE);
 	var _col = collision_point(_x, _y, ObBake, false, false);
 	
-	if (_col){
-		if (_col.item_add(InteractiveInArm)){
-			InteractiveInArm = noone;
-		}else{
-			interactive_abort();
-		}
+	if (_col.item_add(InteractiveInArm)){
+		InteractiveInArm = noone;
 	}else{
 		interactive_abort();
 	}

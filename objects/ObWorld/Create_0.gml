@@ -56,58 +56,54 @@ repeat(_tem_att){
 	show_debug_message($"tem itt: {++_itt}");
 }
 
-var _tile = 0, _str = "", _txx = 0, _tyy = 0;
+
+var _tile = 0, _str = "", _txx = 0, _tyy = 0, _obj, _inst = 0, _carr, _ctem;
 for(var i = 1; i < _tile_w - 1; i++){
 	for(var j = 1; j < _tile_h - 1; j++){
-		if (_arr[# i, j] <= 1){
-			if (_tem[# i, j] <= 0.46){
+		_carr = _arr[# i, j];
+		_ctem = _tem[# i, j];
+		
+		if (_carr <= 1){
+			if (_ctem <= 0.46){
 				_tile = tile.stone;
 			}
 		}
-		if (_arr[# i, j] <= 0.53){
+		if (_carr <= 0.53){
 			_tile = tile.grass;
 			
-			if (_tem[# i, j] > 0.46){
+			if (_ctem > 0.46){
 				_tile = tile.sand;
 			}
 		}
-		if (_arr[# i, j] <= 0.498){
+		if (_carr <= 0.498){
 			_tile = tile.sand;
 			
-			if (_tem[# i, j] > 0.43){
+			if (_ctem > 0.43){
 				_tile = tile.water;
 			}
 		}
-		if (_arr[# i, j] <= 0.494){
+		if (_carr <= 0.494){
 			_tile = tile.water;
+			
+			if (_carr <= 0.49){
+				tilemap_set(TilesCollision, true, i, j);
+			}
 		}
 		
 		tilemap_set(Tiles, _tile, i, j);
 		
 		switch(_tile){
 			case tile.grass:
-				var _obj = -1;
+				 _obj = -1;
 				
 				switch(irandom(100)){
-					case 10:
-					case 9:
-					case 8:
 					case 7:
-					case 2:
-					case 1:
+					case 8:
+					case 9:
+					case 10:
 						_obj = ObTree;
-						
-						repeat(irandom(5)){
-							_txx = irandom_range(-2, 2);
-							_tyy = irandom_range(-2, 2);
-							
-							if (!collision_point(i * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _txx), j * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _tyy), ObDeco, false, false)){
-								instance_create_depth(i * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _txx), j * TILE_SIZE + TILE_SIZE / 2 + (TILE_SIZE * _tyy), -j, ObLeafes);
-							}
-						}
 					break;
 					case 6:
-					case 5:
 						_obj = ObPeg;
 					break;
 					case 11:
@@ -130,8 +126,35 @@ for(var i = 1; i < _tile_w - 1; i++){
 					break;
 				}
 				
-				if (_obj)
+				if (_obj){
 					instance_create_depth(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, -j, _obj);
+				}
+			break;
+			case tile.sand:
+				_obj = -1;
+			
+				switch(irandom(100)){
+					case 1:
+					case 2:
+						if ((_tem[# i, j] > 0.46)){
+							_obj = ObSkorpionSpawner;
+						}
+					break;
+					case 8:
+					case 9:
+					case 10:
+						if ((_tem[# i, j] > 0.46)){
+							_obj = ObDesertTree;
+						}
+					break;
+					case 100:
+						_obj = ObDesertSpikes;
+					break;
+				}
+				
+				if (_obj){
+					instance_create_depth(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, -j, _obj);
+				}
 			break;
 		}
 	}
@@ -139,3 +162,10 @@ for(var i = 1; i < _tile_w - 1; i++){
 
 ds_grid_destroy(_arr);
 ds_grid_destroy(_tem);
+
+with(all){
+	_inst++;
+}
+
+show_debug_message(">>> Generation Complete! <<<");
+show_debug_message($">>> Instances: {_inst} <<<");

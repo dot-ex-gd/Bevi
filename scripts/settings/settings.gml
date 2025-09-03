@@ -9,4 +9,6 @@ enum languages{
 #macro DEPTH	depth = -y div TILE_SIZE
 #macro MENEMIES	200
 
+#macro CHUNK_SIZE	64 * TILE_SIZE
+
 global.Language = languages.rus;

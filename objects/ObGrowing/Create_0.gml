@@ -11,7 +11,8 @@ get_damage = function(_damage){
 
 SpringAtt = 0;
 
-grow = function() { if (!is_grow()) {image_index ++; spring(0.25); }}
+_grow_base = function() { if (!is_grow()) {image_index += GrowLevel; spring(0.25); }}
+grow = function() { _grow_base(); }
 is_grow = function() { return image_index == image_number - 1; }
 
 DEPTH + 1;

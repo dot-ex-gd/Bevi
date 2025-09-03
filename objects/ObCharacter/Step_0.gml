@@ -30,7 +30,7 @@ switch(keyboard_lastchar){
 						_attack.get_damage(_damage);
 					}
 				
-					StepPoints -= 1;
+					StepPoints = 0;
 					if (StepPoints < 1) { ObStepController.alarm[0] = ObStepController.StepTime; }
 				}
 			}
@@ -85,6 +85,8 @@ switch(keyboard_lastchar){
 				InteractiveX = 0;
 				InteractiveY = 0;
 			}
+			
+			InteractiveType = [];
 		}
 	break;
 }

@@ -92,6 +92,14 @@ global.Items = {
 		Flags : [flags.pickup, flags.remeltable, flags.fuel],
 		Fuel : 5,
 	},
+	DesertLog : {
+		Name : "item_desert_log",
+		Weight : 1.2,
+		Item : ObLog,
+		InvSprite : SpLog,
+		Flags : [flags.pickup, flags.remeltable, flags.fuel],
+		Fuel : 5,
+	},
 	Bed : {
 		Name : "item_bed",
 		Weight : 4,
@@ -157,6 +165,22 @@ global.Items = {
 		Flags : [flags.pickup, flags.remeltable],
 		MeltDef : 30,
 		MeltRes : ObIronIngot,
+	},
+	GoldIngot : {
+		Name : "item_gold_ingot",
+		Weight : 1.2,
+		Item : ObGoldIngot,
+		InvSprite : SpGoldIngot,
+		Flags : [flags.pickup],
+	},
+	GoldOre : {
+		Name : "item_gold_ore",
+		Weight : 3,
+		Item : ObGoldOre,
+		InvSprite : SpGoldOre,
+		Flags : [flags.pickup, flags.remeltable],
+		MeltDef : 60,
+		MeltRes : ObGoldIngot,
 	},
 	HearthFlowerSeed : {
 		Name : "item_hearth_flower_seed",

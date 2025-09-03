@@ -97,8 +97,10 @@ time_go = function(_min, _hour = 0, _day = 0){
 			_obj.grow();
 		}
 		
-		if (Time == time.night && !irandom(1000) && instance_number(ObEnemy) < MENEMIES){
-			instance_create_depth(_xx, _yy, 0, ObEvilEye);
+		if (Time == time.night && !irandom(1000) && can_spawn()){
+			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
+				instance_create_depth(_xx, _yy, 0, ObEvilEye);
+			}
 		}
 	}
 	
@@ -115,7 +117,8 @@ surface_update = function(){
 	draw_clear_alpha(c_black, ToNightK);
 	gpu_set_blendmode(bm_subtract);
 	
-	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 0.25, 0.25, 0, c_white, random_range(0.9, 1));
+	//draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 0.25, 0.25, 0, c_white, random_range(0.9, 1));
+	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 4.25, 4.25, 0, c_white, random_range(0.9, 1));
 	
 	with(ObBonfire){
 		draw_sprite_ext(SpLight, 0, x - _cx, y - _cy, Intensivity, Intensivity, 0, c_white, random_range(0.9, 1));

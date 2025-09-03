@@ -1,3 +1,3 @@
-ChunkSize = 64 * TILE_SIZE;
+alarm[0] = 5;
 
-CullList = ds_list_create();
+Need = true;

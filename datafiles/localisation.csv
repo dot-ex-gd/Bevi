@@ -24,11 +24,22 @@ item_coal,Coal,Уголь
 item_evil_eye,Evil eye,Злой глаз
 item_log,Log,Бревно
 item_desert_log,Desert log,Пустынное бревно
+item_iron_helmet,Iron helmet,Железный шлем
+item_iron_chestplate,Iron chestplate,Железный нагрудник
+item_iron_leggins,Iron leggins,Железные поножи
+item_iron_boots,Iron boots,Железные ботинки
+item_gold_helmet,Gold helmet,Золотой шлем
+item_gold_chestplate,Gold chestplate,Золотой нагрудник
+item_gold_leggins,Gold leggins,Золотые поножи
+item_gold_boots,Gold boots,Злотые ботинки
 text_weight,Weight,Вес
 text_kg,Kg,Кг
 text_x,x,х
 text_inventory,Inventory,Инвентарь
 text_craft,Craft,Создание
+text_play,Play,Играть
+text_exit,Exit,Выйти
+text_settings,Settings,Настройки
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз
 enemy_thorn,Thorn,Колючка

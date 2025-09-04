@@ -25,5 +25,5 @@ function text_get(_index){
 	
 	_text = string_replace_all(_text, "\\n", "\n");
 	
-	return _text;
+	return string_lower(_text);
 }

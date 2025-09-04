@@ -13,21 +13,26 @@ switch(keyboard_lastchar){
 	case "c":
 	case "C":
 		Update();
+		
 		if (DoCraft[Select]){
 			var _item = global.Crafts[Select];
 			var _container = ObCharacter.Inventory;
 			var _cont_len = array_length(_container);
+			var _need_item;
+			var _need_count;
+			var _found;
+			var _already;
 			
 			for(var i = 0; i < array_length(_item[craft.rec]); i += 2){
-				var _need_item = _item[craft.rec][i];
-				var _need_count = _item[craft.rec][i + 1];
+				_need_item = _item[craft.rec][i];
+				_need_count = _item[craft.rec][i + 1];
 				
 				if (_need_count <= 0) { continue; }
 				
-				var _found = 0;
+				_found = 0;
 				
 				for(var j = 0; j < _cont_len; j++){
-					var _already = false;
+					_already = false;
 					
 					if (_already) { continue; }
 					
@@ -52,15 +57,11 @@ switch(keyboard_lastchar){
 
 Select = clamp(Select, 0, _len - 1);
 
-if (Select >= MaxShow){
-	if (_dir > 0){
-		Skip += _dir;
-	}
+if (Select >= MaxShow && _dir > 0){
+	Skip += _dir;
 }
-if (Select <= MaxShow){
-	if (_dir < 0){
-		Skip += _dir;
-	}
+if (Select <= MaxShow + 2 && _dir < 0){
+	Skip += _dir;
 }
 
 Skip = clamp(Skip, 0, _len - MaxShow);

@@ -1,39 +1,55 @@
-var _x = camera_get_view_x(view_camera[0]) + xstart;
-var _y = camera_get_view_y(view_camera[0]) + ystart;
-
-x = _x;
-y = _y;
+var _cam_x = camera_get_view_x(view_camera[0]) + xstart;
+var _cam_y = camera_get_view_y(view_camera[0]) + ystart;
+x = _cam_x;
+y = _cam_y;
 
 draw_sprite(sprite_index, 0, x, y);
-
-draw_set_font(global.FontRus);
+draw_set_font(get_language_font());
 
 var _len = array_length(DoCraft);
-var i = 0, j = 0;
+var _max = min(_len, MaxShow);
+var _x1 = bbox_left + 14;
+var _y1 = bbox_top + 22;
+var _entry_index;
 var _item;
-var _x1 = bbox_left + 14, _y1 = bbox_top + 22, _len2;
+var _rec;
+var _len2;
+var _comp_obj;
+var _comp_amount;
+var _comp_x_offset;
+var _item_y;
 
-for(var i = 0; i < min(_len, MaxShow); i++){
+for(var i = 0; i < _max; i++){
+	_entry_index = i + Skip;
+	
 	if (i == Select - Skip){
-		if (DoCraft[i + Skip]){
+		if (DoCraft[_entry_index]){
 			draw_sprite(SpUICraftSelectCell, 0, _x1, _y1 + (i * 20));
-		}else{
+		} else {
 			draw_sprite(SpUIInventorySelectCell, 0, _x1, _y1 + (i * 20));
 		}
 	}
 	
-	_item = global.Crafts[i + Skip];
+	_item = global.Crafts[_entry_index];
 	draw_sprite(_item[craft.struct][$ "InvSprite"], 0, _x1, _y1 + (i * 20));
 	
-	_len2 = array_length(_item[craft.rec]);
+	_rec = _item[craft.rec];
+	_len2 = array_length(_rec);
 	for(var j = 0; j < _len2; j += 2){
-		draw_sprite(object_get_sprite(_item[craft.rec][j]), 0, _x1 + (21 + (20 * j / 2)), _y1 + (i * 20));
-		draw_text(_x1 + (21 + (20 * j / 2) + 4), _y1 + (i * 20) + 4, global.Crafts[i + Skip][craft.rec][j + 1]);
+		_comp_obj = _rec[j];
+		_comp_amount = _rec[j + 1];
+		_comp_x_offset = 21 + (20 * j / 2);
+		_item_y = _y1 + (i * 20);
+		
+		draw_sprite(object_get_sprite(_comp_obj), 0, _x1 + _comp_x_offset, _item_y);
+		draw_text(_x1 + _comp_x_offset + 4, _item_y + 4, _comp_amount);
 		
 		if (j == _len2 - 2){
-			draw_text(_x1 + (21 + (20 * (j + 1) / 2) + 4), _y1 + (i * 20) + 4, $"{global.Crafts[i + Skip][craft.struct][$ "Weight"]}{TextKG}");
+			draw_set_halign(fa_right);
+			draw_text(bbox_right - 6, _item_y + 4, string(_item[craft.struct][$ "Weight"]) + TextKG);
+			draw_set_halign(fa_left);
 		}
 	}
 }
 
-draw_text(bbox_left + 8, bbox_top + 5, $"{TextCraft}");
+draw_text(bbox_left + 8, bbox_top + 5, TextCraft);

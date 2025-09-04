@@ -9,29 +9,7 @@ switch(keyboard_lastchar){
 		if (!Interactive){
 			if (StepPoints >= 1){
 				if (!InventoryOpen && !CraftOpen){
-					var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft)) * TILE_SIZE;
-					var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp)) * TILE_SIZE;
-					
-					var _attack = collision_point(x + _to_x, y + _to_y, [ObEntity, AttackMode ? ObDestroyable : ObEntity], false, false);
-					
-					if (!tilemap_get_at_pixel(ObWorld.TilesCollision, x + _to_x, y + _to_y) && !_attack){
-						x += _to_x;
-						y += _to_y;
-			
-						DEPTH;
-					}
-			
-					if (_attack){
-						var _damage = 1;
-						if (InArm && item_find_flag(InArm, _attack.PreferFlag)){
-							_damage = InArm[$ "Damage"];
-						}
-						
-						_attack.get_damage(_damage);
-					}
-				
-					StepPoints = 0;
-					if (StepPoints < 1) { ObStepController.alarm[0] = ObStepController.StepTime; }
+					step();
 				}
 			}
 		}else{	// interactive

@@ -251,6 +251,62 @@ global.Items = {
 		InvSprite : SpSandTIle,
 		Flags : [flags.pickup],
 	},
+	IronHelmet : {
+		Name : "item_sand",
+		Weight : 1,
+		Item : ObIronHelmet,
+		InvSprite : SpIronHelmet,
+		Flags : [flags.pickup, flags.armor, flags.head],
+	},
+	IronChestplate : {
+		Name : "item_sand",
+		Weight : 2,
+		Item : ObIronChestplate,
+		InvSprite : SpIronChestplate,
+		Flags : [flags.pickup, flags.armor, flags.body],
+	},
+	IronLeggins : {
+		Name : "item_sand",
+		Weight : 1,
+		Item : ObIronLeggins,
+		InvSprite : SpIronLeggins,
+		Flags : [flags.pickup, flags.armor, flags.leggins],
+	},
+	IronBoots : {
+		Name : "item_sand",
+		Weight : 0.5,
+		Item : ObIronBoots,
+		InvSprite : SpIronBoots,
+		Flags : [flags.pickup, flags.armor, flags.boots],
+	},
+	GoldHelmet : {
+		Name : "item_sand",
+		Weight : 1,
+		Item : ObGoldHelmet,
+		InvSprite : SpGoldHelmet,
+		Flags : [flags.pickup, flags.armor, flags.head],
+	},
+	GoldChestplate : {
+		Name : "item_sand",
+		Weight : 2,
+		Item : ObGoldChestplate,
+		InvSprite : SpGoldChestplate,
+		Flags : [flags.pickup, flags.armor, flags.body],
+	},
+	GoldLeggins : {
+		Name : "item_sand",
+		Weight : 1,
+		Item : ObGoldLeggins,
+		InvSprite : SpGoldLeggins,
+		Flags : [flags.pickup, flags.armor, flags.leggins],
+	},
+	GoldBoots : {
+		Name : "item_sand",
+		Weight : 0.5,
+		Item : ObGoldBoots,
+		InvSprite : SpGoldBoots,
+		Flags : [flags.pickup, flags.armor, flags.boots],
+	},
 }
 
 /// @fucn item_find_flag(item, flag)

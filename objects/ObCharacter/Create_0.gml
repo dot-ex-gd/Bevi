@@ -16,13 +16,16 @@ Protection = 0;
 
 #region methods
 get_damage = function(_damage) {
-	Health -= _damage;
+	Health -= clamp(_damage - Protection, 1, infinity);
 }
 xp_add = function(_xp) {
-	Xp += _xp;
+	Xp += _xp * 100;
 	if (Xp >= NeedXp){
 		Xp -= NeedXp;
 		NeedXp *= 1.25;
+		
+		MaxHealth *= 1.07;
+		MaxMana *= 1.05;
 	}
 }
 health_add = function(_hp){

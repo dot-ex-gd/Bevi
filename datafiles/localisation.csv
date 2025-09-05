@@ -41,6 +41,9 @@ text_play,Play,Играть
 text_exit,Exit,Выйти
 text_settings,Settings,Настройки
 text_protection,Protection,Защита
+text_xp,xp,ур
+text_hp,hp,оз
+text_mana,mana,мана
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз
 enemy_thorn,Thorn,Колючка

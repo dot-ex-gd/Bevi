@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpGoldBoots",
-    "path":"sprites/SpGoldBoots/SpGoldBoots.yy",
+    "name":"SpGoldBootsMini",
+    "path":"sprites/SpGoldBootsMini/SpGoldBootsMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

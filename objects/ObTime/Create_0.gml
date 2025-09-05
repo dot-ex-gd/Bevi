@@ -1,6 +1,8 @@
 depth = -16_000;
 
 /// Time
+Second = 0;
+SecondK = 5;
 Minute = 0;
 Hour = 12;
 Day = 0;
@@ -24,12 +26,17 @@ enum time{
 	night,
 }
 
-time_go = function(_min, _hour = 0, _day = 0){
-	var _p = lerp(0, (_min + (_hour * 60) + (_day * 24 * 60)), 0.009);
+time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
+	var _p = lerp(0, (_sec + ((_min * 60) + (_hour * 60) + (_day * 24 * 60))), 0.001);
+	Second += _sec;
 	Minute += _min;
 	Hour += _hour;
 	Day += _day;
 	
+	while(Second >= SecondK){
+		Minute++;
+		Second -= SecondK;
+	}
 	while(Minute >= 60){
 		Hour++;
 		Minute -= 60;
@@ -86,7 +93,10 @@ time_go = function(_min, _hour = 0, _day = 0){
 	var _ux = 0, _uy = 0, _del = 20, _obj;
 	var _cx = ObCharacter.x, _cy = ObCharacter.y;
 	var _xx, _yy;
-	repeat(20 * ((_min) + (_hour * 60) + (_day * 24 * 60))){
+	
+	var _grow = 0, _summoned = 0;
+	
+	repeat(20 * (_sec + ((_min * 60) + (_hour * 60) + (_day * 24 * 60)))){
 		_ux = irandom_range(-_del, _del);
 		_uy = irandom_range(-_del, _del);
 		_xx = _cx + (_ux * TILE_SIZE);
@@ -95,20 +105,30 @@ time_go = function(_min, _hour = 0, _day = 0){
 		_obj = collision_point(_xx, _yy, ObGrowing, false, false);
 		if (_obj){
 			_obj.grow();
+			_grow++;
 		}
 		
-		if (Time == time.night && !irandom(1000) && can_spawn()){
+		if (Time == time.night && !irandom(1000 * SecondK) && can_spawn()){
 			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
 				instance_create_depth(_xx, _yy, 0, ObEvilEye);
+				_summoned++;
 			}
 		}
 	}
 	
 	surface_update();
+	show_debug_message($">>>> Time <<<<");
+	show_debug_message($">> Time: {Time}");
+	show_debug_message($">> Time k: {_p}");
+	show_debug_message($">> Steps simulated: {20 * (_sec + ((_min * 60) + (_hour * 60) + (_day * 24 * 60)))}");
+	show_debug_message($">> Time pass: s: {_sec} m: {_min} h: {_hour} d: {_day}");
+	show_debug_message($">> Grow: {_grow}");
+	show_debug_message($">> Summoned: {_summoned}");
+	show_debug_message("\n");
 }
 
 surface_update = function(){
-	if (ToNightK < 0.02) { exit; }
+	if (ToNightK == 0) { exit; }
 	var _cam = view_camera[0];
 	var _cx = camera_get_view_x(_cam);
 	var _cy = camera_get_view_y(_cam);
@@ -118,7 +138,7 @@ surface_update = function(){
 	gpu_set_blendmode(bm_subtract);
 	
 	//draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 0.25, 0.25, 0, c_white, random_range(0.9, 1));
-	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 4.25, 4.25, 0, c_white, random_range(0.9, 1));
+	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 2, 2, 0, c_white, random_range(0.9, 1));
 	
 	with(ObBonfire){
 		draw_sprite_ext(SpLight, 0, x - _cx, y - _cy, Intensivity, Intensivity, 0, c_white, random_range(0.9, 1));

@@ -60,6 +60,32 @@ update = function(){
 	}
 }
 
+finalize = function(){
+	var _size_y = SizeW, _size_x = SizeH, i, j;
+	var _carr, _tile, _obj;
+	var _ht = TILE_SIZE / 2;
+	
+	for(i = 0; i < _size_y; i++){
+		for(j = 0; j < _size_x; j++){
+			_obj = -1;
+			_carr = World[# i, j];
+			_tile = tilemap_get(LayerTile, i, j);
+			
+			switch(_tile){
+				case tile.grass:
+					if (_carr > 0.5 && !irandom(10)){
+						_obj = ObMenuTree;
+					}
+				break;
+			}
+			
+			if (_obj){
+				instance_create_depth(i * TILE_SIZE + _ht, j * TILE_SIZE + _ht, -50 - j, _obj);
+			}
+		}
+	}
+}
+
 Smooth = 0;
 SmoothNeed = 35;
 

@@ -15,6 +15,6 @@ if (point_in_rectangle(mouse_x, mouse_y, x - _hw, y - _hh, x + _hw, y + _hh)){
 if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))){
 	Number = !Number;
 }
-if (keyboard_check(vk_enter) && !Number){
+if (keyboard_check_pressed(vk_enter) && !keyboard_check(vk_alt) && !Number){
 	Do();
 }

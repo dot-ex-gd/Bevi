@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpGoldLeggins",
-    "path":"sprites/SpGoldLeggins/SpGoldLeggins.yy",
+    "name":"SpGoldLegginsMini",
+    "path":"sprites/SpGoldLegginsMini/SpGoldLegginsMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

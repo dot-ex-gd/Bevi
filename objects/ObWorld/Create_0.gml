@@ -18,6 +18,10 @@ for(var i = 0; i < _tile_w; i++){
 	for(var j = 0; j < _tile_h; j++){
 		_arr[# i, j] = random(1);
 		_tem[# i, j] = 0;
+		
+		if (i == 0 || j == 0 || i == _tile_w - 1 || j == _tile_h - 1){
+			tilemap_set(TilesCollision, true, i, j);
+		}
 	}
 }
 

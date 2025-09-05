@@ -13,6 +13,6 @@ SpringAtt = 0;
 
 _grow_base = function() { if (!is_grow()) {image_index += GrowLevel; spring(0.25); }}
 grow = function() { _grow_base(); }
-is_grow = function() { return image_index == image_number - 1; }
+is_grow = function() { return image_index >= image_number - 1; }
 
 DEPTH + 1;

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpIronHelmet",
-    "path":"sprites/SpIronHelmet/SpIronHelmet.yy",
+    "name":"SpIronHelmetMini",
+    "path":"sprites/SpIronHelmetMini/SpIronHelmetMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

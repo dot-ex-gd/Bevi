@@ -1,8 +1,18 @@
-var _x = camera_get_view_x(view_camera[0]) + xstart;
-var _y = camera_get_view_y(view_camera[0]) + ystart;
+var _cam_x = camera_get_view_x(view_camera[0]);
+var _cam_y = camera_get_view_y(view_camera[0]);
+var _cam_w = camera_get_view_width(view_camera[0]);
+var _cam_h = camera_get_view_height(view_camera[0]);
+x = _cam_x + xstart;
+y = _cam_y + ystart;
 
-x = _x;
-y = _y;
+BackAlpha = lerp(BackAlpha, 0.55, 0.1);
+
+draw_set_alpha(BackAlpha);
+draw_set_color(c_black);
+draw_rectangle(_cam_x, _cam_y, _cam_x + _cam_w, _cam_y + _cam_h, false);
+draw_set_color(c_white);
+draw_set_alpha(1);
+
 
 draw_sprite(sprite_index, 0, x, y);
 
@@ -32,6 +42,22 @@ for(var i = 0; i < min(_len, MaxShow); i++){
 if (ObCharacter.InArm){
 	draw_sprite(ObCharacter.InArm[$ "InvSprite"], 0, _x1 + (20 * 4) + 4, _y1 + 21);
 }
+if (ObCharacter.OnHead){
+	draw_sprite(ObCharacter.OnHead[$ "InvSprite"], 0, _x1 + (20 * 3) + 4, _y1);
+}
+if (ObCharacter.OnBody){
+	draw_sprite(ObCharacter.OnBody[$ "InvSprite"], 0, _x1 + (20 * 3) + 4, _y1 + (20 * 1));
+}
+if (ObCharacter.OnLeggings){
+	draw_sprite(ObCharacter.OnLeggings[$ "InvSprite"], 0, _x1 + (20 * 3) + 4, _y1 + (20 * 2));
+}
+if (ObCharacter.OnFoot){
+	draw_sprite(ObCharacter.OnFoot[$ "InvSprite"], 0, _x1 + (20 * 3) + 4, _y1 + (20 * 3));
+}
 
-draw_text(bbox_left + 8, bbox_bottom - 6, $"{TextWeight}: {ObCharacter.InventoryWeight}{TextKG}/{ObCharacter.InventoryMaxWeight}{TextKG}");
-draw_text(bbox_left + 8, bbox_top + 5, $"{TextInventory}");
+draw_set_halign(fa_center);
+
+draw_text(x, bbox_bottom - 6, $"{TextWeight}: {ObCharacter.InventoryWeight}{TextKG}/{ObCharacter.InventoryMaxWeight}{TextKG} {TextProtection}: {ObCharacter.Protection}");
+draw_text(x, bbox_top + 5, $"{TextInventory}");
+
+draw_set_halign(fa_left);

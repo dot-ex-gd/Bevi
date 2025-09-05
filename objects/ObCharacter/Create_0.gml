@@ -12,6 +12,8 @@ Mana = 10;
 NeedXp = 100;
 Xp = 0;
 
+Protection = 0;
+
 #region methods
 get_damage = function(_damage) {
 	Health -= _damage;
@@ -108,7 +110,7 @@ inventory_weight_upd = function(){
 }
 
 inventory_throw = function(_ind){
-	if (_ind <= array_length(Inventory) - 1 && Inventory[_ind]){
+	if (_ind >= 0 && _ind <= array_length(Inventory) - 1 && Inventory[_ind]){
 		instance_create_depth(x, y, -y, Inventory[_ind].Item);
 		
 		inventory_delete(_ind, -1);
@@ -142,6 +144,58 @@ equip_inarm_add = function(_ind, _struct){
 	}else{
 		Inventory[_ind] = InArm;
 		InArm = _struct;
+	}
+}
+equip_onhead_add = function(_ind, _struct){
+	if (OnHead == noone){
+		inventory_delete(_ind, -1);
+		OnHead = _struct;
+	}else{
+		Inventory[_ind] = OnHead;
+		OnHead = _struct;
+	}
+}
+equip_onbody_add = function(_ind, _struct){
+	if (OnBody == noone){
+		inventory_delete(_ind, -1);
+		OnBody = _struct;
+	}else{
+		Inventory[_ind] = OnBody;
+		OnBody = _struct;
+	}
+}
+equip_onleggins_add = function(_ind, _struct){
+	if (OnLeggings == noone){
+		inventory_delete(_ind, -1);
+		OnLeggings = _struct;
+	}else{
+		Inventory[_ind] = OnLeggings;
+		OnLeggings = _struct;
+	}
+}
+equip_onfoot_add = function(_ind, _struct){
+	if (OnFoot == noone){
+		inventory_delete(_ind, -1);
+		OnFoot = _struct;
+	}else{
+		Inventory[_ind] = OnFoot;
+		OnFoot = _struct;
+	}
+}
+protection_upgdate = function(){
+	Protection = 0;
+	
+	if (OnHead){
+		Protection += OnHead[$ "Protection"];
+	}
+	if (OnBody){
+		Protection += OnBody[$ "Protection"];
+	}
+	if (OnLeggings){
+		Protection += OnLeggings[$ "Protection"];
+	}
+	if (OnFoot){
+		Protection += OnFoot[$ "Protection"];
 	}
 }
 

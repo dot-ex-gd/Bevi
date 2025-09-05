@@ -23,6 +23,8 @@ switch(keyboard_lastchar){
 	break;
 	
 	case "e":
+		if (Select < 0) { exit; }
+		
 		var _item = ObCharacter.Inventory[Select];
 		if (_item){
 			var _del = false;
@@ -30,6 +32,22 @@ switch(keyboard_lastchar){
 			if (item_find_flag(_item, flags.weapon)){
 				ObCharacter.equip_inarm_add(Select, _item);
 				_del = true;
+			}
+			if (item_find_flag(_item, flags.armor)){
+				if (item_find_flag(_item, flags.head)){
+					ObCharacter.equip_onhead_add(Select, _item);
+				}
+				if (item_find_flag(_item, flags.body)){
+					ObCharacter.equip_onbody_add(Select, _item);
+				}
+				if (item_find_flag(_item, flags.leggins)){
+					ObCharacter.equip_onleggins_add(Select, _item);
+				}
+				if (item_find_flag(_item, flags.boots)){
+					ObCharacter.equip_onfoot_add(Select, _item);
+				}
+				
+				ObCharacter.protection_upgdate();
 			}
 			
 			if (item_find_flag(_item, flags.food)){

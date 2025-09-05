@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpIronLeggins",
-    "path":"sprites/SpIronLeggins/SpIronLeggins.yy",
+    "name":"SpIronLegginsMini",
+    "path":"sprites/SpIronLegginsMini/SpIronLegginsMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

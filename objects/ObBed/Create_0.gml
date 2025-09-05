@@ -1,5 +1,5 @@
 event_inherited();
 
 interactive = function(){
-	ObStepController.update(100);
+	ObStepController.update(600);
 }

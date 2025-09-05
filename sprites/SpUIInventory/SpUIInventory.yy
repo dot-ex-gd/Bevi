@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"SpUIInventory",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":103,
   "bbox_left":0,
   "bbox_right":111,

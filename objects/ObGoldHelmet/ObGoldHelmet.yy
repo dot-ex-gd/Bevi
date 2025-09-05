@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpGoldHelmet",
-    "path":"sprites/SpGoldHelmet/SpGoldHelmet.yy",
+    "name":"SpGoldHelmetMini",
+    "path":"sprites/SpGoldHelmetMini/SpGoldHelmetMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

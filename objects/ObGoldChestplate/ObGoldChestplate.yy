@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpGoldChestplate",
-    "path":"sprites/SpGoldChestplate/SpGoldChestplate.yy",
+    "name":"SpGoldChestplateMini",
+    "path":"sprites/SpGoldChestplateMini/SpGoldChestplateMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

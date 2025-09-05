@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpIronBoots",
-    "path":"sprites/SpIronBoots/SpIronBoots.yy",
+    "name":"SpIronBootsMini",
+    "path":"sprites/SpIronBootsMini/SpIronBootsMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

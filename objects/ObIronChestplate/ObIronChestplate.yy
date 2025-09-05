@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpIronChestplate",
-    "path":"sprites/SpIronChestplate/SpIronChestplate.yy",
+    "name":"SpIronChestplateMini",
+    "path":"sprites/SpIronChestplateMini/SpIronChestplateMini.yy",
   },
   "spriteMaskId":null,
   "visible":true,

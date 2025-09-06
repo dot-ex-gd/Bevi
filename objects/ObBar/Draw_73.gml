@@ -17,7 +17,7 @@ switch(BarIndex){
 			_add_text += $"+{XpAdd}";
 		}
 		
-		_text = $"{TextXp}:{floor(ObCharacter.Xp)}/{floor(ObCharacter.NeedXp)}{_add_text}";
+		_text = $"{TextXp}:{floor(ObCharacter.Xp)}{_add_text}/{floor(ObCharacter.NeedXp)}";
 	break;
 	case 2:
 		_width = (ObCharacter.Health / ObCharacter.MaxHealth) * _sw;
@@ -25,7 +25,7 @@ switch(BarIndex){
 			_add_text += $"+{HpAdd}";
 		}
 		
-		_text = $"{TextHp}:{floor(ObCharacter.Health)}/{floor(ObCharacter.MaxHealth)}{_add_text}";
+		_text = $"{TextHp}:{floor(ObCharacter.Health)}{_add_text}/{floor(ObCharacter.MaxHealth)}";
 	break;
 	case 3:
 		_width = (ObCharacter.Mana / ObCharacter.MaxMana) * _sw;
@@ -33,7 +33,7 @@ switch(BarIndex){
 			_add_text += $"+{ManaAdd}";
 		}
 		
-		_text = $"{TextMana}:{floor(ObCharacter.Mana)}/{floor(ObCharacter.MaxMana)}{_add_text}";
+		_text = $"{TextMana}:{floor(ObCharacter.Mana)}{_add_text}/{floor(ObCharacter.MaxMana)}";
 	break;
 }
 

@@ -25,7 +25,7 @@
   ],
   "name":"SpManaFlower",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Root/Objects/Sprites.yy",
@@ -86,7 +86,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":8,
-    "yorigin":8,
+    "yorigin":12,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

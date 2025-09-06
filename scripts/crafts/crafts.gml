@@ -35,6 +35,11 @@ function crafts_init(){
 	craft_add(work_bench.workbench, [ObIronIngot, 16], ObIronChestplate, text_get("item_iron_chestplate"), global.Items.IronChestplate);
 	craft_add(work_bench.workbench, [ObIronIngot, 14], ObIronLeggins, text_get("item_iron_leggins"), global.Items.IronLeggins);
 	craft_add(work_bench.workbench, [ObIronIngot, 8], ObIronBoots, text_get("item_iron_boots"), global.Items.IronBoots);
+	
+	craft_add(work_bench.workbench, [ObGoldIngot, 12], ObGoldHelmet, text_get("item_gold_helmet"), global.Items.GoldHelmet);
+	craft_add(work_bench.workbench, [ObGoldIngot, 18], ObGoldChestplate, text_get("item_gold_chestplate"), global.Items.GoldChestplate);
+	craft_add(work_bench.workbench, [ObGoldIngot, 15], ObGoldLeggins, text_get("item_gold_leggins"), global.Items.GoldLeggins);
+	craft_add(work_bench.workbench, [ObGoldIngot, 10], ObGoldBoots, text_get("item_gold_boots"), global.Items.GoldBoots);
 }
 
 function craft_get(_workbench, _container){

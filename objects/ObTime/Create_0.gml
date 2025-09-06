@@ -132,7 +132,13 @@ surface_update = function(){
 	var _cam = view_camera[0];
 	var _cx = camera_get_view_x(_cam);
 	var _cy = camera_get_view_y(_cam);
-
+	
+	if (!surface_exists(DarkSurf)){
+		var _cw = camera_get_view_width(_cam);
+		var _ch = camera_get_view_height(_cam);
+		DarkSurf = surface_create(_cw, _ch, surface_rgba8unorm);
+	}
+	
 	surface_set_target(DarkSurf);
 	draw_clear_alpha(c_black, ToNightK);
 	gpu_set_blendmode(bm_subtract);
@@ -146,4 +152,8 @@ surface_update = function(){
 	
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
+	
+	if (point_distance(ObCamera.x, ObCamera.y, ObCharacter.x, ObCharacter.y) > 0.1){
+		alarm[2] = 1;
+	}
 }

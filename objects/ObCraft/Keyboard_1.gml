@@ -60,7 +60,7 @@ Select = clamp(Select, 0, _len - 1);
 if (Select >= MaxShow && _dir > 0){
 	Skip += _dir;
 }
-if (Select <= MaxShow + 2 && _dir < 0){
+if (Select <= _len && _dir < 0){
 	Skip += _dir;
 }
 

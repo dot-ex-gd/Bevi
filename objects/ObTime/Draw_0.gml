@@ -1,8 +1,8 @@
 var _cam = view_camera[0];
 var _cx = camera_get_view_x(_cam);
 var _cy = camera_get_view_y(_cam);
-var _cw = camera_get_view_width(_cam)
-var _ch = camera_get_view_height(_cam)
+var _cw = camera_get_view_width(_cam);
+var _ch = camera_get_view_height(_cam);
 
 if (!surface_exists(DarkSurf)){
 	DarkSurf = surface_create(_cw, _ch, surface_rgba8unorm);

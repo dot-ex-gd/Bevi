@@ -6,7 +6,7 @@ DoCraft = [];
 Update = function(){
 	crafts_init();
 	DoCraft = [];
-	DoCraft = craft_get(work_bench.inventory, ObCharacter.Inventory);
+	DoCraft = craft_get(Workbench, ObCharacter.Inventory);
 }
 
 Update();

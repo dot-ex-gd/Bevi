@@ -69,6 +69,8 @@
     {"$GMSpriteFrame":"","%Name":"f655dfe5-9f2f-493c-ae42-413b96cb5511","name":"f655dfe5-9f2f-493c-ae42-413b96cb5511","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"b69ab030-8d46-4f82-88af-cec010dc6078","name":"b69ab030-8d46-4f82-88af-cec010dc6078","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"20d2632e-a65b-4229-9efa-380c8dab2438","name":"20d2632e-a65b-4229-9efa-380c8dab2438","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9a78cf40-2410-4bf5-8bb3-4e6632a888bd","name":"9a78cf40-2410-4bf5-8bb3-4e6632a888bd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1e7116d3-7451-44ef-aa28-074ec139fbf7","name":"1e7116d3-7451-44ef-aa28-074ec139fbf7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -105,7 +107,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":57.0,
+    "length":59.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -297,6 +299,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"20d2632e-a65b-4229-9efa-380c8dab2438","path":"sprites/SpFontRussian/SpFontRussian.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"d5866482-525d-4dd3-a9f4-8487ba014317","IsCreationKey":false,"Key":56.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9a78cf40-2410-4bf5-8bb3-4e6632a888bd","path":"sprites/SpFontRussian/SpFontRussian.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d0f91ecb-2e03-408c-b9bf-d3dcd3e2d20c","IsCreationKey":false,"Key":57.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1e7116d3-7451-44ef-aa28-074ec139fbf7","path":"sprites/SpFontRussian/SpFontRussian.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2616491b-c62c-4ea4-b31b-dee1d9c7068d","IsCreationKey":false,"Key":58.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

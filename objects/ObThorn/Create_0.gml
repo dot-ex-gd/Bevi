@@ -2,7 +2,14 @@ event_inherited();
 
 drop = function(){
 	_drop_base();
-	//instance_create_depth(x, y, depth, ObEvilEyeItem);
+	
+	var _xx, _yy;
+	repeat(irandom_range(1, 3)){
+		_xx = irandom_range(-1, 1);
+		_yy = irandom_range(-1, 1);
+		
+		instance_create_depth(x + _xx * TILE_SIZE, y + _yy * TILE_SIZE, depth, ObThornBerry);
+	}
 }
 
 Step = function(){

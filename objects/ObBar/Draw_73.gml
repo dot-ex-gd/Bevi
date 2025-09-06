@@ -9,18 +9,31 @@ draw_sprite(sprite_index, 0, x, y);
 var _width = sprite_width;
 var _sw = sprite_width;
 var _text = "";
+var _add_text = "";
 switch(BarIndex){
 	case 1:
 		_width = (ObCharacter.Xp / ObCharacter.NeedXp) * _sw;
-		_text = $"{TextXp}: {floor(ObCharacter.Xp)}/{floor(ObCharacter.NeedXp)}";
+		if (XpAdd != 0){
+			_add_text += $"+{XpAdd}";
+		}
+		
+		_text = $"{TextXp}:{floor(ObCharacter.Xp)}/{floor(ObCharacter.NeedXp)}{_add_text}";
 	break;
 	case 2:
 		_width = (ObCharacter.Health / ObCharacter.MaxHealth) * _sw;
-		_text = $"{TextHp}: {floor(ObCharacter.Health)}/{floor(ObCharacter.MaxHealth)}";
+		if (HpAdd != 0){
+			_add_text += $"+{HpAdd}";
+		}
+		
+		_text = $"{TextHp}:{floor(ObCharacter.Health)}/{floor(ObCharacter.MaxHealth)}{_add_text}";
 	break;
 	case 3:
 		_width = (ObCharacter.Mana / ObCharacter.MaxMana) * _sw;
-		_text = $"{TextMana}: {floor(ObCharacter.Mana)}/{floor(ObCharacter.MaxMana)}";
+		if (ManaAdd != 0){
+			_add_text += $"+{ManaAdd}";
+		}
+		
+		_text = $"{TextMana}:{floor(ObCharacter.Mana)}/{floor(ObCharacter.MaxMana)}{_add_text}";
 	break;
 }
 
@@ -30,3 +43,7 @@ draw_text(x, y + 6, _text);
 draw_set_halign(fa_left);
 
 draw_sprite_part(sprite_index, BarIndex, 0, 0, _width, sprite_height, bbox_left, bbox_top);
+
+HpAdd = 0;
+XpAdd = 0;
+ManaAdd = 0;

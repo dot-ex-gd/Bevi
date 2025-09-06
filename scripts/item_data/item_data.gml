@@ -238,6 +238,15 @@ global.Items = {
 		Food : [food_stats.mn, 5, food_stats.hp, 5],
 		Fuel : 1,
 	},
+	ThornBerry : {
+		Name : "item_thorn_berry",
+		Weight : 0.1,
+		Item : ObThornBerry,
+		InvSprite : SpThornBerry,
+		Flags : [flags.pickup, flags.food],
+		Food : [food_stats.hp, 15],
+		Fuel : 2,
+	},
 	GrassTile : {
 		Name : "item_grass",
 		Weight : 0.1,

@@ -33,6 +33,11 @@ switch(keyboard_lastchar){
 		if (!InventoryOpen && !CraftOpen){
 			Interactive = !Interactive;
 			
+			var _obj = collision_point(x + InteractiveX * TILE_SIZE, y + InteractiveY * TILE_SIZE, ObDestroyableCollisionInteractive, false, false);
+			if (_obj){
+				_obj.interactive();
+			}
+			
 			if (!InArm && !InteractiveInArm){
 				array_push(InteractiveType, interactive_type.interactive);
 			}

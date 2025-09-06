@@ -33,6 +33,9 @@ item_gold_chestplate,Gold chestplate,Золотой нагрудник
 item_gold_leggins,Gold leggins,Золотые поножи
 item_gold_boots,Gold boots,Злотые ботинки
 item_thorn_berry,Thorn berry,Ягоды шиповника
+item_block_wood,Wood block,Блок дерева
+item_block_stone,Stone block,Блок камня
+item_block_door,Door,Дверь
 text_weight,Weight,Вес
 text_kg,Kg,Кг
 text_x,x,х

@@ -131,7 +131,7 @@ for(var i = 1; i < _tile_w - 1; i++){
 				}
 				
 				if (_obj){
-					instance_create_depth(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, -j, _obj);
+					instance_create_depth(i * TILE_SIZE + TILE_SIZE / 2, j * TILE_SIZE + TILE_SIZE / 2, 0, _obj);
 				}
 			break;
 			case tile.sand:

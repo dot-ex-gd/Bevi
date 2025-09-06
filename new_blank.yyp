@@ -138,6 +138,7 @@
     {"id":{"name":"ObTime","path":"objects/ObTime/ObTime.yy",},},
     {"id":{"name":"ObTree","path":"objects/ObTree/ObTree.yy",},},
     {"id":{"name":"ObWorkbench","path":"objects/ObWorkbench/ObWorkbench.yy",},},
+    {"id":{"name":"ObWorkbenchItem","path":"objects/ObWorkbenchItem/ObWorkbenchItem.yy",},},
     {"id":{"name":"ObWorld","path":"objects/ObWorld/ObWorld.yy",},},
     {"id":{"name":"ObXpBar","path":"objects/ObXpBar/ObXpBar.yy",},},
     {"id":{"name":"RmMenu","path":"rooms/RmMenu/RmMenu.yy",},},

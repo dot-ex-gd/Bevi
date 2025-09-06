@@ -50,7 +50,16 @@ global.Items = {
 		Weight : 10,
 		Item : ObWorkbench,
 		InvSprite : SpWorkbench,
-		Flags : [flags.pickup, flags.placeble, flags.workbench],
+		Flags : [flags.interactive, flags.workbench],
+	},
+	WorkbenchItem : {
+		Name : "item_workbench",
+		Weight : 10,
+		Item : ObWorkbenchItem,
+		InvSprite : SpWorkbench,
+		Flags : [flags.pickup, flags.placeble],
+		Replaceble : ObWorkbench,
+		ReplacebleSprite : SpWorkbench,
 	},
 	StoneAxe : {
 		Name : "item_stone_axe",
@@ -105,7 +114,7 @@ global.Items = {
 		Weight : 4,
 		Item : ObBed,
 		InvSprite : SpBed,
-		Flags : [flags.placeble, flags.interactive],
+		Flags : [flags.interactive],
 	},
 	BedItem : {
 		Name : "item_bed",

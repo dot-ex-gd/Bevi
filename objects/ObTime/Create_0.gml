@@ -114,6 +114,12 @@ time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
 				_summoned++;
 			}
 		}
+		if (Time == time.morning && !irandom(1000 * SecondK) && can_spawn()){
+			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
+				instance_create_depth(_xx, _yy, 0, ObHunter);
+				_summoned++;
+			}
+		}
 	}
 	
 	surface_update();

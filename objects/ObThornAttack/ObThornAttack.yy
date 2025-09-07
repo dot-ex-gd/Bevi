@@ -16,8 +16,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"MaxHealth","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"4",},
   ],
   "parent":{
-    "name":"Entity",
-    "path":"folders/Root/Entity.yy",
+    "name":"Enemies",
+    "path":"folders/Root/Entity/Enemies.yy",
   },
   "parentObjectId":{
     "name":"ObEnemy",

@@ -19,7 +19,7 @@ get_damage = function(_damage) {
 	Health -= clamp(_damage - Protection, 1, infinity);
 }
 xp_add = function(_xp) {
-	Xp += _xp * 100;
+	Xp += _xp;
 	if (Xp >= NeedXp){
 		Xp -= NeedXp;
 		NeedXp *= 1.25;
@@ -286,7 +286,12 @@ interactive_tdig = function(){
 			break;
 			case tile.stone:
 				_time = 20;
-				_create = ObStoneTile;
+				
+				if (!irandom(1)){
+					_create = ObStoneTile;
+				}else{
+					_create = ObRock;
+				}
 				
 				if (!irandom(10)){
 					_create = ObIronOre;

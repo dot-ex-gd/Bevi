@@ -1,0 +1,2 @@
+/// is defeat
+IsDarknessDefeat = false;

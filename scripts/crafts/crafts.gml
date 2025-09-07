@@ -31,8 +31,8 @@ function crafts_init(){
 	craft_add(work_bench.inventory, [ObRock, 16, ObLog, 2], ObBake, text_get("item_bake"), global.Items.Bake);
 	craft_add(work_bench.inventory, [ObStick, 3, ObLog, 1], ObBonfireItem, text_get("item_bonfire"), global.Items.BonfireItem);
 	
-	craft_add(work_bench.inventory, [ObLog, 8], ObBlockWoodItem, text_get("item_block_wood"), global.Items.BlockWoodItem);
-	craft_add(work_bench.inventory, [ObLog, 8, ObStick, 4], ObBlockWoodDoorItem, text_get("item_block_door"), global.Items.BlockWoodDoorItem);
+	craft_add(work_bench.inventory, [ObLog, 2], ObBlockWoodItem, text_get("item_block_wood"), global.Items.BlockWoodItem);
+	craft_add(work_bench.inventory, [ObLog, 2, ObStick, 2], ObBlockWoodDoorItem, text_get("item_block_door"), global.Items.BlockWoodDoorItem);
 	
 	craft_add(work_bench.workbench, [ObIronIngot, 10], ObIronHelmet, text_get("item_iron_helmet"), global.Items.IronHelmet);
 	craft_add(work_bench.workbench, [ObIronIngot, 16], ObIronChestplate, text_get("item_iron_chestplate"), global.Items.IronChestplate);

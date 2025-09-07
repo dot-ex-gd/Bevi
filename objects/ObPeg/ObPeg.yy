@@ -12,8 +12,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"PreferFlag","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"flags.sword",},
   ],
   "parent":{
-    "name":"Entity",
-    "path":"folders/Root/Entity.yy",
+    "name":"Peaceful",
+    "path":"folders/Root/Entity/Peaceful.yy",
   },
   "parentObjectId":{
     "name":"ObEntity",

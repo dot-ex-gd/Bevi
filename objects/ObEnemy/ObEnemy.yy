@@ -6,8 +6,8 @@
   "name":"ObEnemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entity",
-    "path":"folders/Root/Entity.yy",
+    "name":"Enemies",
+    "path":"folders/Root/Entity/Enemies.yy",
   },
   "parentObjectId":{
     "name":"ObEntity",

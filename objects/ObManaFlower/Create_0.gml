@@ -6,6 +6,13 @@ drop = function(){
 	
 	if (is_grow()){
 		instance_create_depth(x, y, 0, ObManaFlowerFruit);
-		instance_create_depth(x, y, 0, ObManaFlowerSeed);
+		
+		var _xx, _yy;
+		repeat(irandom_range(1, 3)){
+			_xx = irandom_range(-1, 1) * TILE_SIZE;
+			_yy = irandom_range(-1, 1) * TILE_SIZE;
+			
+			instance_create_depth(x + _xx, y + _yy, 0, ObManaFlowerSeed);
+		}
 	}
 }

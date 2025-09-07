@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"Sprites",
-    "path":"folders/Root/Entity/Sprites.yy",
+    "path":"folders/Root/Entity/Peaceful/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

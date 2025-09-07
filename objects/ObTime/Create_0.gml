@@ -11,6 +11,8 @@ ToNightK = 0;
 DarkSurf = -1;
 CurX = 0;
 
+LightIntensity = 1;
+
 /// Popup
 PopupActive = false;
 PopupY = 24;
@@ -149,11 +151,13 @@ surface_update = function(){
 	draw_clear_alpha(c_black, ToNightK);
 	gpu_set_blendmode(bm_subtract);
 	
-	//draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 0.25, 0.25, 0, c_white, random_range(0.9, 1));
-	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 2, 2, 0, c_white, random_range(0.9, 1));
+	var _li = LightIntensity;
+	
+	//draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 0.25 * _li, 0.25 * _li, 0, c_white, random_range(0.9, 1));
+	draw_sprite_ext(SpLight, 0, ObCharacter.x - _cx, ObCharacter.y - _cy, 2 * _li, 2 * _li, 0, c_white, random_range(0.9, 1));
 	
 	with(ObBonfire){
-		draw_sprite_ext(SpLight, 0, x - _cx, y - _cy, Intensivity, Intensivity, 0, c_white, random_range(0.9, 1));
+		draw_sprite_ext(SpLight, 0, x - _cx, y - _cy, Intensivity * _li, Intensivity * _li, 0, c_white, random_range(0.9, 1));
 	}
 	
 	gpu_set_blendmode(bm_normal);

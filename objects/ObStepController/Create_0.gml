@@ -18,7 +18,7 @@ update = function(_steps){
 	}
 
 	with(ObBonfire){
-		Intensivity -= 0.001 * _steps;
+		Intensivity -= 0.0001 * _steps;
 		
 		if (Intensivity < 0){
 			instance_destroy();

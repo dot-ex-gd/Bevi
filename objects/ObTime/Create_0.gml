@@ -55,6 +55,8 @@ time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
 			PopupYS = 1 + choose(-0.75, 0.75);
 			PopupTo = 1;
 			alarm[1] = 1;
+			
+			ObController.save();
 		}
 		
 		Time = time.night;
@@ -69,6 +71,8 @@ time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
 			PopupYS = 1 + choose(-0.75, 0.75);
 			PopupTo = 1;
 			alarm[1] = 1;
+			
+			ObController.save();
 		}
 		
 		Time = time.day;

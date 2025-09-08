@@ -185,7 +185,7 @@ equip_onfoot_add = function(_ind, _struct){
 		OnFoot = _struct;
 	}
 }
-protection_upgdate = function(){
+protection_update = function(){
 	Protection = 0;
 	
 	if (OnHead){
@@ -348,3 +348,7 @@ interactive_tmelt = function(){
 	}
 }
 #endregion
+
+
+protection_update();
+inventory_weight_upd();

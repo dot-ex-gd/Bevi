@@ -1,0 +1,30 @@
+CanPress = false;
+Buttons = [text_get("text_select_world"), text_get("text_new_world"), text_get("text_back")];
+Select = 0;
+
+Font = global.Font;
+
+do_sworld = function(){
+	instance_destroy();
+	
+	instance_create_depth(x, y, -200, ObSelectWorld);
+}
+do_nworld = function(){
+	instance_destroy();
+	
+	instance_create_depth(x, y, -200, ObCreateWorld);
+}
+do_back = function(){
+	instance_destroy();
+	
+	instance_create_depth(152, 88, -200, ObButtonPlay, {Number : false});
+	instance_create_depth(152, 104, -200, ObButtonExit, {Number : true});
+}
+
+Do = [do_sworld, do_nworld, do_back];
+
+var _len = array_length(Buttons);
+for(var i = 0; i < _len; i++){
+	Width[i] = string_width(Buttons[i]);
+	Height[i] = string_height(Buttons[i]);
+}

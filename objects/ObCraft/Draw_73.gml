@@ -14,7 +14,7 @@ draw_set_color(c_white);
 draw_set_alpha(1);
 
 draw_sprite(sprite_index, 0, x, y);
-draw_set_font(get_language_font());
+draw_set_font(global.Font);
 
 var _len = array_length(DoCraft);
 var _max = min(_len, MaxShow);

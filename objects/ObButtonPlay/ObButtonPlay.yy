@@ -5,7 +5,7 @@
   "managed":true,
   "name":"ObButtonPlay",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObButton","path":"objects/ObButton/ObButton.yy",},"propertyId":{"name":"Do","path":"objects/ObButton/ObButton.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"function(){ room_goto(RmWorld); }",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObButton","path":"objects/ObButton/ObButton.yy",},"propertyId":{"name":"Do","path":"objects/ObButton/ObButton.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"function(){ instance_create_depth(x, y, -200, ObSelectButtons); instance_destroy(ObButton); }",},
   ],
   "parent":{
     "name":"Buttons",

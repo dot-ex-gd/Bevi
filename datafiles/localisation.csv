@@ -50,6 +50,30 @@ text_xp,xp,ур
 text_hp,hp,оз
 text_mana,mana,мана
 text_darkness_thickens,The Darkness Thickens,Тьма Сгущается
+text_new_world,New world,Новый мир
+text_new_character,New character,Новый персонаж
+text_select_world,Select world,Выбрать мир
+text_select_character,Select character,Выбрать персонажа
+text_load,Load,Загрузить
+text_delete,Delete,Удалить
+text_back,Back,Назад
+text_tiles_width,Width (tilse),Ширина (тайлы)
+text_tiles_height,Height (tiles),Высота (тайлы)
+text_create,Create,Создать
+text_height_map_iterations,Height map iterations,Итерации карты высот
+text_temperature_map_iterations,Temperature map iterations,Итерации карты температур
+
+text_save,Save,Сохраниться
+text_load,Load,Загрузиться
+
+text_height_map_generation,Height map generation,Генерация карты высот
+text_temperature_map_generation,Temperature map generation,Генерация карты температур
+text_tile_fill,Filling tiles,Заполнение тайлов
+text_instances_generation,Instances generation,Генерация сущностей
+text_managers_initializing,initialization of managers,Инициализация менеджеров
+text_culling,Instances culling,Отбраковка сущностей
+text_character_spawn_find,Character spawn point find,Поиск точки появления игрока
+
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз
 enemy_thorn,Thorn,Колючка

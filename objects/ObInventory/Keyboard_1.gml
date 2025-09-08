@@ -47,7 +47,7 @@ switch(keyboard_lastchar){
 					ObCharacter.equip_onfoot_add(Select, _item);
 				}
 				
-				ObCharacter.protection_upgdate();
+				ObCharacter.protection_update();
 			}
 			
 			if (item_find_flag(_item, flags.food)){

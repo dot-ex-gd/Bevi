@@ -1,6 +1,6 @@
 x = room_width / 2;
 
-Font = get_language_font();
+Font = global.Font;
 draw_set_font(Font);
 
 Text = text_get(Text);

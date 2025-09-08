@@ -24,12 +24,3 @@ drop = function(){
 		instance_create_depth(x + (TILE_SIZE * _xx), y + (TILE_SIZE * _yy), 0, ObStick);
 	}
 }
-
-repeat(irandom(5)){
-	var _txx = irandom_range(-2, 2);
-	var _tyy = irandom_range(-2, 2);
-	
-	if (!collision_point(x + (TILE_SIZE * _txx), y + (TILE_SIZE * _tyy), ObDeco, false, false)){
-		instance_create_depth(x + (TILE_SIZE * _txx), y + (TILE_SIZE * _tyy), 0, ObLeafes);
-	}
-}

@@ -1,3 +1,5 @@
+if (ObWorld.InstancesLoad) { exit; }
+
 switch(keyboard_lastchar){
 	case "A":
 		AttackMode = !AttackMode;
@@ -71,6 +73,9 @@ switch(keyboard_lastchar){
 			
 			InteractiveType = [];
 		}
+	break;
+	case "R":
+		game_restart();
 	break;
 }
 

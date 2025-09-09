@@ -1,5 +1,3 @@
-if (ObWorld.InstancesLoad) { exit; }
-
 switch(keyboard_lastchar){
 	case "A":
 		AttackMode = !AttackMode;

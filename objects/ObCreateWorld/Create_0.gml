@@ -1,7 +1,7 @@
 Buttons = [
 	text_get("text_tiles_width") + ":", text_get("text_tiles_height") + ":", 
 	text_get("text_height_map_iterations") + ":", text_get("text_temperature_map_iterations") + ":",
-	text_get("text_create"), text_get("text_back")
+	text_get("text_world_name"), text_get("text_create"), text_get("text_back")
 ];
 Select = 0;
 
@@ -119,14 +119,41 @@ do_create = function(){
 	room_set_height(RmWorld, WorldHeight * TILE_SIZE);
 	room_goto(RmWorld);
 	
-	instance_create_depth(0, 0, 0, ObWorld);
+	if (WorldName == ""){
+		WorldName = $"world{irandom(9999999999)}";
+	}
+	
+	instance_create_depth(0, 0, 0, ObWorld, {WorldName : WorldName});
 	ObWorld.HeightMapNeed = HMI;
 	ObWorld.TemperatureMapNeed = TMI;
 }
+
+WorldName = "";
+do_world_name = function(){
+	if (!keyboard_check_pressed(vk_backspace)){
+		if (keyboard_string != ""){
+			if (string_length(keyboard_string) < string_length(WorldName)){
+				WorldName += string_lower(keyboard_string);
+				keyboard_string = "";
+			}else{
+				WorldName = string_lower(keyboard_string);
+			}
+		}else{
+			WorldName = WorldName + string_lower(keyboard_string);
+		}
+	}
+	
+	if (keyboard_check_pressed(vk_backspace)){
+		WorldName = string_copy(WorldName, 0, string_length(WorldName) - 1);
+	}
+	
+	WorldName = string_copy(WorldName, 0, 16);
+}
+
 do_back = function(){
 	instance_destroy();
 	
 	instance_create_depth(x, y, depth, ObSelectButtons);
 }
 
-Do = [do_twidth, do_theight, do_hmi, do_tmi, do_create, do_back];
+Do = [do_twidth, do_theight, do_hmi, do_tmi, do_world_name, do_create, do_back];

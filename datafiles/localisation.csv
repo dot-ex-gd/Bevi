@@ -62,6 +62,7 @@ text_tiles_height,Height (tiles),Высота (тайлы)
 text_create,Create,Создать
 text_height_map_iterations,Height map iterations,Итерации карты высот
 text_temperature_map_iterations,Temperature map iterations,Итерации карты температур
+text_world_name,World name,Название мира
 
 text_save,Save,Сохраниться
 text_load,Load,Загрузиться

@@ -7,6 +7,10 @@ function world_load(_filename){
 	var _buf_character = buffer_load($"Worlds/{_filename}/character.buf");
 	
 	var i, j, _size_w = buffer_read(_buff_tiles, buffer_u16), _size_h = buffer_read(_buff_tiles, buffer_u16), _tiles = ObWorld.Tiles;
+	
+	room_width = _size_w * TILE_SIZE;
+	room_height = _size_h * TILE_SIZE;
+	
 	for(i = 0; i < _size_w; i++){
 		for(j = 0; j < _size_h; j++){
 			tilemap_set(_tiles, buffer_read(_buff_tiles, buffer_u8), i, j);
@@ -29,7 +33,6 @@ function world_load(_filename){
 	var _onleggins = buffer_read(_buf_character, buffer_string);
 	var _onfoot = buffer_read(_buf_character, buffer_string);
 	var _inv = buffer_read(_buf_character, buffer_string);
-	show_message(_inv);
 	var _char = instance_create_depth(_x, _y, 0, ObCharacter);
 	_char.Health = _hp;
 	_char.MaxHealth = _mhp;

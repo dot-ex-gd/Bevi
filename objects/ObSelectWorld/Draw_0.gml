@@ -22,10 +22,10 @@ if (CanPress){
 	for(var i = 0; i < _len; i++){
 		_hw = Width[i] / 2;
 		_hh = Height[i] / 2;
-	
+
 		if (point_in_rectangle(mouse_x, mouse_y, x - _hw, y + (12 * i) - _hh, x + _hw, y + (12 * i) + _hh)){
 			Select = i;
-		
+	
 			if (mouse_check_button_released(mb_left)){
 				load();
 			}
@@ -36,4 +36,6 @@ if (CanPress){
 		load();
 	}
 }
+
+
 CanPress = true;

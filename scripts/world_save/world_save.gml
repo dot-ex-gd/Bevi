@@ -70,11 +70,10 @@ function world_save(_filename){
 
 function world_list_save(_filename){
 	var _buff_worlds = buffer_load($"Worlds/world_list.txt");
+	var _buff_new = buffer_create(32, buffer_grow, 1);
 	var _list = [];
 	
-	if (!_buff_worlds){	
-		_buff_worlds = buffer_create(32, buffer_grow, 1);
-	}else{
+	if (_buff_worlds != -1){
 		_list = json_parse(buffer_read(_buff_worlds, buffer_string));
 	}
 	
@@ -82,19 +81,21 @@ function world_list_save(_filename){
 	for(var i = 0; i < array_length(_list); i++){
 		if (_list[i] == _filename){
 			_find = true;
-			break;
 		}
 	}
+	
 	if (!_find){
 		array_push(_list, _filename);
 	}
 	
-	var _buff_new = buffer_create(32, buffer_grow, 1);
 	buffer_write(_buff_new, buffer_string, json_stringify(_list));
 	
-	
-	buffer_write(_buff_worlds, buffer_string, json_stringify(_list));
+	file_delete($"Worlds/world_list.txt");
 	buffer_save(_buff_new, $"Worlds/world_list.txt");
-	buffer_delete(_buff_worlds);
+	
+	if (buffer_exists(_buff_worlds)){
+		buffer_delete(_buff_worlds);
+	}
+	
 	buffer_delete(_buff_new);
 }

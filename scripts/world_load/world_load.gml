@@ -17,8 +17,6 @@ function world_load(_filename){
 		}
 	}
 	
-	ObWorld.instances_load_init(_buff_instances);
-	
 	var _x = buffer_read(_buf_character, buffer_u32);
 	var _y = buffer_read(_buf_character, buffer_u32);
 	var _hp = buffer_read(_buf_character, buffer_u32);

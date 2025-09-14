@@ -12,6 +12,7 @@ update = function(){
 	var _x, _y;
 	for(_x = -1; _x < 2; _x++){
 		for(var _y = -1; _y < 2; _y++){
+			if (CurX + _x < 0 || CurY + _y < 0) {continue; }
 			if (!is_generate(CurX + _x, CurY + _y)){
 				random_set_seed(((CurX + _x) * Seed1) & ((CurY + _y) * Seed2));
 				generate(CurX + _x, CurY + _y);
@@ -124,6 +125,7 @@ load = function(_chunk_x, _chunk_y){
 	
 	var _chunk_size = CHUNK_SIZE * TILE_SIZE;
 	
+	buffer_seek(_buff_chunk, buffer_seek_start, 0);
 	var _count = buffer_read(_buff_chunk, buffer_u32);
 	
 	var i, _struct;
@@ -136,40 +138,41 @@ load = function(_chunk_x, _chunk_y){
 	var _imi;
 	var _attack_points;
 	var _index;
-	
+	var _parent_ind;
 	for(i = 0; i < _count; i++){
 		_struct = {};
-		//_parent_name = buffer_read(_buff_chunk, buffer_string);
-		_x = buffer_read(_buff_chunk, buffer_s32);
-		_y = buffer_read(_buff_chunk, buffer_s32);
+		_parent_name = buffer_read(_buff_chunk, buffer_string);
+		_x = buffer_read(_buff_chunk, buffer_u32);
+		_y = buffer_read(_buff_chunk, buffer_u32);
 		_obj_name = buffer_read(_buff_chunk, buffer_string);
+		_parent_ind = asset_get_index(_parent_name);
 		
-		//switch(asset_get_index(_parent_name)){
-		//	case ObEntity:
-		//		_step_points = buffer_read(_buff_chunk, buffer_s32);
-		//		_health = buffer_read(_buff_chunk, buffer_s32);
-		//		
-		//		_struct = {StepPoints: _step_points, Health: _health};
-		//	break;
-		//	case ObEnemy:
-		//		_step_points = buffer_read(_buff_chunk, buffer_s32);
-		//		_health = buffer_read(_buff_chunk, buffer_s32);
-		//		_attack_points = buffer_read(_buff_chunk, buffer_s32);
-		//		
-		//		_struct = {StepPoints: _step_points, Health: _health, AttackPoints: _attack_points};
-		//	break;
-		//	case ObGrowing:
-		//		_imi = buffer_read(_buff_chunk, buffer_s32);
-		//		_health = buffer_read(_buff_chunk, buffer_s32);
-		//		
-		//		_struct = {image_index: _imi, Health: _health};
-		//	break;
-		//	case ObDestroyable:
-		//		_health = buffer_read(_buff_chunk, buffer_s32);
-		//		
-		//		_struct = {Health: _health};
-		//	break;
-		//}
+		switch(object_get_parent(_parent_ind)){
+			case ObEntity:
+				_step_points = buffer_read(_buff_chunk, buffer_u32);
+				_health = buffer_read(_buff_chunk, buffer_u32);
+				
+				_struct = {StepPoints: _step_points, Health: _health};
+			break;
+			case ObEnemy:
+				_step_points = buffer_read(_buff_chunk, buffer_u32);
+				_health = buffer_read(_buff_chunk, buffer_u32);
+				_attack_points = buffer_read(_buff_chunk, buffer_u32);
+				
+				_struct = {StepPoints: _step_points, Health: _health, AttackPoints: _attack_points};
+			break;
+			case ObGrowing:
+				_imi = buffer_read(_buff_chunk, buffer_u32);
+				_health = buffer_read(_buff_chunk, buffer_u32);
+				
+				_struct = {image_index: _imi, Health: _health};
+			break;
+			case ObDestroyable:
+				_health = buffer_read(_buff_chunk, buffer_u32);
+				
+				_struct = {Health: _health};
+			break;
+		}
 		
 		_index = asset_get_index(_obj_name);
 		if (_index != -1){
@@ -226,8 +229,10 @@ save = function(_chunk_x, _chunk_y){
 	var _chunk_size = CHUNK_SIZE * TILE_SIZE;
 	
 	var _list = ds_list_create();
-	var _count = collision_rectangle_list(_chunk_xoffset, _chunk_yoffset, _chunk_xoffset + _chunk_size, _chunk_yoffset + _chunk_size, ObCulling, 1, 1, _list, false);
+	var _delay = 8;
+	var _count = collision_rectangle_list(_chunk_xoffset + _delay, _chunk_yoffset + _delay, _chunk_xoffset + _chunk_size - _delay, _chunk_yoffset + _chunk_size - _delay, ObCulling, 1, 1, _list, false);
 	
+	buffer_seek(_buff_chunk, buffer_seek_start, 0);
 	buffer_write(_buff_chunk, buffer_u32, _count);
 	
 	var i;
@@ -239,29 +244,31 @@ save = function(_chunk_x, _chunk_y){
 	
 	for(i = 0; i < _count; i++){
 		_obj = _list[| i];
-		//buffer_write(_buff_chunk, buffer_string, _parent_name);
-		buffer_write(_buff_chunk, buffer_s32, _obj.x);
-		buffer_write(_buff_chunk, buffer_s32, _obj.y);
+		_parent = object_get_parent(_obj.object_index);
+		_parent_name = object_get_name(_obj.object_index);
+		buffer_write(_buff_chunk, buffer_string, _parent_name);
+		buffer_write(_buff_chunk, buffer_u32, _obj.x);
+		buffer_write(_buff_chunk, buffer_u32, _obj.y);
 		buffer_write(_buff_chunk, buffer_string, object_get_name(_obj.object_index));
 		
-		//switch(_parent){
-		//	case ObEntity:
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.StepPoints);
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.Health);
-		//	break;
-		//	case ObEnemy:
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.StepPoints);
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.Health);
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.AttackPoints);
-		//	break;
-		//	case ObGrowing:
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.image_index);
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.Health);
-		//	break;
-		//	case ObDestroyable:
-		//		buffer_write(_buff_chunk, buffer_s32, _obj.Health);
-		//	break;
-		//}
+		switch(_parent){
+			case ObEntity:
+				buffer_write(_buff_chunk, buffer_u32, _obj.StepPoints);
+				buffer_write(_buff_chunk, buffer_u32, _obj.Health);
+			break;
+			case ObEnemy:
+				buffer_write(_buff_chunk, buffer_u32, _obj.StepPoints);
+				buffer_write(_buff_chunk, buffer_u32, _obj.Health);
+				buffer_write(_buff_chunk, buffer_u32, _obj.AttackPoints);
+			break;
+			case ObGrowing:
+				buffer_write(_buff_chunk, buffer_u32, _obj.image_index);
+				buffer_write(_buff_chunk, buffer_u32, _obj.Health);
+			break;
+			case ObDestroyable:
+				buffer_write(_buff_chunk, buffer_u32, _obj.Health);
+			break;
+		}
 	}
 	
 	buffer_save(_buff_chunk, _name);

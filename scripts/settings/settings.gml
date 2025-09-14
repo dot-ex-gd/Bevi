@@ -9,7 +9,8 @@ enum languages{
 #macro DEPTH	depth = -y div TILE_SIZE
 #macro MENEMIES	200
 
-#macro CHUNK_SIZE	16
+#macro CHUNK_SIZE	24
+#macro ENTITY_ACTIVE_DISTANCE	34
 
 var _rus_let = "йцукенгшщзхъфывапролджэячсмитьбю";
 var _eng_let = "qwertyuiopasdfghjklzxcvbnm";

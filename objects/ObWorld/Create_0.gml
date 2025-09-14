@@ -1,3 +1,5 @@
+random_set_seed(Seed);
+
 depth = -16_000;
 GenerationStage = [
 	text_get("text_height_map_generation"), text_get("text_temperature_map_generation"), text_get("text_tile_fill"), 
@@ -34,17 +36,4 @@ character_init = function(i, j){
 	instance_create_depth(160, 168, 0, ObHealthBar);
 	instance_create_depth(224, 168, 0, ObManaBar);
 	global.PlayerExist = true;
-}
-
-ILISize = -1;
-ILIBuff = -1;
-ILIX = 0;
-InstancesLoad = false;
-ILT = text_get("text_instances_generation");
-instances_load_init = function(_buff){
-	ILISize = buffer_read(_buff, buffer_u32);
-	ILIBuff = _buff;
-	InstancesLoad = true;
-	
-	alarm[10] = 2;
 }

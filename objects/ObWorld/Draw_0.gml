@@ -23,9 +23,3 @@ if (!Generation){
 	draw_text(160, 90, _text);
 	draw_set_halign(fa_left);
 }
-
-if (InstancesLoad){
-	draw_set_halign(fa_center);
-	draw_text(160, 90, $"{ILT}: {ILIX}/{ILISize}");
-	draw_set_halign(fa_left);
-}

@@ -1,5 +1,5 @@
 LoadChunks = [];
-Location = $"/worlds/{ObWorld.WorldName}"
+Location = $"Worlds/{ObWorld.WorldName}"
 Seed1 = ObWorld.Seed;
 Seed2 = ObWorld.Seed2;
 

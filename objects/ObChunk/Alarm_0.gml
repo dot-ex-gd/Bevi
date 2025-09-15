@@ -14,6 +14,8 @@ if (global.PlayerExist){
 	
 	CurX = _cx;
 	CurY = _cy;
+}else{
+	alarm[0] = 5;
 }
 
 if (CurX != PrevX || CurY != PrevY){

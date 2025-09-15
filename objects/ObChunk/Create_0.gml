@@ -3,10 +3,10 @@ Location = $"Worlds/{ObWorld.WorldName}"
 Seed1 = ObWorld.Seed;
 Seed2 = ObWorld.Seed2;
 
-CurX = 0;
-CurY = 0;
-PrevX = 0;
-PrevY = 0;
+CurX = -2;
+CurY = -2;
+PrevX = -2;
+PrevY = -2;
 
 update = function(){
 	var _x, _y;

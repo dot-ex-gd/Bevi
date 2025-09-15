@@ -51,14 +51,11 @@ generate = function(_chunk_x, _chunk_y){
 	var _in_chunk_xoffset = _chunk_x * CHUNK_SIZE;
 	var _in_chunk_yoffset = _chunk_y * CHUNK_SIZE;
 	
-	var _xpos = _chunk_x;
-	var _ypos = _chunk_y;
-	
-	for(_x = _xpos; _x < _xpos + CHUNK_SIZE; _x++){
-		for(_y = _ypos; _y < _ypos + CHUNK_SIZE; _y++){
+	for(_x = 0; _x < CHUNK_SIZE; _x++){
+		for(_y = 0; _y < CHUNK_SIZE; _y++){
 			_tile = tilemap_get(_tiles, _x + _in_chunk_xoffset, _y + _in_chunk_yoffset);
-			_obj = noone;
 			_map_t = ObWorld.TemperatureMap[# _x + _in_chunk_xoffset, _y + _in_chunk_yoffset];
+			_obj = noone;
 			
 			_rand = irandom(250);
 			switch(_tile){
@@ -101,7 +98,7 @@ generate = function(_chunk_x, _chunk_y){
 			}
 			
 			if (_obj){
-				instance_create_depth(_x * TILE_SIZE + _ts2 + _chunk_xoffset, _y * TILE_SIZE + _ts2 + _chunk_yoffset, 0, _obj);
+				instance_create_depth((_x * TILE_SIZE) + _ts2 + _chunk_xoffset, (_y * TILE_SIZE) + _ts2 + _chunk_yoffset, 0, _obj);
 			}
 		}
 	}

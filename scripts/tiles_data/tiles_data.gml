@@ -6,5 +6,9 @@ enum tile{
 	stone,
 	sand,
 	grass,
-	snow
+	snow,
+	slime_blue,
+	slime_green,
+	slime_red,
+	slime_yellow
 }

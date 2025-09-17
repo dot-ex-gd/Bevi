@@ -37,3 +37,16 @@ character_init = function(i, j){
 	instance_create_depth(224, 168, 0, ObManaBar);
 	global.PlayerExist = true;
 }
+
+/// @func change_temperature(bias, count, main_size, second_count, second_bias, second_size, temperature)
+change_temperature = function(_bias = 200, _count = 5, _main_size = [20, 50], _second_count = [20, 100], _second_bias = [-70, 70], _second_size = [5, 11], _temperature = [2, 1]){
+	repeat(_count){
+		var _xx = irandom_range(_bias, TileW - _bias);
+		var _yy = irandom_range(_bias, TileH - _bias);
+	
+		ds_grid_add_disk(TemperatureMap, _xx, _yy, irandom_range(_main_size[0], _main_size[1]), _temperature[0]);
+		repeat(irandom_range(_second_count[0], _second_count[1])){
+			ds_grid_add_disk(TemperatureMap, _xx + irandom_range(_second_bias[0], _second_bias[1]), _yy + irandom_range(_second_bias[0], _second_bias[1]), irandom_range(_second_size[0], _second_size[1]), _temperature[1]);
+		}
+	}
+}

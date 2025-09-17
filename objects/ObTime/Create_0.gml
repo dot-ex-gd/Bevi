@@ -126,6 +126,35 @@ time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
 				_summoned++;
 			}
 		}
+		if (Time == time.day && !irandom(200 * SecondK) && can_spawn()){
+			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
+				
+				var _tile = tilemap_get_at_pixel(ObWorld.Tiles, _xx, _yy);
+				var _params = {};
+				
+				switch(_tile){
+					case tile.slime_blue:
+						_params = {image_index : 0};
+					case tile.slime_green:
+						if (_tile == tile.slime_green){
+							_params = {image_index : 1};
+						}
+					case tile.slime_red:
+						if (_tile == tile.slime_red){
+							_params = {image_index : 2};
+						}
+					case tile.slime_yellow:
+						if (_tile == tile.slime_yellow){
+							_params = {image_index : 3};
+						}
+						
+						instance_create_depth(_xx, _yy, 0, ObSlime, _params);
+					break;
+				}
+				
+				_summoned++;
+			}
+		}
 	}
 	
 	surface_update();

@@ -10,7 +10,7 @@ enum languages{
 #macro MENEMIES	200
 
 #macro CHUNK_SIZE	24
-#macro ENTITY_ACTIVE_DISTANCE	34
+#macro ENTITY_ACTIVE_DISTANCE	24
 
 var _rus_let = "йцукенгшщзхъфывапролджэячсмитьбю";
 var _eng_let = "qwertyuiopasdfghjklzxcvbnm";

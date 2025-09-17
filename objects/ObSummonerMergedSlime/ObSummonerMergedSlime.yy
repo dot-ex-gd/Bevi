@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"ObEcho",
+  "%Name":"ObSummonerMergedSlime",
   "eventList":[],
   "managed":true,
-  "name":"ObEcho",
+  "name":"ObSummonerMergedSlime",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObItem","path":"objects/ObItem/ObItem.yy",},"propertyId":{"name":"Item","path":"objects/ObItem/ObItem.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.Items.Echo",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObItem","path":"objects/ObItem/ObItem.yy",},"propertyId":{"name":"Item","path":"objects/ObItem/ObItem.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"global.Items.SummonerMergedSlime",},
   ],
   "parent":{
-    "name":"Pickup",
-    "path":"folders/Root/Items/Pickup.yy",
+    "name":"Interactive",
+    "path":"folders/Root/Items/Interactive.yy",
   },
   "parentObjectId":{
     "name":"ObItem",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"SpEcho",
-    "path":"sprites/SpEcho/SpEcho.yy",
+    "name":"SpSummonerMergedSlime",
+    "path":"sprites/SpSummonerMergedSlime/SpSummonerMergedSlime.yy",
   },
   "spriteMaskId":null,
   "visible":true,

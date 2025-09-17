@@ -37,6 +37,9 @@ item_block_wood,Wood block,Блок дерева
 item_block_stone,Stone block,Блок камня
 item_block_door,Door,Дверь
 item_tree_seed,Tree seed,Семечко дерева
+item_slime,Slime,Слизь
+item_echo,Echo,Эхо
+item_summoner_merged_slime,Merged Slime,Слившаяся Слизь
 text_weight,Weight,Вес
 text_kg,Kg,Кг
 text_x,x,х

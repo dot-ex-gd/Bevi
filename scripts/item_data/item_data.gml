@@ -351,6 +351,21 @@ global.Items = {
 		Flags : [flags.pickup, flags.armor, flags.boots],
 		Protection : 1,
 	},
+	Echo : {
+		Name : "item_echo",
+		Weight : 0.01,
+		Item : ObEcho,
+		InvSprite : SpEcho,
+		Flags : [flags.pickup],
+	},
+	Slime : {
+		Name : "item_slime",
+		Weight : 0.01,
+		Item : ObItemSlime,
+		InvSprite : SpItemSlime,
+		Flags : [flags.pickup, flags.fuel],
+		Fuel: 2,
+	},
 	TreeSeed : {
 		Name : "item_tree_seed",
 		Weight : 0.005,
@@ -360,6 +375,15 @@ global.Items = {
 		Replaceble : ObTreeGrow,
 		ReplacebleSprite : SpTreeGrow,
 		Fuel : 1,
+	},
+	SummonerMergedSlime : {
+		Name : "item_summoner_merged_slime",
+		Weight : 0.025,
+		Item : ObSummonerMergedSlime,
+		InvSprite : SpSummonerMergedSlime,
+		Flags : [flags.pickup, flags.placeble],
+		Replaceble : ObBossMergedSlime,
+		ReplacebleSprite : SpVoid,
 	},
 }
 

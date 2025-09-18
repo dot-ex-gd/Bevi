@@ -100,7 +100,7 @@ time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
 	var _cx = ObCharacter.x, _cy = ObCharacter.y;
 	var _xx, _yy;
 	
-	var _grow = 0, _summoned = 0;
+	var _spawn_obj, _rand;
 	
 	repeat(20 * (_sec + ((_min * 60) + (_hour * 60) + (_day * 24 * 60)))){
 		_ux = irandom_range(-_del, _del);
@@ -111,61 +111,61 @@ time_go = function(_sec, _min = 0, _hour = 0, _day = 0){
 		_obj = collision_point(_xx, _yy, ObGrowing, false, false);
 		if (_obj){
 			_obj.grow();
-			_grow++;
 		}
 		
-		if (Time == time.night && !irandom(1000 * SecondK) && can_spawn()){
-			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
-				instance_create_depth(_xx, _yy, 0, ObEvilEye);
-				_summoned++;
+		if (can_spawn() && point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
+			_rand = irandom(1000);
+			_spawn_obj = noone;
+			var _params = {};
+			
+			switch(Time){
+				case time.night:
+					if (_rand == 0){
+						_spawn_obj = ObEvilEye;
+					}
+				break;
+				case time.morning:
+					if (_rand == 0){
+						_spawn_obj = ObHunter;
+					}
+				break;
+				case time.day:
+					if (_rand >= 0 && _rand <= 8){
+						var _tile = tilemap_get_at_pixel(ObWorld.Tiles, _xx, _yy);
+					
+						switch(_tile){
+							case tile.slime_blue:
+								_params = {image_index : 0};
+							case tile.slime_green:
+								if (_tile == tile.slime_green){
+									_params = {image_index : 1};
+								}
+							case tile.slime_red:
+								if (_tile == tile.slime_red){
+									_params = {image_index : 2};
+								}
+							case tile.slime_yellow:
+								if (_tile == tile.slime_yellow){
+									_params = {image_index : 3};
+								}
+								
+								_spawn_obj = ObSlime;
+							break;
+						}
+					}
+				break;
+				case time.evening:
+				
+				break;
 			}
-		}
-		if (Time == time.morning && !irandom(1000 * SecondK) && can_spawn()){
-			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
-				instance_create_depth(_xx, _yy, 0, ObHunter);
-				_summoned++;
-			}
-		}
-		if (Time == time.day && !irandom(200 * SecondK) && can_spawn()){
-			if (point_distance(ObCharacter.x, ObCharacter.y, _xx, _yy) > 10 * TILE_SIZE){
-				
-				var _tile = tilemap_get_at_pixel(ObWorld.Tiles, _xx, _yy);
-				var _params = {};
-				
-				switch(_tile){
-					case tile.slime_blue:
-						_params = {image_index : 0};
-					case tile.slime_green:
-						if (_tile == tile.slime_green){
-							_params = {image_index : 1};
-						}
-					case tile.slime_red:
-						if (_tile == tile.slime_red){
-							_params = {image_index : 2};
-						}
-					case tile.slime_yellow:
-						if (_tile == tile.slime_yellow){
-							_params = {image_index : 3};
-						}
-						
-						instance_create_depth(_xx, _yy, 0, ObSlime, _params);
-					break;
-				}
-				
-				_summoned++;
+			
+			if (_spawn_obj){
+				instance_create_depth(_xx, _yy, 0, _spawn_obj, _params);
 			}
 		}
 	}
 	
 	surface_update();
-	show_debug_message($">>>> Time <<<<");
-	show_debug_message($">> Time: {Time}");
-	show_debug_message($">> Time k: {_p}");
-	show_debug_message($">> Steps simulated: {20 * (_sec + ((_min * 60) + (_hour * 60) + (_day * 24 * 60)))}");
-	show_debug_message($">> Time pass: s: {_sec} m: {_min} h: {_hour} d: {_day}");
-	show_debug_message($">> Grow: {_grow}");
-	show_debug_message($">> Summoned: {_summoned}");
-	show_debug_message("\n");
 }
 
 surface_update = function(){

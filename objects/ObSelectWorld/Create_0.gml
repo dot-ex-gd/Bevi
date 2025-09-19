@@ -23,3 +23,6 @@ load = function(){
 		instance_create_depth(0, 0, 0, ObWorld, {WorldName : Buttons[Select], IsLoad : true});
 	}
 }
+
+Skip = 0;
+MaxShow = 6;

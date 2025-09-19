@@ -32,15 +32,11 @@ function world_save(_filename){
 		buffer_write(_buff_instances, buffer_u32, x);
 		buffer_write(_buff_instances, buffer_u32, y);
 		buffer_write(_buff_instances, buffer_string, object_get_name(object_index));
-		
-		//show_debug_message($"INST >>> x: {x} | y: {y} | name: {object_get_name(object_index)}");
 	}
 	for(var i = 0; i < _cull_size; i++){
 		buffer_write(_buff_instances, buffer_u32, _cull[| i][1]);
 		buffer_write(_buff_instances, buffer_u32, _cull[| i][2]);
 		buffer_write(_buff_instances, buffer_string, object_get_name(_cull[| i][3]));
-		
-		//show_debug_message($"CULL >>> x: {_cull[| i][1]} | y: {_cull[| i][2]} | name: {object_get_name(_cull[| i][3])}");
 	}
 	
 	var _buf_character = buffer_create(128, buffer_grow, 1);

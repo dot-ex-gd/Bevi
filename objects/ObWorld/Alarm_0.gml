@@ -29,7 +29,6 @@ if (HeightMapIteration != HeightMapNeed){
 		}
 	}
 	
-	show_debug_message($"arr itt: {HeightMapIteration + 1}");
 	HeightMapIteration++;
 	
 	if (HeightMapNeed == HeightMapIteration){
@@ -45,7 +44,6 @@ if (HeightMapIteration != HeightMapNeed){
 			}
 		}
 		
-		show_debug_message($"tem itt: {TemperatureMapIteration + 1}");
 		TemperatureMapIteration++;
 	}else{
 		GenerationStageCurrent ++;

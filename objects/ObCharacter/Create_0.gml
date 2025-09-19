@@ -52,25 +52,27 @@ MoveRight = ord(string_upper(CMoveRight));
 AttackMode = false;
 
 step = function(){
-	var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft)) * TILE_SIZE;
-	var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp)) * TILE_SIZE;
+	if (!effect_active(effect.stun)){
+		var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft)) * TILE_SIZE;
+		var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp)) * TILE_SIZE;
 	
-	var _attack = collision_point(x + _to_x, y + _to_y, [ObEntity, AttackMode ? ObDestroyable : ObEntity], false, false);
+		var _attack = collision_point(x + _to_x, y + _to_y, [ObEntity, AttackMode ? ObDestroyable : ObEntity], false, false);
 	
-	if (!tilemap_get_at_pixel(ObWorld.TilesCollision, x + _to_x, y + _to_y) && !_attack){
-		x += _to_x;
-		y += _to_y;
+		if (!tilemap_get_at_pixel(ObWorld.TilesCollision, x + _to_x, y + _to_y) && !_attack){
+			x += _to_x;
+			y += _to_y;
 	
-		DEPTH;
-	}
-	
-	if (_attack){
-		var _damage = 1;
-		if (InArm && item_find_flag(InArm, _attack.PreferFlag)){
-			_damage = InArm[$ "Damage"];
+			DEPTH;
 		}
+	
+		if (_attack){
+			var _damage = 1;
+			if (InArm && item_find_flag(InArm, _attack.PreferFlag)){
+				_damage = InArm[$ "Damage"];
+			}
 		
-		_attack.get_damage(_damage);
+			_attack.get_damage(_damage);
+		}
 	}
 	
 	StepPoints = 0;
@@ -348,6 +350,22 @@ interactive_tmelt = function(){
 	}
 }
 #endregion
+
+Effects = array_create(20, 0);
+effect_add = function(_effect, _count){
+	Effects[_effect] += _count;
+}
+effects_lower = function(){
+	var i, _len = array_length(Effects);
+	
+	for(i = 0; i < _len; i++){
+		Effects[i]--;
+		Effects[i] = max(Effects[i], 0);
+	}
+}
+effect_active = function(_effect){
+	return Effects[_effect];
+}
 
 
 protection_update();

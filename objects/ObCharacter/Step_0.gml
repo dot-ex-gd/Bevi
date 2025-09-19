@@ -75,6 +75,9 @@ switch(keyboard_lastchar){
 	case "R":
 		game_restart();
 	break;
+	case "f":
+		instance_create_depth(x, y, 0, ObSummonerMergedSlime);
+	break;
 }
 
 keyboard_lastchar = "";

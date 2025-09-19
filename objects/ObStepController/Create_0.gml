@@ -15,6 +15,8 @@ update = function(_steps){
 
 	with(ObCharacter){
 		StepPoints += StepPointsGive;
+		
+		effects_lower();
 	}
 
 	with(ObBonfire){

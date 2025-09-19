@@ -107,6 +107,7 @@
     {"id":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},},
     {"id":{"name":"ObEvilEye","path":"objects/ObEvilEye/ObEvilEye.yy",},},
     {"id":{"name":"ObEvilEyeItem","path":"objects/ObEvilEyeItem/ObEvilEyeItem.yy",},},
+    {"id":{"name":"ObFamiliar","path":"objects/ObFamiliar/ObFamiliar.yy",},},
     {"id":{"name":"ObGoldBoots","path":"objects/ObGoldBoots/ObGoldBoots.yy",},},
     {"id":{"name":"ObGoldChestplate","path":"objects/ObGoldChestplate/ObGoldChestplate.yy",},},
     {"id":{"name":"ObGoldHelmet","path":"objects/ObGoldHelmet/ObGoldHelmet.yy",},},

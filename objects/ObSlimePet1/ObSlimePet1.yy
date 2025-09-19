@@ -10,14 +10,16 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"StepPointsGive","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"MaxHealth","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"25",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObEntity","path":"objects/ObEntity/ObEntity.yy",},"propertyId":{"name":"PreferFlag","path":"objects/ObEntity/ObEntity.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"flags.sword",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObFamiliar","path":"objects/ObFamiliar/ObFamiliar.yy",},"propertyId":{"name":"DamageType","path":"objects/ObFamiliar/ObFamiliar.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"flags.sword",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"ObFamiliar","path":"objects/ObFamiliar/ObFamiliar.yy",},"propertyId":{"name":"Damage","path":"objects/ObFamiliar/ObFamiliar.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
   ],
   "parent":{
     "name":"Peaceful",
     "path":"folders/Root/Entity/Peaceful.yy",
   },
   "parentObjectId":{
-    "name":"ObEntity",
-    "path":"objects/ObEntity/ObEntity.yy",
+    "name":"ObFamiliar",
+    "path":"objects/ObFamiliar/ObFamiliar.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

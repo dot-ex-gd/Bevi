@@ -67,6 +67,17 @@ text_height_map_iterations,Height map iterations,Итерации карты в�
 text_temperature_map_iterations,Temperature map iterations,Итерации карты температур
 text_world_name,World name,Название мира
 
+text_world_size,World size,Размер мира
+text_world_size_small,Small,Маленький
+text_world_size_medium,Medium,Средний
+text_world_size_big,Big,Большой
+text_world_size_giant,Giant,Гигантский
+
+text_world_smooth,World smooth,Гладкость мира
+text_world_smooth_small,Small,Небольшая
+text_world_smooth_medium,Medium,Средняя
+text_world_smooth_big,Big,Большая
+
 text_save,Save,Сохраниться
 text_load,Load,Загрузиться
 

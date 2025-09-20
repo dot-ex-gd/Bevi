@@ -16,7 +16,7 @@ draw_set_alpha(1);
 
 draw_sprite(sprite_index, 0, x, y);
 
-draw_set_font(global.Font);
+draw_set_font(global.FontLight);
 
 var _len = array_length(ObCharacter.Inventory);
 var _x = 0, _x1 = bbox_left + 14;

@@ -136,6 +136,8 @@ load = function(_chunk_x, _chunk_y){
 	var _attack_points;
 	var _index;
 	var _parent_ind;
+	var _instance;
+	
 	for(i = 0; i < _count; i++){
 		_struct = {};
 		_parent_name = buffer_read(_buff_chunk, buffer_string);
@@ -173,7 +175,9 @@ load = function(_chunk_x, _chunk_y){
 		
 		_index = asset_get_index(_obj_name);
 		if (_index != -1){
-			instance_create_depth(_x, _y, 0, _index, _struct);
+			_instance = instance_create_depth(_x, _y, 0, _index, _struct);
+			_instance.image_xscale = 1;
+			_instance.image_yscale = 1;
 		}else{
 			show_message($"i {i}: {_obj_name}");
 		}

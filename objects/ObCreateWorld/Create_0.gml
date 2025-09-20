@@ -1,122 +1,65 @@
 Buttons = [
-	text_get("text_tiles_width") + ":", text_get("text_tiles_height") + ":", 
-	text_get("text_height_map_iterations") + ":", text_get("text_temperature_map_iterations") + ":",
-	text_get("text_world_name"), text_get("text_create"), text_get("text_back")
+	text_get("text_world_size") + ": ",
+	text_get("text_world_smooth") + ": ",
+	text_get("text_world_name") + ": ",
+	text_get("text_create"), 
+	text_get("text_back")
 ];
 Select = 0;
+Font = global.FontDark;
 
-WorldWidth = 500;
-WWMax = 5000;
-WWMin = 450;
+WorldSizeArr = [
+	text_get("text_world_size_small"),
+	text_get("text_world_size_medium"),
+	text_get("text_world_size_big"),
+	text_get("text_world_size_giant"),
+]
+SizeLevel = 0;
+WorldSize = "";
 
-WorldHeight = 500;
-WHMax = 5000;
-WHMin = 450;
+WorldSmoothArr = [
+	text_get("text_world_smooth_small"),
+	text_get("text_world_smooth_medium"),
+	text_get("text_world_smooth_big"),
+]
+SmoothLevel = 0;
+WorldSmooth = "";
 
-HMI = 65;
-HMIMin = 0;
-HMIMax = 200;
-
-TMI = 6;
-TMIMin = 0;
-TMIMax = 100;
-
-Font = global.Font;
-
-var _len = array_length(Buttons);
-for(var i = 0; i < _len; i++){
-	Width[i] = string_width(Buttons[i]);
-	Height[i] = string_height(Buttons[i]);
-}
-
-do_twidth = function(){
-	if (keyboard_lastchar == "a" || mouse_wheel_down()){
-		WorldWidth -= 10;
-		WorldWidth = clamp(WorldWidth, WWMin, WWMax);
-	}
-	if (keyboard_lastchar == "d" || mouse_wheel_up()){
-		WorldWidth += 10;
-		WorldWidth = clamp(WorldWidth, WWMin, WWMax);
-	}
-	
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("D"))){
-		WorldWidth = 500;
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("E"))){
-		WorldWidth = WWMin;
-	}
-	if (keyboard_check_pressed(ord("D")) && keyboard_check_pressed(ord("E"))){
-		WorldWidth = WWMax;
-	}
-	
-	keyboard_lastchar = "";
-}
-do_theight = function(){
-	if (keyboard_lastchar == "a" || mouse_wheel_down()){
-		WorldHeight -= 10;
-		WorldHeight = clamp(WorldHeight, WHMin, WHMax);
-	}
-	if (keyboard_lastchar == "d" || mouse_wheel_up()){
-		WorldHeight += 10;
-		WorldHeight = clamp(WorldHeight, WHMin, WHMax);
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("D"))){
-		WorldHeight = 500;
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("E"))){
-		WorldHeight = WHMin;
-	}
-	if (keyboard_check_pressed(ord("D")) && keyboard_check_pressed(ord("E"))){
-		WorldHeight = WHMax;
-	}
-	
-	keyboard_lastchar = "";
-}
-do_hmi = function(){
-	if (keyboard_lastchar == "a" || mouse_wheel_down()){
-		HMI--;
-		HMI = clamp(HMI, HMIMin, HMIMax);
-	}
-	if (keyboard_lastchar == "d" || mouse_wheel_up()){
-		HMI++;
-		HMI = clamp(HMI, HMIMin, HMIMax);
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("D"))){
-		HMI = 65;
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("E"))){
-		HMI = HMIMin;
-	}
-	if (keyboard_check_pressed(ord("D")) && keyboard_check_pressed(ord("E"))){
-		HMI = HMIMax;
-	}
-	
-	keyboard_lastchar = "";
-}
-do_tmi = function(){
-	if (keyboard_lastchar == "a" || mouse_wheel_down()){
-		TMI--;
-		TMI = clamp(TMI, TMIMin, TMIMax);
-	}
-	if (keyboard_lastchar == "d" || mouse_wheel_up()){
-		TMI++;
-		TMI = clamp(TMI, TMIMin, TMIMax);
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("D"))){
-		TMI = 6;
-	}
-	if (keyboard_check_pressed(ord("A")) && keyboard_check_pressed(ord("E"))){
-		TMI = TMIMin;
-	}
-	if (keyboard_check_pressed(ord("D")) && keyboard_check_pressed(ord("E"))){
-		TMI = TMIMax;
-	}
-	
-	keyboard_lastchar = "";
-}
 do_create = function(){
-	room_set_width(RmWorld, WorldWidth * TILE_SIZE);
-	room_set_height(RmWorld, WorldHeight * TILE_SIZE);
+	var _world_w = 500;
+	var _world_h = 500;
+	var _height_map_need = 65;
+	var _temperature_map_need = 5;
+	
+	
+	switch(SizeLevel){
+		case 1:
+			_world_w = 1000;
+			_world_h = 1000;
+		break;
+		case 2:
+			_world_w = 4000;
+			_world_h = 4000;
+		break;
+		case 3:
+			_world_w = 10000;
+			_world_h = 10000;
+		break;
+	}
+	
+	switch(SmoothLevel){
+		case 1:
+			_height_map_need = 85;
+			_temperature_map_need = 10;
+		break;
+		case 2:
+			_height_map_need = 100;
+			_temperature_map_need = 15;
+		break;
+	}
+	
+	room_set_width(RmWorld, _world_w * TILE_SIZE);
+	room_set_height(RmWorld, _world_h * TILE_SIZE);
 	room_goto(RmWorld);
 	
 	if (WorldName == ""){
@@ -124,30 +67,30 @@ do_create = function(){
 	}
 	
 	instance_create_depth(0, 0, 0, ObWorld, {WorldName : WorldName});
-	ObWorld.HeightMapNeed = HMI;
-	ObWorld.TemperatureMapNeed = TMI;
+	ObWorld.HeightMapNeed = _height_map_need;
+	ObWorld.TemperatureMapNeed = _temperature_map_need;
 }
 
 WorldName = "";
+IsRename = false;
 do_world_name = function(){
-	if (!keyboard_check_pressed(vk_backspace)){
-		if (keyboard_string != ""){
-			if (string_length(keyboard_string) < string_length(WorldName)){
-				WorldName += string_lower(keyboard_string);
-				keyboard_string = "";
-			}else{
-				WorldName = string_lower(keyboard_string);
-			}
-		}else{
-			WorldName = WorldName + string_lower(keyboard_string);
+	if (keyboard_check_pressed(vk_enter)){
+		IsRename = !IsRename;
+		keyboard_lastchar = "";
+	}
+	
+	if (IsRename && !keyboard_check_pressed(vk_enter)){
+		if (!keyboard_check_pressed(vk_backspace)){
+			WorldName = WorldName + string_lower(keyboard_lastchar);
+		}
+	
+		if (keyboard_check_pressed(vk_backspace)){
+			WorldName = string_copy(WorldName, 0, string_length(WorldName) - 1);
 		}
 	}
 	
-	if (keyboard_check_pressed(vk_backspace)){
-		WorldName = string_copy(WorldName, 0, string_length(WorldName) - 1);
-	}
-	
 	WorldName = string_copy(WorldName, 0, 16);
+	keyboard_lastchar = "";
 }
 
 do_back = function(){
@@ -156,4 +99,26 @@ do_back = function(){
 	instance_create_depth(x, y, depth, ObSelectButtons);
 }
 
-Do = [do_twidth, do_theight, do_hmi, do_tmi, do_world_name, do_create, do_back];
+do_world_size = function(){
+	if (SizeLevel == array_length(WorldSizeArr) - 1){
+		SizeLevel = -1;
+	}
+	
+	SizeLevel++;
+}
+do_world_smooth = function(){
+	if (SmoothLevel == array_length(WorldSmoothArr) - 1){
+		SmoothLevel = -1;
+	}
+	
+	SmoothLevel++;
+}
+Do = [do_world_size, do_world_smooth, do_world_name, do_create, do_back];
+
+var _len = array_length(Buttons);
+for(var i = 0; i < _len; i++){
+	Width[i] = string_width(Buttons[i]);
+	Height[i] = string_height(Buttons[i]);
+}
+
+BackAlpha = 0.3;

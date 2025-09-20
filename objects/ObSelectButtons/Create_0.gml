@@ -2,7 +2,7 @@ CanPress = false;
 Buttons = [text_get("text_select_world"), text_get("text_new_world"), text_get("text_back")];
 Select = 0;
 
-Font = global.Font;
+Font = global.FontDark;
 
 do_sworld = function(){
 	instance_destroy();
@@ -28,3 +28,5 @@ for(var i = 0; i < _len; i++){
 	Width[i] = string_width(Buttons[i]);
 	Height[i] = string_height(Buttons[i]);
 }
+
+BackAlpha = 0.3;

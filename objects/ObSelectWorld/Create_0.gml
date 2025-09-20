@@ -2,7 +2,7 @@ CanPress = false;
 Buttons = [];
 Select = 0;
 
-Font = global.Font;
+Font = global.FontDark;
 
 Buttons = world_list_load();
 array_push(Buttons, text_get("text_back"));
@@ -26,3 +26,5 @@ load = function(){
 
 Skip = 0;
 MaxShow = 6;
+
+BackAlpha = 0.3;

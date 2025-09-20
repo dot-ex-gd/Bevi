@@ -1,3 +1,5 @@
+draw_set_font(global.FontLight);
+
 var _x = camera_get_view_x(view_camera[0]) + xstart;
 var _y = camera_get_view_y(view_camera[0]) + ystart;
 

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"text_get",
   "parent":{
-    "name":"Root",
-    "path":"folders/Root.yy",
+    "name":"Some scripts",
+    "path":"folders/Root/Some scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

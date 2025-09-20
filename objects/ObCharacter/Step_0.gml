@@ -1,11 +1,14 @@
-switch(keyboard_lastchar){
-	case "A":
+if (CanPress){
+	if (get_pressed(ObController.KeybindAttackMode)){
 		AttackMode = !AttackMode;
-	break;
-	case CMoveUp:
-	case CMoveLeft:
-	case CMoveDown:
-	case CMoveRight:
+	}
+
+	var _ml, _mr, _mu, _md;
+	_ml = get_pressed(ObController.KeybindMoveLeft);
+	_mr = get_pressed(ObController.KeybindMoveRight);
+	_mu = get_pressed(ObController.KeybindMoveUp);
+	_md = get_pressed(ObController.KeybindMoveDown);
+	if (_ml || _mr || _mu || _md){
 		if (!Interactive){
 			if (StepPoints >= 1){
 				if (!InventoryOpen && !CraftOpen){
@@ -13,31 +16,31 @@ switch(keyboard_lastchar){
 				}
 			}
 		}else{	// interactive
-			var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft));
-			var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp));
-			
+			var _to_x = (_mr - _ml);
+			var _to_y = (_md - _mu);
+		
 			InteractiveX += _to_x;
 			InteractiveY += _to_y;
-			
+		
 			InteractiveX = clamp(InteractiveX, -1, 1);
 			InteractiveY = clamp(InteractiveY, -1, 1);
 		}
-	break;
-	case "i":
-		inventory_open();
-	break;
-	case "I":
+	}
+	if (get_pressed(ObController.KeybindCrafts)){
 		craft_open();
-	break;
-	case "e":
+	}
+	if (get_pressed(ObController.KeybindInventory)){
+		inventory_open();
+	}
+	if (get_pressed(ObController.KeybindInteract)){
 		if (!InventoryOpen && !CraftOpen){
 			Interactive = !Interactive;
-			
+		
 			var _obj = collision_point(x + InteractiveX * TILE_SIZE, y + InteractiveY * TILE_SIZE, ObDestroyableCollisionInteractive, false, false);
 			if (_obj){
 				_obj.interactive();
 			}
-			
+		
 			if (!InArm && !InteractiveInArm){
 				array_push(InteractiveType, interactive_type.interactive);
 			}
@@ -50,7 +53,7 @@ switch(keyboard_lastchar){
 			if (item_find_flag(InteractiveInArm, flags.remeltable)){
 				array_push(InteractiveType, interactive_type.melt);
 			}
-			
+		
 			if (!Interactive){
 				if (interactive_type_find(interactive_type.interactive)){
 					interactive_tinteractive();
@@ -68,16 +71,11 @@ switch(keyboard_lastchar){
 				InteractiveX = 0;
 				InteractiveY = 0;
 			}
-			
+		
 			InteractiveType = [];
 		}
-	break;
-	case "R":
-		game_restart();
-	break;
-	case "f":
-		instance_create_depth(x, y, 0, ObSummonerMergedSlime);
-	break;
+	}
+	
+	CanPress = false;
+	alarm[0] = KEY_DELAY;
 }
-
-keyboard_lastchar = "";

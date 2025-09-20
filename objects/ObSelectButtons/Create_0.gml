@@ -17,8 +17,7 @@ do_nworld = function(){
 do_back = function(){
 	instance_destroy();
 	
-	instance_create_depth(152, 88, -200, ObButtonPlay, {Number : false});
-	instance_create_depth(152, 104, -200, ObButtonExit, {Number : true});
+	instance_create_depth(152, 88, -200, ObButton);
 }
 
 Do = [do_sworld, do_nworld, do_back];
@@ -30,3 +29,5 @@ for(var i = 0; i < _len; i++){
 }
 
 BackAlpha = 0.3;
+
+alarm[0] = KEY_DELAY;

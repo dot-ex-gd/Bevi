@@ -28,3 +28,5 @@ Skip = 0;
 MaxShow = 6;
 
 BackAlpha = 0.3;
+
+alarm[0] = KEY_DELAY;

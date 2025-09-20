@@ -39,22 +39,18 @@ mana_add = function(_mn){
 #endregion
 
 /// movement
-CMoveUp = "w";
-CMoveLeft = "a";
-CMoveDown = "s";
-CMoveRight = "d";
-
-MoveUp = ord(string_upper(CMoveUp));
-MoveLeft = ord(string_upper(CMoveLeft));
-MoveDown = ord(string_upper(CMoveDown));
-MoveRight = ord(string_upper(CMoveRight));
-
 AttackMode = false;
 
 step = function(){
+	var _ml, _mr, _mu, _md;
+	_ml = get_pressed(ObController.KeybindMoveLeft);
+	_mr = get_pressed(ObController.KeybindMoveRight);
+	_mu = get_pressed(ObController.KeybindMoveUp);
+	_md = get_pressed(ObController.KeybindMoveDown);
+	
 	if (!effect_active(effect.stun)){
-		var _to_x = (keyboard_check(MoveRight) - keyboard_check(MoveLeft)) * TILE_SIZE;
-		var _to_y = (keyboard_check(MoveDown) - keyboard_check(MoveUp)) * TILE_SIZE;
+		var _to_x = (_mr - _ml) * TILE_SIZE;
+		var _to_y = (_md - _mu) * TILE_SIZE;
 	
 		var _attack = collision_point(x + _to_x, y + _to_y, [ObEntity, AttackMode ? ObDestroyable : ObEntity], false, false);
 	
@@ -370,3 +366,6 @@ effect_active = function(_effect){
 
 protection_update();
 inventory_weight_upd();
+
+CanPress = false;
+alarm[0] = KEY_DELAY;

@@ -89,6 +89,21 @@ text_managers_initializing,initialization of managers,Инициализация
 text_culling,Instances culling,Отбраковка сущностей
 text_character_spawn_find,Character spawn point find,Поиск точки появления игрока
 
+text_keybinds,Keybinds,Сочетания клавиш
+keybind_move_left,Left,Влево
+keybind_move_right,Right,Вправо
+keybind_move_up,Up,Вверх
+keybind_move_down,Down,Вниз
+keybind_interact,Interact,Взаимодействовать
+keybind_inventory,Inventory,Инвентарь
+keybind_crafts,Crafts,Крафты
+keybind_craft,Craft,Крафт
+keybind_save,Save,Сохранить
+keybind_equip,Equip,Экипировать
+keybind_attack_mode,Attack mode,Режим атаки
+keybind_discard_from_inventory,Discard from inventory,Выбросить из инвентаря
+keybind_text_instruction,Uppercase(^) and lowercase are not the same thing\n| - assignment of several buttons; + -combination,Верхний(^) и нижний регистр - не одно и то же\n| -назначение нескольких кнопок; + -сочетание
+
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз
 enemy_thorn,Thorn,Колючка

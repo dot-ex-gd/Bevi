@@ -10,3 +10,6 @@ TextInventory = text_get("text_inventory");
 TextProtection = text_get("text_protection");
 
 BackAlpha = 0;
+
+CanPress = false;
+alarm[0] = KEY_DELAY;

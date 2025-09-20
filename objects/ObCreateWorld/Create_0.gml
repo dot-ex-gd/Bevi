@@ -122,3 +122,6 @@ for(var i = 0; i < _len; i++){
 }
 
 BackAlpha = 0.3;
+
+CanPress = false;
+alarm[0] = KEY_DELAY;

@@ -35,29 +35,23 @@ draw_set_halign(fa_left);
 if (IsRename){
 	do_world_name();
 }else{
-	if (keyboard_check_pressed(ord("S"))){
-		Select ++;
-		Select = clamp(Select, 0, _len - 1);
-	}
-	if (keyboard_check_pressed(ord("W"))){
-		Select --;
-		Select = clamp(Select, 0, _len - 1);
-	}
-	
-	var _hw, _hh;
-	for(var i = 0; i < _len; i++){
-		_hw = Width[i] / 2;
-		_hh = Height[i] / 2;
-	
-		if (point_in_rectangle(mouse_x, mouse_y, x - _hw, y + (_ydel * i) - _hh, x + _hw, y + (_ydel * i) + _hh)){
-			Select = i;
-		
-			if (mouse_check_button_released(mb_left)){
-				Do[Select]();
-			}
+	if (CanPress){
+		if (get_pressed(ObController.KeybindMoveDown)){
+			Select ++;
+			Select = clamp(Select, 0, _len - 1);
+			
+			CanPress = false;
+			alarm[0] = KEY_DELAY;
+		}
+		if (get_pressed(ObController.KeybindMoveUp)){
+			Select --;
+			Select = clamp(Select, 0, _len - 1);
+			
+			CanPress = false;
+			alarm[0] = KEY_DELAY;
 		}
 	}
-
+	
 	if ((keyboard_check_pressed(vk_enter) && !keyboard_check(vk_alt))){
 		Do[Select]();
 	}

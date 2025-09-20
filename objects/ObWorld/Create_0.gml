@@ -20,7 +20,6 @@ InstancesY = 1;
 alarm[11] = 2;
 
 managers_init = function(){
-	instance_create_depth(0, 0, 0, ObController);
 	instance_create_depth(0, 0, -16_000, ObTime);
 	instance_create_depth(0, 0, 0, ObStepController);
 	instance_create_depth(0, 0, 0, ObChunk);

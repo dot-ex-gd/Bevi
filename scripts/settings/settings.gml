@@ -12,10 +12,12 @@ enum languages{
 #macro CHUNK_SIZE	24
 #macro ENTITY_ACTIVE_DISTANCE	24
 
+#macro KEY_DELAY	5
+
 var _rus_let = "йцукенгшщзхъфывапролджэячсмитьбю";
 var _eng_let = "qwertyuiopasdfghjklzxcvbnm";
 var _dig = "1234567890";
-var _spec = "!?:/().,;><*'\"";
+var _spec = "!?:/().,;><*'\"|^";
 
 global.FontDark = font_add_sprite_ext(SpFontDark, $"{_eng_let}{_rus_let}{_dig}{_spec}ё+-", 1, -1);
 global.FontLight = font_add_sprite_ext(SpFontLight, $"{_eng_let}{_rus_let}{_dig}{_spec}ё+-", 1, -1);

@@ -89,6 +89,36 @@ text_managers_initializing,initialization of managers,Инициализация
 text_culling,Instances culling,Отбраковка сущностей
 text_character_spawn_find,Character spawn point find,Поиск точки появления игрока
 
+text_dev_advice_count,24,24
+text_dev_advice,Advice,Совет
+text_dev_advice_1,Find me,Найди меня
+text_dev_advice_2,Slimes drop the same slime,Из слаймов выпадает один вид слизи
+text_dev_advice_3,Sleep doesn't skip time,Сон не пропускает время
+text_dev_advice_4,The moon doesn't like the full moon,Луна не любит полнолуние
+text_dev_advice_5,The eclipse is near,Затмение близко
+text_dev_advice_6,Язык можно изменить в настройках,The language can be changed in the settings,,,, "no"
+text_dev_advice_7,The previous advice is a lie,Предыдущий совет - ложь
+text_dev_advice_8,Has the moon fallen yet?,Луна уже упала?
+text_dev_advice_9,Sometimes you have to wait,Иногда приходится ждать
+text_dev_advice_10,I don't know all the languages,Я не знаю всех языков
+text_dev_advice_11,I think I heard someone last night,"Кажется, я слышал кого-то этой ночью"
+text_dev_advice_12,Are you listening to me?,Ты меня слушаешь?
+text_dev_advice_13,Don't trust plants,Не верь растениям
+text_dev_advice_14,Dot[Ex]?,Dot[Ex]?
+text_dev_advice_15,1,2,3,4
+text_dev_advice_16,Hello world!,Привет мир!
+text_dev_advice_17,His name is peg,Его зовут Пег
+text_dev_advice_18,[age limit],[возрастное ограничение]
+text_dev_advice_19,"sudo rm -rf /Bevi","sudo rm -rf /Bevi"
+text_dev_advice_20,The sun doesn't like it when you look into its eyes,"Солнцу не нравится, когда смотришь ему в глаза"
+text_dev_advice_21,Optimization does not exist,Оптимизация не существует
+text_dev_advice_22,Bugs are present,Баги присутствуют
+text_dev_advice_23,Shift + R to restart,Shift + R для перезапуска
+text_dev_advice_24,No advice today,Сегодня без советов
+
+
+
+
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз
 enemy_thorn,Thorn,Колючка

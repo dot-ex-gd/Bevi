@@ -38,6 +38,15 @@ character_init = function(i, j){
 	global.PlayerExist = true;
 }
 
+AdviceText = text_get("text_dev_advice");
+get_advice = function(){
+    AdviceCount = real(text_get("text_dev_advice_count"));
+    Advice = text_get($"text_dev_advice_{irandom_range(1, AdviceCount)}");
+}
+get_advice();
+alarm[10] = 60;
+
+
 /// @func change_temperature(bias, count, main_size, second_count, second_bias, second_size, temperature)
 change_temperature = function(_bias = 200, _count = 5, _main_size = [20, 50], _second_count = [20, 100], _second_bias = [-70, 70], _second_size = [5, 11], _temperature = [2, 1]){
 	repeat(_count){

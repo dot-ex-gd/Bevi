@@ -12,14 +12,16 @@ function world_save(_filename){
 	world_list_save(_filename);
 	
 	var _buff_tiles = buffer_create(4096, buffer_grow, 1); // tiles
+	var _buff_collision = buffer_create(4096, buffer_grow, 1); // tiles
 	
-	var i, j, _size_w = room_width div TILE_SIZE + 1, _size_h = room_height div TILE_SIZE + 1, _tiles = ObWorld.Tiles;
+	var i, j, _size_w = room_width div TILE_SIZE + 1, _size_h = room_height div TILE_SIZE + 1, _tiles = ObWorld.Tiles, _coll = ObWorld.TilesCollision;
 	buffer_write(_buff_tiles, buffer_u16, _size_w);
 	buffer_write(_buff_tiles, buffer_u16, _size_h);
 	
 	for(i = 0; i < _size_w; i++){
 		for(j = 0; j < _size_h; j++){
 			buffer_write(_buff_tiles, buffer_u8, tilemap_get(_tiles, i, j));
+			buffer_write(_buff_collision, buffer_u8, tilemap_get(_coll, i, j));
 		}
 	}
 	
@@ -57,9 +59,11 @@ function world_save(_filename){
 	
 	
 	buffer_save(_buff_tiles, $"/Worlds/{_filename}/tiles.buf");
+	buffer_save(_buff_collision, $"/Worlds/{_filename}/coll.buf");
 	buffer_save(_buff_instances, $"/Worlds/{_filename}/instances.buf");
 	buffer_save(_buf_character, $"/Worlds/{_filename}/character.buf");
 	buffer_delete(_buff_tiles);
+	buffer_delete(_buff_collision);
 	buffer_delete(_buff_instances);
 	buffer_delete(_buf_character);
 }

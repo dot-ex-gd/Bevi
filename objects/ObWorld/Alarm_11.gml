@@ -25,3 +25,5 @@ if (!IsLoad){
 	world_load(WorldName);
 	Generation = true;
 }
+
+create_border();

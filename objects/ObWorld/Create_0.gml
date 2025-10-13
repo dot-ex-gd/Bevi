@@ -59,3 +59,13 @@ change_temperature = function(_bias = 200, _count = 5, _main_size = [20, 50], _s
 		}
 	}
 }
+
+create_border = function(){
+    for(var i = 0; i < TileW; i++){
+    	for(var j = 0; j < TileH; j++){
+    		if (i == 0 || j == 0 || i == TileW - 1 || j == TileH - 1){
+    			tilemap_set(TilesCollision, true, i, j);
+    		}
+    	}
+    }
+}

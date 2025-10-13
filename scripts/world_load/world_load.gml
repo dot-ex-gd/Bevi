@@ -3,10 +3,11 @@
 
 function world_load(_filename){
 	var _buff_tiles = buffer_load($"/Worlds/{_filename}/tiles.buf");
+    var _buffer_collision = buffer_load($"/Worlds/{_filename}/coll.buf");
 	var _buff_instances = buffer_load($"/Worlds/{_filename}/instances.buf");
 	var _buf_character = buffer_load($"/Worlds/{_filename}/character.buf");
 	
-	var i, j, _size_w = buffer_read(_buff_tiles, buffer_u16), _size_h = buffer_read(_buff_tiles, buffer_u16), _tiles = ObWorld.Tiles;
+	var i, j, _size_w = buffer_read(_buff_tiles, buffer_u16), _size_h = buffer_read(_buff_tiles, buffer_u16), _tiles = ObWorld.Tiles, _coll = ObWorld.TilesCollision;
 	
 	room_width = _size_w * TILE_SIZE;
 	room_height = _size_h * TILE_SIZE;
@@ -14,6 +15,7 @@ function world_load(_filename){
 	for(i = 0; i < _size_w; i++){
 		for(j = 0; j < _size_h; j++){
 			tilemap_set(_tiles, buffer_read(_buff_tiles, buffer_u8), i, j);
+			tilemap_set(_coll, buffer_read(_buffer_collision, buffer_u8), i, j);
 		}
 	}
 	

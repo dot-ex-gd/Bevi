@@ -6,10 +6,6 @@ if (!MapsInitializing){
 		for(var j = 0; j < TileH; j++){
 			HeightMap[# i, j] = random(1);
 			TemperatureMap[# i, j] = random(0.25);
-		
-			if (i == 0 || j == 0 || i == TileW - 1 || j == TileH - 1){
-				tilemap_set(TilesCollision, true, i, j);
-			}
 		}
 	}
 	

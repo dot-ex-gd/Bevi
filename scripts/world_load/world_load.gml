@@ -2,9 +2,9 @@
 /// @func	load selected world
 
 function world_load(_filename){
-	var _buff_tiles = buffer_load($"Worlds/{_filename}/tiles.buf");
-	var _buff_instances = buffer_load($"Worlds/{_filename}/instances.buf");
-	var _buf_character = buffer_load($"Worlds/{_filename}/character.buf");
+	var _buff_tiles = buffer_load($"/Worlds/{_filename}/tiles.buf");
+	var _buff_instances = buffer_load($"/Worlds/{_filename}/instances.buf");
+	var _buf_character = buffer_load($"/Worlds/{_filename}/character.buf");
 	
 	var i, j, _size_w = buffer_read(_buff_tiles, buffer_u16), _size_h = buffer_read(_buff_tiles, buffer_u16), _tiles = ObWorld.Tiles;
 	
@@ -68,7 +68,7 @@ function world_load(_filename){
 
 function world_list_load(){
 	var _list = [];
-	var _buff_worlds = buffer_load($"Worlds/world_list.txt");
+	var _buff_worlds = buffer_load($"/Worlds/world_list.txt");
 	
 	if (_buff_worlds != -1){	
 		_list = json_parse(buffer_read(_buff_worlds, buffer_string));

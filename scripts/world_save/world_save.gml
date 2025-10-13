@@ -2,11 +2,11 @@
 /// @func	save current world
 
 function world_save(_filename){
-	if (!directory_exists($"Worlds")){
-		directory_create($"worlds");
+	if (!directory_exists($"/Worlds")){
+		directory_create($"/worlds");
 	}
-	if (!directory_exists($"Worlds/{_filename}")){
-		directory_create($"Worlds/{_filename}");
+	if (!directory_exists($"/Worlds/{_filename}")){
+		directory_create($"/Worlds/{_filename}");
 	}
 	
 	world_list_save(_filename);
@@ -56,16 +56,16 @@ function world_save(_filename){
 	buffer_write(_buf_character, buffer_string, json_stringify(ObCharacter.Inventory));
 	
 	
-	buffer_save(_buff_tiles, $"Worlds/{_filename}/tiles.buf");
-	buffer_save(_buff_instances, $"Worlds/{_filename}/instances.buf");
-	buffer_save(_buf_character, $"Worlds/{_filename}/character.buf");
+	buffer_save(_buff_tiles, $"/Worlds/{_filename}/tiles.buf");
+	buffer_save(_buff_instances, $"/Worlds/{_filename}/instances.buf");
+	buffer_save(_buf_character, $"/Worlds/{_filename}/character.buf");
 	buffer_delete(_buff_tiles);
 	buffer_delete(_buff_instances);
 	buffer_delete(_buf_character);
 }
 
 function world_list_save(_filename){
-	var _buff_worlds = buffer_load($"Worlds/world_list.txt");
+	var _buff_worlds = buffer_load($"/Worlds/world_list.txt");
 	var _buff_new = buffer_create(32, buffer_grow, 1);
 	var _list = [];
 	
@@ -86,8 +86,8 @@ function world_list_save(_filename){
 	
 	buffer_write(_buff_new, buffer_string, json_stringify(_list));
 	
-	file_delete($"Worlds/world_list.txt");
-	buffer_save(_buff_new, $"Worlds/world_list.txt");
+	file_delete($"/Worlds/world_list.txt");
+	buffer_save(_buff_new, $"/Worlds/world_list.txt");
 	
 	if (buffer_exists(_buff_worlds)){
 		buffer_delete(_buff_worlds);

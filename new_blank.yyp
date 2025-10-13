@@ -150,6 +150,7 @@
     {"id":{"name":"ObSandTile","path":"objects/ObSandTile/ObSandTile.yy",},},
     {"id":{"name":"ObSelectButtons","path":"objects/ObSelectButtons/ObSelectButtons.yy",},},
     {"id":{"name":"ObSelectWorld","path":"objects/ObSelectWorld/ObSelectWorld.yy",},},
+    {"id":{"name":"ObSettings","path":"objects/ObSettings/ObSettings.yy",},},
     {"id":{"name":"ObSkorpion","path":"objects/ObSkorpion/ObSkorpion.yy",},},
     {"id":{"name":"ObSkorpionSpawner","path":"objects/ObSkorpionSpawner/ObSkorpionSpawner.yy",},},
     {"id":{"name":"ObSlime","path":"objects/ObSlime/ObSlime.yy",},},

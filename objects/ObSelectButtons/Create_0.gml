@@ -20,6 +20,10 @@ do_language = function(){
     global.Language = !global.Language;
     LanguageName = text_get("text_language");
     
+    ini_open("/settings.ini");
+    ini_write_real("global", "lang", global.Language);
+    ini_close();
+    
     room_restart();
 }
 do_back = function(){

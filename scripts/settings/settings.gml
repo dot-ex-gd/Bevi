@@ -19,4 +19,9 @@ var _spec = "!?:/().,;><*'\"";
 
 global.FontDark = font_add_sprite_ext(SpFontDark, $"{_eng_let}{_rus_let}{_dig}{_spec}ё+-", 1, -1);
 global.FontLight = font_add_sprite_ext(SpFontLight, $"{_eng_let}{_rus_let}{_dig}{_spec}ё+-", 1, -1);
-global.Language = languages.rus;
+
+
+ini_open("/settings.ini");
+global.Language = ini_read_real("global", "lang", languages.eng);
+window_set_fullscreen(ini_read_real("global", "full_scr", false));
+ini_close();

@@ -23,15 +23,15 @@ switch(keyboard_lastchar){
 	break;
 	
 	case "e":
-		if (Select < 0) { exit; }
-		
+		if (Select < 0 || ObCharacter.InteractiveInArm != noone) { exit; }
+        
 		var _item = ObCharacter.Inventory[Select];
 		if (_item){
 			var _del = false;
 			
 			if (item_find_flag(_item, flags.weapon)){
 				ObCharacter.equip_inarm_add(Select, _item);
-				_del = true;
+				//_del = true;
 			}
 			if (item_find_flag(_item, flags.armor)){
 				if (item_find_flag(_item, flags.head)){

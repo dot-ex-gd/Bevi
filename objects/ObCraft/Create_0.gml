@@ -1,10 +1,11 @@
+crafts_init();
+
 image_alpha = 0;
 Skip = 0;
 Select = 0;
 DoCraft = [];
 
 Update = function(){
-	crafts_init();
 	DoCraft = [];
 	DoCraft = craft_get(Workbench, ObCharacter.Inventory);
 }

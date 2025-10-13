@@ -33,14 +33,10 @@ for(var i = 0; i < _max; i++){
 	_entry_index = i + Skip;
 	
 	if (i == Select - Skip){
-		if (DoCraft[_entry_index]){
-			draw_sprite(SpUICraftSelectCell, 0, _x1, _y1 + (i * 20));
-		} else {
-			draw_sprite(SpUIInventorySelectCell, 0, _x1, _y1 + (i * 20));
-		}
+		draw_sprite(SpUICraftSelectCell, 0, _x1, _y1 + (i * 20));
 	}
 	
-	_item = global.Crafts[_entry_index];
+	_item = global.Crafts[DoCraft[i + Skip]];
 	draw_sprite(_item[craft.struct][$ "InvSprite"], 0, _x1, _y1 + (i * 20));
 	
 	_rec = _item[craft.rec];

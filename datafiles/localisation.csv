@@ -116,7 +116,8 @@ text_dev_advice_22,Bugs are present,Баги присутствуют
 text_dev_advice_23,Shift + R to restart,Shift + R для перезапуска
 text_dev_advice_24,No advice today,Сегодня без советов
 
-
+text_tlanguage,Language,Язык
+text_language,English,Русский
 
 
 enemy_skorpion,Skorpion,Скорпион

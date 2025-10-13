@@ -85,6 +85,7 @@
     {"id":{"name":"ObButtonExit","path":"objects/ObButtonExit/ObButtonExit.yy",},},
     {"id":{"name":"ObButtonPlay","path":"objects/ObButtonPlay/ObButtonPlay.yy",},},
     {"id":{"name":"ObCamera","path":"objects/ObCamera/ObCamera.yy",},},
+    {"id":{"name":"ObChangeLanguage","path":"objects/ObChangeLanguage/ObChangeLanguage.yy",},},
     {"id":{"name":"ObCharacter","path":"objects/ObCharacter/ObCharacter.yy",},},
     {"id":{"name":"ObChunk","path":"objects/ObChunk/ObChunk.yy",},},
     {"id":{"name":"ObCoal","path":"objects/ObCoal/ObCoal.yy",},},

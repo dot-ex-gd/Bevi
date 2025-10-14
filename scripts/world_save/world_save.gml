@@ -57,11 +57,11 @@ function world_save(_filename){
 	buffer_write(_buf_character, buffer_string, json_stringify(ObCharacter.OnFoot));
 	buffer_write(_buf_character, buffer_string, json_stringify(ObCharacter.Inventory));
 	
-	
-	buffer_save(_buff_tiles, $"/Worlds/{_filename}/tiles.buf");
-	buffer_save(_buff_collision, $"/Worlds/{_filename}/coll.buf");
-	buffer_save(_buff_instances, $"/Worlds/{_filename}/instances.buf");
-	buffer_save(_buf_character, $"/Worlds/{_filename}/character.buf");
+	var _dir = $"{GLOBAL_DIR}{WORLD_DIR}/{_filename}";
+	buffer_save(_buff_tiles, $"{_dir}/tiles.buf");
+	buffer_save(_buff_collision, $"{_dir}/coll.buf");
+	buffer_save(_buff_instances, $"{_dir}/instances.buf");
+	buffer_save(_buf_character, $"{_dir}/character.buf");
 	buffer_delete(_buff_tiles);
 	buffer_delete(_buff_collision);
 	buffer_delete(_buff_instances);
@@ -69,7 +69,7 @@ function world_save(_filename){
 }
 
 function world_list_save(_filename){
-	var _buff_worlds = buffer_load($"/Worlds/world_list.txt");
+	var _buff_worlds = buffer_load($"world_list.txt");
 	var _buff_new = buffer_create(32, buffer_grow, 1);
 	var _list = [];
 	
@@ -90,8 +90,8 @@ function world_list_save(_filename){
 	
 	buffer_write(_buff_new, buffer_string, json_stringify(_list));
 	
-	file_delete($"/Worlds/world_list.txt");
-	buffer_save(_buff_new, $"/Worlds/world_list.txt");
+	file_delete($"world_list.txt");
+	buffer_save(_buff_new, $"world_list.txt");
 	
 	if (buffer_exists(_buff_worlds)){
 		buffer_delete(_buff_worlds);

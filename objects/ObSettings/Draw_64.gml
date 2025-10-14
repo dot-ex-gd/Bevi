@@ -1,5 +1,5 @@
 if (Guide){
-	draw_text(4, 4, "indev: 0 (f5 - close this)");
+	draw_text(4, 4, "indev: 0.1 (f5 - close this)");
 
 	draw_text(4, 13, @"		
 								keys:
@@ -15,5 +15,9 @@ if (Guide){
 								save: ctrl + s
 								restart: shift + r
 								cancel: esc
-								menu accept: enter");
+								menu accept: enter
+								f1 - debug
+								f2 - toggle view
+								f3 - screenshot
+								f4 - resize view");
 }

@@ -14,8 +14,8 @@ switch(keyboard_lastchar){
 	case "C":
 		Update();
 		
-		if (DoCraft[Select] >= 0){
-			var _item = global.Crafts[DoCraft[Select]];
+		if (DoCraft[Select][1]){
+			var _item = global.Crafts[DoCraft[Select][0]];
 			var _container = ObCharacter.Inventory;
 			var _cont_len = array_length(_container);
 			var _need_item;
@@ -49,7 +49,7 @@ switch(keyboard_lastchar){
 				}
 			}
 			
-			ObCharacter.inventory_add(global.Crafts[DoCraft[Select]][craft.struct]);
+			ObCharacter.inventory_add(global.Crafts[DoCraft[Select][0]][craft.struct]);
 			Update();
 		}
 	break;

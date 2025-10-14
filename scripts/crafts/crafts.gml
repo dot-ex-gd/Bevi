@@ -93,9 +93,9 @@ function craft_get(_workbench, _container){
 		}
 		
 		if (_can_craft){
-			array_push(_ids, i);
+			array_push(_ids, [i, true]);
 		}else{
-			//array_push(_ids, false);
+			array_push(_ids, [i, false]);
 		}
 	}
 	

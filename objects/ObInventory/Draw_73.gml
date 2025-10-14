@@ -25,6 +25,10 @@ var _slot;
 for(var i = 0; i < min(_len, MaxShow); i++){
 	if (i == Select - Skip){
 		draw_sprite(SpUIInventorySelectCell, 0, _x1 + (_x * 20), _y1 + (_y * 20));
+		
+		draw_set_halign(fa_center);
+		draw_text(bbox_right + 48, bbox_top - 8, text_get(ObCharacter.Inventory[i + Skip][$ "Name"]));
+		draw_set_halign(fa_left);
 	}
 	
 	if (i + Skip < _len){

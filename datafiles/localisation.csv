@@ -1,45 +1,86 @@
 INDEX,ENGLISH,RUSSIAN
 item_rock,Rock,Камень
+item_rock_dsc,Hard stone,Твёрдый камень
 item_stick,Stick,Палка
+item_stick_dsc,A small stick,Небольшая палка
 item_workbench,Workbench,Верстак
+item_workbench_dsc,Looks like a crafting spot,Похоже на место для крафта
 item_stone_axe,Stone axe,Каменный топор
+item_stone_axe_dcs,Allows you to shop wood comfortably,Позволяет рубить дерево с комфортом
 item_stone_pickaxe,Stone pickaxe,Каменная кирка
+item_stone_pickaxe_dsc,Allows you to break stone,Позволяет разбивать камень
 item_stone_sword,Stone sword,Каменный мечь
+item_stone_sword_dsc,You fell the power,Ты чувствуешь силу
 item_peg_wool,Peg wool,Мех пега
+item_peg_wool_dsc,Soft and warm,Мягкий и тёплый
 item_bed,Bed,Кровать
+item_bed_dsc,Speed up time,Ускорь время
 item_hearth_flower,Hearth flower,Сердечник
+item_hearth_flower_dsc,It beats,Оно бьётся
 item_hearth_flower_seed,Hearth flower seed,Семена сердечника
+item_hearth_flower_seed_dsc,Create your hearth,Создай своё сердце
 item_mana_flower,Mana flower,Цветок маны
-item_mana_flower_seed,Mana flower seed,Семена цветка манф
+item_mana_flower_dsc,It looks strange,Выглядит странно
+item_mana_flower_seed,Mana flower seed,Семена цветка маны
+item_mana_flower_seed_dsc,This is definitely a flower, Это определённо цветок
 item_iron_ore,Iron ore,Железная руда
+item_iron_ore_dsc,I've seen this somewhere before,Где-то я это уже видел
 item_iron_ingot,Iron ingot,Железный слиток
+item_iron_ingot_dsc,New layer?,Новый слой?
 item_gold_ore,Gold ore,Золотая руда
+item_gold_ore_dsc,I think it will be better than iron,"Думаю, оно будет лучше железа"
 item_gold_ingot,Gold ingot,Золотой слиток
+item_gold_ingot_dsc,Definitely yes,Определённо да
 item_bake,Bake,Печь
+item_bake_dsc,Melt this whole world,Переплавь весь этот мир
 item_bonfire,Bonfire,Костёр
+item_bonfire_dsc,Helps you survive at night,Помогает выжить ночью
 item_sand,Sand,Песок
+item_sand_dsc,"Like dust, but better","Как пыль, но лучше"
 item_grass,Grass,Трава
+item_grass_dsc,For what?,Зачем?
 item_stone,Stone,Камень
+item_stone_dsc,"...","..."
 item_coal,Coal,Уголь
+item_coal_dsc,Greatly speeds up remelting,Сильно ускоряет переплавку
 item_evil_eye,Evil eye,Злой глаз
+item_evil_eye_dsc,it's alive,Оно живое
 item_log,Log,Бревно
+item_log_dsc,Place a log near the fire for added ambiance,Разложи бревно возле костра для большей атмосферы
 item_desert_log,Desert log,Пустынное бревно
+item_desert_log_dsc,Why does it exist?,Зачем оно существует?
 item_iron_helmet,Iron helmet,Железный шлем
+item_iron_helmet_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_iron_chestplate,Iron chestplate,Железный нагрудник
+item_iron_chestplate_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_iron_leggins,Iron leggins,Железные поножи
+item_iron_leggins_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_iron_boots,Iron boots,Железные ботинки
+item_iron_boots_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_gold_helmet,Gold helmet,Золотой шлем
+item_gold_helmet_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_gold_chestplate,Gold chestplate,Золотой нагрудник
+item_gold_chestplate_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_gold_leggins,Gold leggins,Золотые поножи
+item_gold_leggins_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_gold_boots,Gold boots,Злотые ботинки
+item_gold_boots_dsc,You feel protected,Ты чувствуешь себя защищённым
 item_thorn_berry,Thorn berry,Ягоды шиповника
+item_thorn_berry_dsc,They are prickly,Они колючие
 item_block_wood,Wood block,Блок дерева
+item_block_wood_dsc,Build your house,Возведи свой дом
 item_block_stone,Stone block,Блок камня
+item_block_stone_dsc,It's definitely cold,Оно определённо холодное
 item_block_door,Door,Дверь
+item_block_door_dsc,My defense,Моя оборона
 item_tree_seed,Tree seed,Семечко дерева
+item_tree_seed_dsc,Give life to what you killed,"Дай жизнь тому, что ты убил"
 item_slime,Slime,Слизь
+item_slime_dsc,It's all sticky and cold,Оно всё липкое и холодное
 item_echo,Echo,Эхо
+item_echo_dsc,Have you heard this?,Ты слышал это?
 item_summoner_merged_slime,Merged Slime,Слившаяся Слизь
+item_summoner_merged_slime_dsc,He wants freedom,Он хочет на свободу
 text_weight,Weight,Вес
 text_kg,Kg,Кг
 text_x,x,х

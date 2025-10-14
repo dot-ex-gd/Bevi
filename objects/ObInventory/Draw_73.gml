@@ -27,7 +27,8 @@ for(var i = 0; i < min(_len, MaxShow); i++){
 		draw_sprite(SpUIInventorySelectCell, 0, _x1 + (_x * 20), _y1 + (_y * 20));
 		
 		draw_set_halign(fa_center);
-		draw_text(bbox_right + 48, bbox_top - 8, text_get(ObCharacter.Inventory[i + Skip][$ "Name"]));
+		draw_text(bbox_right + 48, bbox_top + 5, text_get(ObCharacter.Inventory[i + Skip][$ "Name"]));
+		draw_text_ext(bbox_right + 48, bbox_top + 16, text_get(ObCharacter.Inventory[i + Skip][$ "Name"] + "_dsc"), 8, 100);
 		draw_set_halign(fa_left);
 	}
 	
@@ -61,7 +62,7 @@ if (ObCharacter.OnFoot){
 
 draw_set_halign(fa_center);
 
-draw_text(x, bbox_bottom - 6, $"{TextWeight}: {ObCharacter.InventoryWeight}{TextKG}/{ObCharacter.InventoryMaxWeight}{TextKG} {TextProtection}: {ObCharacter.Protection}");
+draw_text(x, bbox_bottom - 6, $"{TextWeight}: {ObCharacter.InventoryWeight}{TextKG}/{ObCharacter.InventoryMaxWeight}{TextKG}\n{TextProtection}: {ObCharacter.Protection}");
 draw_text(x, bbox_top + 5, $"{TextInventory}");
 
 draw_set_halign(fa_left);

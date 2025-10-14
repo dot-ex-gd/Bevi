@@ -62,6 +62,8 @@ function world_load(_filename){
 		_char.Inventory = json_parse(_inv);
 	}
 	
+	_char.inventory_weight_upd();
+	_char.protection_update();
 	global.PlayerExist = true;
 	ObWorld.character_init(_x, _y);
 	

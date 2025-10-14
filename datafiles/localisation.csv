@@ -160,6 +160,10 @@ text_dev_advice_24,No advice today,Сегодня без советов
 text_tlanguage,Language,Язык
 text_language,English,Русский
 
+text_is_attack_mode,Attack mode,Режим атаки
+text_yes,Yes,Да
+text_no,No,Нет
+
 
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз

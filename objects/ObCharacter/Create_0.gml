@@ -50,6 +50,7 @@ MoveDown = ord(string_upper(CMoveDown));
 MoveRight = ord(string_upper(CMoveRight));
 
 AttackMode = false;
+AttackModeText = text_get("text_is_attack_mode") + ": ";
 
 step = function(){
 	if (!effect_active(effect.stun)){

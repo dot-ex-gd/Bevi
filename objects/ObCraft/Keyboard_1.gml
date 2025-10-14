@@ -2,6 +2,10 @@ var _dir = 0;
 var _len = array_length(DoCraft);
 
 switch(keyboard_lastchar){
+	case "e":
+	case "E":
+		ObCharacter.craft_open();
+	break;
 	case "s":
 		Select++;
 		_dir = 1;

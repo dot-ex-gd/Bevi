@@ -29,11 +29,11 @@ switch(keyboard_lastchar){
 		if (_item){
 			var _del = false;
 			
-			if (item_find_flag(_item, flags.weapon)){
+			if (!_del && item_find_flag(_item, flags.weapon)){
 				ObCharacter.equip_inarm_add(Select, _item);
 				//_del = true;
 			}
-			if (item_find_flag(_item, flags.armor)){
+			if (!_del && item_find_flag(_item, flags.armor)){
 				if (item_find_flag(_item, flags.head)){
 					ObCharacter.equip_onhead_add(Select, _item);
 				}
@@ -50,23 +50,17 @@ switch(keyboard_lastchar){
 				ObCharacter.protection_update();
 			}
 			
-			if (item_find_flag(_item, flags.food)){
+			if (!_del && item_find_flag(_item, flags.food)){
 				var _food = _item[$ "Food"];
-				var _len = array_length(_food);
-				
-				for(var i = 0; i < _len; i += 2){
-					if (_food[i] == food_stats.hp) { ObCharacter.health_add(_food[i + 1]); }
-					if (_food[i] == food_stats.mn) { ObCharacter.mana_add(_food[i + 1]); }
-					if (_food[i] == food_stats.xp) { ObCharacter.xp_add(_food[i + 1]); }
-				}
-				
+				ObCharacter.eat(_food);
 				_del = true;
 			}
-			if (item_find_flag(_item, flags.placeble)){
+			
+			if (!_del && item_find_flag(_item, flags.placeble)){
 				ObCharacter.interactive_inarm(_item, interactive_type.replace);
 				_del = true;
 			}
-			if (item_find_flag(_item, flags.remeltable)){
+			if (!_del && item_find_flag(_item, flags.remeltable)){
 				ObCharacter.interactive_inarm(_item, interactive_type.melt);
 				_del = true;
 			}

@@ -37,7 +37,7 @@ if (!Generation){
     draw_set_font(global.FontLight);
     
     draw_text(_dev_x, _dev_y + 38, AdviceText + ":");
-    draw_text(_dev_x, _dev_y + 48, Advice);
+    draw_text_ext(_dev_x, _dev_y + 48, Advice, 8, SCREEN_W / 2);
     
 	draw_set_halign(fa_left);
 }

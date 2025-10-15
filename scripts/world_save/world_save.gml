@@ -11,10 +11,15 @@ function world_save(_filename){
 	
 	world_list_save(_filename);
 	
+	with(ObChunk){
+		save(CurX, CurY);
+	}
+	
 	var _buff_tiles = buffer_create(4096, buffer_grow, 1); // tiles
 	var _buff_collision = buffer_create(4096, buffer_grow, 1); // tiles
+	var _buff_world = buffer_create(4096, buffer_grow, 1); // tiles
 	
-	var i, j, _size_w = room_width div TILE_SIZE + 1, _size_h = room_height div TILE_SIZE + 1, _tiles = ObWorld.Tiles, _coll = ObWorld.TilesCollision;
+	var i, j, _size_w = room_width div TILE_SIZE, _size_h = room_height div TILE_SIZE, _tiles = ObWorld.Tiles, _coll = ObWorld.TilesCollision;
 	buffer_write(_buff_tiles, buffer_u16, _size_w);
 	buffer_write(_buff_tiles, buffer_u16, _size_h);
 	
@@ -57,15 +62,28 @@ function world_save(_filename){
 	buffer_write(_buf_character, buffer_string, json_stringify(ObCharacter.OnFoot));
 	buffer_write(_buf_character, buffer_string, json_stringify(ObCharacter.Inventory));
 	
+	buffer_write(_buff_world, buffer_u16, ObTime.Day);
+	buffer_write(_buff_world, buffer_u16, ObTime.Night);
+	buffer_write(_buff_world, buffer_u16, ObTime.Second);
+	buffer_write(_buff_world, buffer_u16, ObTime.Minute);
+	buffer_write(_buff_world, buffer_u16, ObTime.Hour);
+	buffer_write(_buff_world, buffer_f16, ObTime.ToNightK);
+	buffer_write(_buff_world, buffer_u8, ObTime.Time);
+	buffer_write(_buff_world, buffer_u16, ObTime.LightIntensity);
+	buffer_write(_buff_world, buffer_bool, ObTime.SolarEclipse);
+	buffer_write(_buff_world, buffer_bool, ObTime.LunarEclipse);
+	
 	var _dir = $"{GLOBAL_DIR}{WORLD_DIR}/{_filename}";
 	buffer_save(_buff_tiles, $"{_dir}/tiles.buf");
 	buffer_save(_buff_collision, $"{_dir}/coll.buf");
 	buffer_save(_buff_instances, $"{_dir}/instances.buf");
 	buffer_save(_buf_character, $"{_dir}/character.buf");
+	buffer_save(_buff_world, $"{_dir}/world.buf");
 	buffer_delete(_buff_tiles);
 	buffer_delete(_buff_collision);
 	buffer_delete(_buff_instances);
 	buffer_delete(_buf_character);
+	buffer_delete(_buff_world);
 }
 
 function world_list_save(_filename){

@@ -1,5 +1,5 @@
 if (Guide){
-	draw_text(4, 4, "indev: 0.1 (f5 - close this)");
+	draw_text(4, 4, "indev: 1.0 (f5 - close this)");
 
 	draw_text(4, 13, @"		
 								keys:

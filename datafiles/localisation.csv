@@ -81,6 +81,36 @@ item_echo,Echo,Эхо
 item_echo_dsc,Have you heard this?,Ты слышал это?
 item_summoner_merged_slime,Merged Slime,Слившаяся Слизь
 item_summoner_merged_slime_dsc,He wants freedom,Он хочет на свободу
+item_essence_of_night,Essence of night,Эссенция ночи
+item_essence_of_night_dsc,You feel something strange,Ты чувствуешь что-то странное
+item_essence_of_day,Essence of day,Эссенция дня
+item_essence_of_day_dsc,Is this a piece of sky?,Это кусок неба?
+item_health_potion,Health potion,Зелье здоровья
+item_health_potion_dsc,Restores health\nIt's not that tasty,Восстанавливает здоровье\nОно не такое уж и скусное
+item_mana_potion,Mana potion,Зелье маны
+item_mana_potion_dsc,Restores mana\nIt tastes like antifreeze,Восстанавливает ману\nНа вкус как антифриз
+item_health_recovery_bracelet,Health recovery bracelet,Браслет восстановления здоровья
+item_health_recovery_bracelet_dsc,From somewhere he gets the strength to restore,Откуда-то он достаёт силу для восстановления
+item_mana_recovery_bracelet,Mana recovery bracelet,Браслет восстановления маны
+item_mana_recovery_bracelet_dsc,100% safe,Безопасно на 100%
+item_recovery_bracelet,Recovery bracelet,Браслет восстановления
+item_recovery_bracelet_dsc,You feel the power of these two,Ты чувствуешь силу этих двоих
+item_dark_creator,Dark creator,Тёмный создатель
+item_dark_creator_dsc,I don't like this name,Мне не нравится это название
+item_glass,Glass,Стекло
+item_glass_dsc,So transparent that it can be used as an invisible wall,"Настолько прозрачено, что его можно использовать как невидимую стену"
+item_test_tube,Test tube,Пробирка
+item_test_tube_dsc,You can pour liquid into it,В неё можно налить жидкость
+item_test_tube_with_mana,Test tube with mana,Пробирка с маной
+item_test_tube_with_mana_dsc,I think it restores mana,"Я думаю, что это восстанавливает ману"
+item_test_tube_with_health,Test tube with health,Пробирка со здоровьем
+item_test_tube_with_health_dsc,Restores health (maybe),Восстанавливает здоровье (может быть)
+item_test_tube_with_essence_of_night,Test tube with essence of night,Пробирка с эссенцией ночи
+item_test_tube_with_essence_of_night_dsc,The heaviness of being,Тяжесть бытия
+item_test_tube_with_essence_of_day,Test tube with essence of day,Пробирка с эссенцией дня
+item_test_tube_with_essence_of_day_dsc,Feel this lightness,Почувствуй эту лёгкость
+
+
 text_weight,Weight,Вес
 text_kg,Kg,Кг
 text_x,x,х
@@ -157,6 +187,21 @@ text_dev_advice_22,Bugs are present,Баги присутствуют
 text_dev_advice_23,Shift + R to restart,Shift + R для перезапуска
 text_dev_advice_24,No advice today,Сегодня без советов
 
+text_dev_monologue_1,Welcome!,Добро пожаловать!
+text_dev_monologue_2,I am a dev,Я - разработчик
+text_dev_monologue_3,"You probably already understood...","Ты наверное уже понял..."
+text_dev_monologue_4,I'm tired and i'm very bored here,Я устал и мне очень скучно здесь
+text_dev_monologue_5,"And i decided...","И я решил..."
+text_dev_monologue_6,to create you,Создать тебя
+text_dev_monologue_7,"Yes, this may sound strange","Да, это может прозвучать странно"
+text_dev_monologue_8,"You don't mind, do you?",Ты же не против?
+text_dev_monologue_9,"...","..."
+text_dev_monologue_10,"Of course, you can't speak","Точно, ты не умеешь говорить"
+text_dev_monologue_11,Someday i will add this feature for you,Когда-нибудь я добавлю тебе эту возможность
+text_dev_monologue_12,Here you will find everything you need for comfortable survival,Здесь есть всё для комфортного выживания
+text_dev_monologue_13,Try not to die,Постарайся не умереть
+text_dev_monologue_14,Find me,Найди меня
+
 text_tlanguage,Language,Язык
 text_language,English,Русский
 
@@ -164,6 +209,23 @@ text_is_attack_mode,Attack mode,Режим атаки
 text_yes,Yes,Да
 text_no,No,Нет
 
+text_lunar_eclipse,Lunar eclipse,Лунное затвение
+text_solar_eclipse,Solar eclipse,Солнечное затмение
+
+text_you_died,13,13
+text_you_died_1,You died :(,Ты умер :(
+text_you_died_2,Fail!,Неудача!
+text_you_died_3,Another time,В другой раз
+text_you_died_4,Don't go,Не уходи
+text_you_died_5,It was too fast,Это было слишком быстро
+text_you_died_6,I have no words,У меня нету слов
+text_you_died_7,And what was that?,И что это было?
+text_you_died_8,Are you serious?,Ты серьёзно?
+text_you_died_9,Didn't expect it,Не ожидал
+text_you_died_10,"...","..."
+text_you_died_11,Don't make me angry.,Не зли меня.
+text_you_died_12,What!?,Что!?
+text_you_died_13,"shift + r...","shift + r..."
 
 enemy_skorpion,Skorpion,Скорпион
 enemy_evil_eye,Evil eye,Злой глаз

@@ -6,11 +6,11 @@ drop = function(){
 }
 
 Step = function(){
+	var _dir = [irandom_range(-1, 1) * TILE_SIZE, irandom_range(-1, 1) * TILE_SIZE];
+	
 	if (distance_to_object(ObCharacter) < 5 * TILE_SIZE){
-		var _dir = [sign(ObCharacter.x - x) * TILE_SIZE, sign(ObCharacter.y - y) * TILE_SIZE];
+		_dir = [sign(ObCharacter.x - x) * TILE_SIZE, sign(ObCharacter.y - y) * TILE_SIZE];
 	}else{
-		var _dir = [irandom_range(-1, 1) * TILE_SIZE, irandom_range(-1, 1) * TILE_SIZE];
-		
 		if (ObTime.Time >= time.evening){
 			if (Base && instance_exists(Base)){
 				_dir = [sign(Base.x - x) * TILE_SIZE, sign(Base.y - y) * TILE_SIZE];
@@ -29,7 +29,7 @@ Step = function(){
 			
 			if (ObTime.Time >= time.evening){
 				if (Base && instance_exists(Base)){
-					if (distance_to_object(Base) < 1){
+					if (distance_to_object(Base) <= 1){
 						Base.Skorp = noone;
 						instance_destroy();
 					}

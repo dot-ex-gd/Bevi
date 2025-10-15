@@ -16,6 +16,13 @@ update = function(_steps){
 	with(ObCharacter){
 		StepPoints += StepPointsGive;
 		
+		repeat(_steps){
+			var _rec = equip_get_recover();
+			for(var i = 0; i < array_length(_rec); i++){
+				eat(_rec[i]);
+			}
+		}
+		
 		effects_lower();
 	}
 

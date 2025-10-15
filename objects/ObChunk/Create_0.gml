@@ -56,6 +56,7 @@ generate = function(_chunk_x, _chunk_y){
 			_tile = tilemap_get(_tiles, _x + _in_chunk_xoffset, _y + _in_chunk_yoffset);
 			_map_t = ObWorld.TemperatureMap[# _x + _in_chunk_xoffset, _y + _in_chunk_yoffset];
 			_obj = noone;
+			var _params = {};
 			
 			_rand = irandom(250);
 			switch(_tile){
@@ -75,6 +76,7 @@ generate = function(_chunk_x, _chunk_y){
 						break;
 						case 13: case 14:
 							_obj = irandom(1) ? ObManaFlower : ObHearthFlower;
+							_params = {image_index: irandom_range(1, 3)};
 						break;
 					}
 				break;
@@ -98,7 +100,7 @@ generate = function(_chunk_x, _chunk_y){
 			}
 			
 			if (_obj){
-				instance_create_depth((_x * TILE_SIZE) + _ts2 + _chunk_xoffset, (_y * TILE_SIZE) + _ts2 + _chunk_yoffset, 0, _obj);
+				instance_create_depth((_x * TILE_SIZE) + _ts2 + _chunk_xoffset, (_y * TILE_SIZE) + _ts2 + _chunk_yoffset, 0, _obj, _params);
 			}
 		}
 	}

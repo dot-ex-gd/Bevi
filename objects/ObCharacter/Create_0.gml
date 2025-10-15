@@ -14,9 +14,30 @@ Xp = 0;
 
 Protection = 0;
 
+eat = function(_food){
+	var _len = array_length(_food);
+	
+	for(var i = 0; i < _len; i += 2){
+		if (_food[i] == food_stats.hp) { health_add(_food[i + 1]); }
+		if (_food[i] == food_stats.mn) { mana_add(_food[i + 1]); }
+		if (_food[i] == food_stats.xp) { xp_add(_food[i + 1]); }
+	}
+}
+
 #region methods
 get_damage = function(_damage) {
 	Health -= clamp(_damage - Protection, 1, infinity);
+	
+	if (Health <= 0){
+		instance_destroy(ObBar);
+		global.PlayerExist = false;
+		
+		particle_create(x, y, SpDeath, [0, -1], 0.03);
+		
+		instance_destroy();
+		
+		instance_create_depth(0, 0, -16_000, ObDeathScreen);
+	}
 }
 xp_add = function(_xp) {
 	Xp += _xp;
@@ -142,6 +163,33 @@ OnHead = noone;
 OnBody = noone;
 OnLeggings = noone;
 OnFoot = noone;
+
+equip_get_recover = function(){
+	var _rec = [];
+	
+	if (OnHead){
+		if (item_find_flag(OnHead, flags.recover)){
+			array_push(_rec, OnHead[$ "Food"]);
+		}
+	}
+	if (OnBody){
+		if (item_find_flag(OnBody, flags.recover)){
+			array_push(_rec, OnBody[$ "Food"]);
+		}
+	}
+	if (OnLeggings){
+		if (item_find_flag(OnLeggings, flags.recover)){
+			array_push(_rec, OnLeggings[$ "Food"]);
+		}
+	}
+	if (OnFoot){
+		if (item_find_flag(OnFoot, flags.recover)){
+			array_push(_rec, OnFoot[$ "Food"]);
+		}
+	}
+	
+	return _rec;
+}
 
 equip_inarm_add = function(_ind, _struct){
 	if (InArm == noone){

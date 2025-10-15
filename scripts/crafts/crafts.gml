@@ -11,7 +11,8 @@ enum craft{
 enum work_bench{
 	inventory,
 	workbench,
-	any
+	any,
+	dark_creator
 }
 
 ///@func craft_add(workbench, reciepe, item, [count])
@@ -26,13 +27,13 @@ function crafts_init(){
 	craft_add(work_bench.inventory, [ObStick, 3, ObRock, 4], ObStoneAxe, text_get("item_stone_axe"), global.Items.StoneAxe);
 	craft_add(work_bench.inventory, [ObStick, 2, ObRock, 5], ObStonePickaxe, text_get("item_stone_pickaxe"), global.Items.StonePickaxe);
 	craft_add(work_bench.inventory, [ObStick, 3, ObRock, 3], ObStoneSword, text_get("item_stone_sword"), global.Items.StoneSword);
-	craft_add(work_bench.inventory, [ObStick, 3, ObLog, 6, ObPegWool, 6], ObBedItem, text_get("item_bed"), global.Items.BedItem);
+	craft_add(work_bench.workbench, [ObStick, 3, ObLog, 6, ObPegWool, 6], ObBedItem, text_get("item_bed"), global.Items.BedItem);
 	
-	craft_add(work_bench.inventory, [ObRock, 16, ObLog, 2], ObBake, text_get("item_bake"), global.Items.Bake);
+	craft_add(work_bench.workbench, [ObRock, 16, ObLog, 2], ObBake, text_get("item_bake"), global.Items.Bake);
 	craft_add(work_bench.inventory, [ObStick, 3, ObLog, 1], ObBonfireItem, text_get("item_bonfire"), global.Items.BonfireItem);
 	
-	craft_add(work_bench.inventory, [ObLog, 2], ObBlockWoodItem, text_get("item_block_wood"), global.Items.BlockWoodItem);
-	craft_add(work_bench.inventory, [ObLog, 2, ObStick, 2], ObBlockWoodDoorItem, text_get("item_block_door"), global.Items.BlockWoodDoorItem);
+	craft_add(work_bench.workbench, [ObLog, 2], ObBlockWoodItem, text_get("item_block_wood"), global.Items.BlockWoodItem);
+	craft_add(work_bench.workbench, [ObLog, 2, ObStick, 2], ObBlockWoodDoorItem, text_get("item_block_door"), global.Items.BlockWoodDoorItem);
 	
 	craft_add(work_bench.inventory, [ObItemSlime, 32], ObSummonerMergedSlime, text_get("item_summoner_merged_slime"), global.Items.SummonerMergedSlime);
 	
@@ -45,6 +46,18 @@ function crafts_init(){
 	craft_add(work_bench.workbench, [ObGoldIngot, 18], ObGoldChestplate, text_get("item_gold_chestplate"), global.Items.GoldChestplate);
 	craft_add(work_bench.workbench, [ObGoldIngot, 15], ObGoldLeggins, text_get("item_gold_leggins"), global.Items.GoldLeggins);
 	craft_add(work_bench.workbench, [ObGoldIngot, 10], ObGoldBoots, text_get("item_gold_boots"), global.Items.GoldBoots);
+	
+	craft_add(work_bench.workbench, [ObEssenceOfDay, 1, ObEssenceOfNight, 1, ObEcho, 3], ObDarkCreatorItem, text_get("item_dark_creator"), global.Items.DarkCreatorItem);
+	craft_add(work_bench.workbench, [ObGlass, 1], ObTestTube, text_get("item_test_tube"), global.Items.TestTube);
+	
+	craft_add(work_bench.dark_creator, [ObHearthFlower, 5, ObHearthFlowerSeed, 2, ObEssenceOfDay, 1], ObHealthRecoveryBracelet, text_get("item_health_recovery_bracelet"), global.Items.HealthRecoveryBracelet);
+	craft_add(work_bench.dark_creator, [ObManaFlower, 12, ObManaFlowerSeed, 5, ObEssenceOfNight, 1, ObEcho, 1], ObManaRecoveryBracelet, text_get("item_mana_recovery_bracelet"), global.Items.ManaRecoveryBracelet);
+	craft_add(work_bench.dark_creator, [ObHealthRecoveryBracelet, 1, ObManaRecoveryBracelet, 1, ObEcho, 4], ObRecoveryBracelet, text_get("item_recovery_bracelet"), global.Items.RecoveryBracelet);
+	
+	craft_add(work_bench.dark_creator, [ObTestTube, 1, ObEssenceOfNight, 1], ObTestTubeWithEssenceOfNight, text_get("item_test_tube_with_essence_of_night"), global.Items.TestTubeWithEssenceOfNight);
+	craft_add(work_bench.dark_creator, [ObTestTube, 1, ObEssenceOfDay, 1], ObTestTubeWithEssenceOfDay, text_get("item_test_tube_with_essence_of_day"), global.Items.TestTubeWithEssenceOfDay);
+	craft_add(work_bench.dark_creator, [ObTestTubeWithEssenceOfDay, 1, ObHearthFlower, 1], ObTestTubeWithHealth, text_get("item_test_tube_with_health"), global.Items.TestTubeWithHealth);
+	craft_add(work_bench.dark_creator, [ObTestTubeWithEssenceOfNight, 1, ObManaFlower, 1], ObTestTubeWithMana, text_get("item_test_tube_with_mana"), global.Items.TestTubeWithMana);
 }
 
 function craft_get(_workbench, _container){

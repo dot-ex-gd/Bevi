@@ -82,12 +82,12 @@ switch(keyboard_lastchar){
 
 Select = clamp(Select, 0, _len - 1);
 
-if (Select >= MaxShow){
+if (Select >= MaxShow + Skip){
 	if (_dir > 0){
 		Skip += _dir;
 	}
 }
-if (Select <= MaxShow){
+if (Select <= Skip){
 	if (_dir < 0){
 		Skip += _dir;
 	}

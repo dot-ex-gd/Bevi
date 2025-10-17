@@ -13,3 +13,6 @@
 #macro WORLDS_DIR	"worlds/"
 
 #macro DEPTH		depth = -y
+
+#macro BACK_ALPHA	0.55
+#macro BACK_ALPHA_SPEED	0.1

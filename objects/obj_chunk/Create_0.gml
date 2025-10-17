@@ -173,13 +173,13 @@ content_generate = function(_x, _y, _in_chunk_x, _in_chunk_y, _chunk_x_offset, _
 					_obj = obj_peg;
 				break;
 				case 5:
-					_obj = obj_rock;
+					
 				break;
 				case 6: case 7:
 				
 				break;
 				case 8: case 9: case 10: case 11: case 12:
-				
+					_obj = irandom(1) ? obj_rock : obj_stick;
 				break;
 				case 13: case 14:
 				

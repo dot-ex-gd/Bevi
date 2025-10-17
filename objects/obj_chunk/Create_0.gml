@@ -1,4 +1,5 @@
-saveDirectory = $"{WORLDS_DIR}/{obj_world.worldName}";
+loadChunks = [];
+saveDirectory = $"{SAVE_DIR}{WORLDS_DIR}{obj_world.worldName}";
 
 seed1 = obj_world.seed1;
 seed2 = obj_world.seed2;
@@ -27,25 +28,39 @@ chunks_update = function(){
 				random_set_seed((_chunk_x * seed1) & (_chunk_y * seed2));
 				chunk_generate(_chunk_x, _chunk_y);
 			}else{
-				load_chunk(_chunk_x, _chunk_y);
+				if (!is_load(_chunk_x, _chunk_y)){
+					load_chunk(_chunk_x, _chunk_y);
+				}
 			}
 		}
 	}
 	
 	random_set_seed(seed1);
+	
+	if (DEBUG){
+		show_debug_message($"Chunks update");
+	}
 }
 
 is_chunk_generate = function(_chunk_x, _chunk_y){
-	var _id = file_exists($"X{_chunk_x}Y{_chunk_y}");
+	var _id = $"X{_chunk_x}Y{_chunk_y}";
 	
 	return (file_exists($"{saveDirectory}/{_id}.buf"));
 }
 
-load_chunk = function(_chunk_x, _chunk_y){
+is_load = function(_chunk_x, _chunk_y){
+	var _len = array_length(loadChunks), _id = $"X{_chunk_x}Y{_chunk_y}";
 	
+	for(var i = 0; i < _len; i++){
+		if (loadChunks[i] == _id) { return true; }
+	}
+	
+	return false;
 }
 
 unload_chunk = function(_chunk_x, _chunk_y){
+	var _id = $"X{_chunk_x}Y{_chunk_y}";
+	
 	var _chunk_in_tile_size = CHUNK_SIZE * TILE_SIZE;
 	var _chunk_x_offset = _chunk_x * _chunk_in_tile_size;
 	var _chunk_y_offset = _chunk_y * _chunk_in_tile_size;
@@ -58,6 +73,21 @@ unload_chunk = function(_chunk_x, _chunk_y){
 	}
 	
 	ds_list_destroy(_list);
+	
+	if (is_load(_chunk_x, _chunk_y)){
+		var _len = array_length(loadChunks);
+		
+		for(var i = 0; i < _len; i++){
+			if (loadChunks[i] == $"X{_chunk_x}Y{_chunk_y}"){
+				array_delete(loadChunks, i, -1);
+				break;
+			}
+		}
+	}
+	
+	if (DEBUG){
+		show_debug_message($"Chunk {_id}: unload");
+	}
 }
 
 save_chunk = function(_chunk_x, _chunk_y){
@@ -82,18 +112,28 @@ save_chunk = function(_chunk_x, _chunk_y){
 		var _obj_parent = object_get_parent(_obj.object_index);
 		var _obj_name = object_get_name(_obj.object_index);
 		
+		if (DEBUG){
+			show_debug_message($"chunk: {_id} | obj: {_obj_name}");
+		}
+		
 		buffer_write(_buf_chunk, buffer_string, _obj_name);
 		buffer_write(_buf_chunk, buffer_u16, _obj.x - _chunk_x_offset);
 		buffer_write(_buf_chunk, buffer_u16, _obj.y - _chunk_y_offset);
 		
 		switch(_obj_parent){
 			default:
+			
+			break;
 		}
 	}
 	
 	buffer_save(_buf_chunk, _name);
 	buffer_delete(_buf_chunk);
 	ds_list_destroy(_list);
+	
+	if (DEBUG){
+		show_debug_message($"Chunk {_id}: save");
+	}
 }
 
 load_chunk = function(_chunk_x, _chunk_y){
@@ -122,9 +162,12 @@ load_chunk = function(_chunk_x, _chunk_y){
 		if (_asset){
 			var _obj_x = buffer_read(_buf_chunk, buffer_u16);
 			var _obj_y = buffer_read(_buf_chunk, buffer_u16);
+			var _parent = object_get_parent(_asset);
 			
-			switch(object_get_parent(_obj_name)){
+			switch(_parent){
 				default:
+				
+				break;
 			}
 			
 			var _instance = instance_create_depth(_obj_x + _chunk_x_offset, _obj_y + _chunk_y_offset, 0, _asset, _struct);
@@ -138,9 +181,19 @@ load_chunk = function(_chunk_x, _chunk_y){
 		
 		delete _struct;
 	}
+	
+	if (!is_load(_chunk_x, _chunk_y)){
+		array_push(loadChunks, _id);
+	}
+	
+	if (DEBUG){
+		show_debug_message($"Chunk {_id}: load");
+	}
 }
 
 chunk_generate = function(_chunk_x, _chunk_y){
+	var _id = $"X{_chunk_x}Y{_chunk_y}";
+	
 	var _chunk_in_tile_size = CHUNK_SIZE * TILE_SIZE;
 	var _chunk_x_offset = _chunk_x * _chunk_in_tile_size;
 	var _chunk_y_offset = _chunk_y * _chunk_in_tile_size;
@@ -152,6 +205,14 @@ chunk_generate = function(_chunk_x, _chunk_y){
 		for(var _y = 0; _y < CHUNK_SIZE; _y++){
 			content_generate(_x, _y, _in_chunk_x_offset, _in_chunk_y_offset, _chunk_x_offset, _chunk_y_offset);
 		}
+	}
+	
+	if (!is_load(_chunk_x, _chunk_y)){
+		array_push(loadChunks, _id);
+	}
+	
+	if (DEBUG){
+		show_debug_message($"Chunk {_id}: generate");
 	}
 }
 

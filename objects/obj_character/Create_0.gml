@@ -1,7 +1,16 @@
-xp = 0;
-hp = 0;
-mana = 0;
+global.playerExists = true;
 
+xpMax = 100;
+xp = 0;
+
+hpMax = 100;
+hp = hpMax;
+
+manaMax = 25;
+mana = manaMax;
+
+
+#region MOVEMENT
 keyUp = ord("W");
 keyDown = ord("S");
 keyLeft = ord("A");
@@ -23,3 +32,4 @@ move = function(_dir_x, _dir_y){
 	stepPoints --;
 	obj_step_controller.step();
 }
+#endregion

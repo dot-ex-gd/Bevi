@@ -1,13 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_character",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_culling",
+  "eventList":[],
   "managed":true,
-  "name":"obj_character",
+  "name":"obj_culling",
   "overriddenProperties":[],
   "parent":{
     "name":"main",
@@ -34,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_character",
-    "path":"sprites/spr_character/spr_character.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

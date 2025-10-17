@@ -10,6 +10,9 @@ update = function(){
 	with(obj_entity){
 		stepPoints += stepPointsGive * other.timeDelta;
 	}
+	with(obj_chunk){
+		alarm[0] = STEP_DELAY;
+	}
 	
 	if (DEBUG){
 		show_debug_message("another step!");

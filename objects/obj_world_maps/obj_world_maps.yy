@@ -1,22 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_character",
+  "%Name":"obj_world_maps",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_character",
+  "name":"obj_world_maps",
   "overriddenProperties":[],
   "parent":{
-    "name":"main",
-    "path":"folders/Root/main.yy",
+    "name":"world generation",
+    "path":"folders/Root/world generation.yy",
   },
-  "parentObjectId":{
-    "name":"obj_entity",
-    "path":"objects/obj_entity/obj_entity.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,14 +26,13 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"isGenerate","filters":[],"listItems":[],"multiselect":false,"name":"isGenerate","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_character",
-    "path":"sprites/spr_character/spr_character.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

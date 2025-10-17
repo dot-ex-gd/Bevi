@@ -42,7 +42,7 @@ is_load = function(_chunk_x, _chunk_y){
 }
 
 generate = function(_chunk_x, _chunk_y){
-	var _x, _y, _obj, _rand, _tile, _tiles = ObWorld.Tiles, _map_t;
+	var _x, _y, _obj, _rand, _tile, _tiles = ObWorld.Tiles, _map_t, _map_h;
 	var _ts2 = TILE_SIZE / 2;
 	
 	var _chunk_xoffset = _chunk_x * CHUNK_SIZE * TILE_SIZE;
@@ -55,6 +55,7 @@ generate = function(_chunk_x, _chunk_y){
 		for(_y = 0; _y < CHUNK_SIZE; _y++){
 			_tile = tilemap_get(_tiles, _x + _in_chunk_xoffset, _y + _in_chunk_yoffset);
 			_map_t = ObWorld.TemperatureMap[# _x + _in_chunk_xoffset, _y + _in_chunk_yoffset];
+			_map_h = ObWorld.HeightMap[# _x + _in_chunk_xoffset, _y + _in_chunk_yoffset];
 			_obj = noone;
 			var _params = {};
 			
@@ -78,6 +79,11 @@ generate = function(_chunk_x, _chunk_y){
 							_obj = irandom(1) ? ObManaFlower : ObHearthFlower;
 							_params = {image_index: irandom_range(1, 3)};
 						break;
+						default:
+							if (_map_h > 0.52){
+								//_obj = ObBlockGrass;
+							}
+						break;
 					}
 				break;
 				case tile.sand:
@@ -95,6 +101,11 @@ generate = function(_chunk_x, _chunk_y){
 						case 10: case 11: case 12:
 							_obj = ObDesertSpikes;
 						break;
+					}
+				break;
+				case tile.stone:
+					if (_map_h > 0.531){
+						//_obj = ObBlockStone;
 					}
 				break;
 			}

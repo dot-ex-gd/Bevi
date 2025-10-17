@@ -25,5 +25,6 @@ function text_get(_index){
 	
 	_text = string_replace_all(_text, "\\n", "\n");
 	
+	ds_grid_destroy(_csv)
 	return string_lower(_text);
 }

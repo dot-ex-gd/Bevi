@@ -88,12 +88,21 @@ step = function(){
 		}
 	
 		if (_attack){
-			var _damage = 1;
-			if (InArm && item_find_flag(InArm, _attack.PreferFlag)){
-				_damage = InArm[$ "Damage"];
-			}
+			if (_attack.DoNFDamage == true){
+				var _damage = 1;
+				if (InArm && item_find_flag(InArm, _attack.PreferFlag)){
+					_damage = InArm[$ "Damage"];
+				}
 		
-			_attack.get_damage(_damage);
+				_attack.get_damage(_damage);
+			}else if (item_find_flag(InArm, _attack.PreferFlag)){
+				var _damage = 1;
+				if (InArm){
+					_damage = InArm[$ "Damage"];
+				}
+				
+				_attack.get_damage(_damage);
+			}
 		}
 	}
 	

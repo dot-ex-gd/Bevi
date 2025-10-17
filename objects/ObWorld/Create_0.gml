@@ -48,7 +48,7 @@ alarm[10] = 60;
 
 
 /// @func change_temperature(bias, count, main_size, second_count, second_bias, second_size, temperature)
-change_temperature = function(_bias = 200, _count = 5, _main_size = [20, 50], _second_count = [20, 100], _second_bias = [-70, 70], _second_size = [5, 11], _temperature = [2, 1]){
+change_temperature = function(_bias = 200, _count = 5, _main_size = [20, 50], _second_count = [20, 100], _second_bias = [-70, 70], _second_size = [5, 11], _temperature = [20, 10]){
 	repeat(_count){
 		var _xx = irandom_range(_bias, TileW - _bias);
 		var _yy = irandom_range(_bias, TileH - _bias);
@@ -69,3 +69,14 @@ create_border = function(){
     	}
     }
 }
+
+/// generation
+TSlimeBiome = 0;
+TSandLevel = 640;
+
+
+HStoneLevel = 1000;
+HGrassLevel = 510;
+HSandLevel = 496;
+HWaterLevel = 492;
+HDeepWaterLevel = 485;

@@ -6,27 +6,27 @@ for(var i = 0; i < TileW; i++){
 		_carr = HeightMap[# i, j];
 		_ctem = TemperatureMap[# i, j];
 		
-		if (_carr <= 0.494){
+		if (_carr <= HWaterLevel){
 			_tile = tile.water;
 			
-			if (_carr <= 0.49){
+			if (_carr <= HDeepWaterLevel){
 				tilemap_set(TilesCollision, true, i, j);
 			}
-		}else if (_carr <= 0.498){
+		}else if (_carr <= HSandLevel){
 			_tile = tile.sand;
-		}else if (_carr <= 0.53){
+		}else if (_carr <= HGrassLevel){
 			_tile = tile.grass;
 			
-			if (_ctem > 0.46){
+			if (_ctem > TSandLevel){
 				_tile = tile.sand;
 			}
-		}else if (_carr <= 1){
-			if (_ctem <= 0.46){
+		}else if (_carr <= HStoneLevel){
+			if (_ctem < TSandLevel){
 				_tile = tile.stone;
 			}
 		}
 		
-		if (_ctem <= 0){
+		if (_ctem <= TSlimeBiome){
 			_tile = choose(tile.slime_blue, tile.slime_green, tile.slime_red, tile.slime_yellow);
 			tilemap_set(TilesCollision, false, i, j);
 		}

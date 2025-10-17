@@ -4,14 +4,14 @@ if (!MapsInitializing){
 	/// maps init
 	for(var i = 0; i < TileW; i++){
 		for(var j = 0; j < TileH; j++){
-			HeightMap[# i, j] = random(1);
-			TemperatureMap[# i, j] = random(0.25);
+			HeightMap[# i, j] = irandom_range(1, 1_000);
+			TemperatureMap[# i, j] = irandom_range(1, 1_000);
 		}
 	}
 	
 	/// desert
 	change_temperature();
-	change_temperature(100, 2, [10, 20], [5, 20], [-40, 40], [8, 20], [-0.72, -0.125]);
+	change_temperature(100, 2, [10, 20], [5, 20], [-40, 40], [8, 20], [-125, -75]);
 	
 	MapsInitializing = true;
 }

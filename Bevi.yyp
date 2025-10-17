@@ -11,6 +11,8 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Root","folderPath":"folders/Root.yy","name":"Root","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"main","folderPath":"folders/Root/main.yy","name":"main","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"main sprites","folderPath":"folders/Root/main/main sprites.yy","name":"main sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
@@ -22,10 +24,20 @@
     "IDEVersion":"2024.13.1.193",
   },
   "name":"new_blank",
-  "resources":[],
+  "resources":[
+    {"id":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},},
+    {"id":{"name":"obj_entity","path":"objects/obj_entity/obj_entity.yy",},},
+    {"id":{"name":"obj_step_controller","path":"objects/obj_step_controller/obj_step_controller.yy",},},
+    {"id":{"name":"rm_master","path":"rooms/rm_master/rm_master.yy",},},
+    {"id":{"name":"constants","path":"scripts/constants/constants.yy",},},
+    {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},},
+    {"id":{"name":"spr_master","path":"sprites/spr_master/spr_master.yy",},},
+  ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
-  "RoomOrderNodes":[],
+  "RoomOrderNodes":[
+    {"roomId":{"name":"rm_master","path":"rooms/rm_master/rm_master.yy",},},
+  ],
   "templateType":null,
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},

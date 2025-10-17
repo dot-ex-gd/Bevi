@@ -8,6 +8,9 @@ curY = 0;
 prevCurX = 0;
 prevCurY = 0;
 
+maxTileX = (room_width div TILE_SIZE) div CHUNK_SIZE;
+maxTileY = (room_width div TILE_SIZE) div CHUNK_SIZE;
+
 chunks_update = function(){
 	var _chunk_x;
 	var _chunk_y;
@@ -18,6 +21,7 @@ chunks_update = function(){
 			_chunk_y = curY + _y;
 			
 			if ((_chunk_x < 0) || (_chunk_y < 0)) { continue; }
+			if ((_chunk_x >= maxTileX) || (_chunk_y >= maxTileY)) { continue; }
 			
 			if (!is_chunk_generate(_chunk_x, _chunk_y)){
 				random_set_seed((_chunk_x * seed1) & (_chunk_y * seed2));

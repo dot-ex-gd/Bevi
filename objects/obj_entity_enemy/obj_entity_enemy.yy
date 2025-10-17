@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_peg",
+  "%Name":"obj_entity_enemy",
   "eventList":[],
   "managed":true,
-  "name":"obj_peg",
+  "name":"obj_entity_enemy",
   "overriddenProperties":[],
   "parent":{
     "name":"entity",
     "path":"folders/Root/entity.yy",
   },
   "parentObjectId":{
-    "name":"obj_entity_peaceful",
-    "path":"objects/obj_entity_peaceful/obj_entity_peaceful.yy",
+    "name":"obj_culling",
+    "path":"objects/obj_culling/obj_culling.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_peg",
-    "path":"sprites/spr_peg/spr_peg.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

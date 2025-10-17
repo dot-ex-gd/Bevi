@@ -10,6 +10,11 @@ update = function(){
 	with(obj_entity){
 		stepPoints += stepPointsGive * other.timeDelta;
 	}
+	
+	with(obj_character){
+		stepPoints += stepPointsGive * other.timeDelta;
+	}
+	
 	with(obj_chunk){
 		alarm[0] = STEP_DELAY;
 	}

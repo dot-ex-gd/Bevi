@@ -1,1 +1,0 @@
-random_set_seed(irandom_range(-current_day, current_day) + current_year + current_month + current_day + current_hour + current_minute + current_second + current_weekday + current_time);

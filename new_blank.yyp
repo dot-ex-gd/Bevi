@@ -30,6 +30,7 @@
   },
   "name":"new_blank",
   "resources":[
+    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},},
     {"id":{"name":"obj_chunk","path":"objects/obj_chunk/obj_chunk.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
@@ -42,6 +43,7 @@
     {"id":{"name":"obj_world","path":"objects/obj_world/obj_world.yy",},},
     {"id":{"name":"rm_master","path":"rooms/rm_master/rm_master.yy",},},
     {"id":{"name":"constants","path":"scripts/constants/constants.yy",},},
+    {"id":{"name":"game","path":"scripts/game/game.yy",},},
     {"id":{"name":"tiles","path":"scripts/tiles/tiles.yy",},},
     {"id":{"name":"spr_character","path":"sprites/spr_character/spr_character.yy",},},
     {"id":{"name":"spr_master","path":"sprites/spr_master/spr_master.yy",},},

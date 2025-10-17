@@ -33,3 +33,8 @@ move = function(_dir_x, _dir_y){
 	obj_step_controller.step();
 }
 #endregion
+
+
+
+
+instance_create_depth(x, y, 0, obj_camera);

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"tiles",
+  "%Name":"item_data",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"tiles",
+  "name":"item_data",
   "parent":{
-    "name":"world generation",
-    "path":"folders/Root/main/world generation.yy",
+    "name":"items",
+    "path":"folders/Root/main/items.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

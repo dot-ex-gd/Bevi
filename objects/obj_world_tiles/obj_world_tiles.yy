@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"world generation",
-    "path":"folders/Root/world generation.yy",
+    "path":"folders/Root/main/world generation.yy",
   },
   "parentObjectId":null,
   "persistent":false,

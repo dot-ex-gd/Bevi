@@ -1,6 +1,19 @@
 if (stepPoints >= 1){
-	var _dir_x = (keyboard_check(keyRight) - keyboard_check(keyLeft));
-	var _dir_y = (keyboard_check(keyDown) - keyboard_check(keyUp));
+	var _case_modifier = keyboard_check(vk_control);
+	var _dir_x = 0;
+	var _dir_y = 0;
+	
+	if (!_case_modifier){
+		_dir_x = (keyboard_check(keyRight) - keyboard_check(keyLeft));
+		_dir_y = (keyboard_check(keyDown) - keyboard_check(keyUp));
+	}
+	
+	var _change_inventory_state = (keyboard_check_pressed(keyInventory));
+	if (_change_inventory_state){
+		if (!_change_inventory_state){
+			inventory_open();
+		}
+	}
 	
 	move(_dir_x, _dir_y);
 }

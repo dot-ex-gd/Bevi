@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"tiles sprites",
-    "path":"folders/Root/world generation/tiles/tiles sprites.yy",
+    "path":"folders/Root/main/world generation/tiles/tiles sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

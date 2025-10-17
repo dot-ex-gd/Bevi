@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"entity",
-    "path":"folders/Root/entity.yy",
+    "path":"folders/Root/main/entity.yy",
   },
   "parentObjectId":{
     "name":"obj_entity_peaceful",

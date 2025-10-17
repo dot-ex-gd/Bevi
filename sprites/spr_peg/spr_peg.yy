@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"enity sprites",
-    "path":"folders/Root/entity/enity sprites.yy",
+    "path":"folders/Root/main/entity/enity sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

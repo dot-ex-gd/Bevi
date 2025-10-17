@@ -10,6 +10,20 @@ manaMax = 25;
 mana = manaMax;
 
 
+#region INVENTORY
+keyInventory = ord("I");
+
+isInventoryOpen = false;
+inventory_open = function(){
+	isInventoryOpen = !isInventoryOpen;
+}
+
+inventory = [];
+inventoryWeight = 0;
+inventoryWeightMax = 20;
+
+#endregion
+
 #region MOVEMENT
 keyUp = ord("W");
 keyDown = ord("S");

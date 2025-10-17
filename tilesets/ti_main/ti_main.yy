@@ -13,7 +13,7 @@
   "out_tilevborder":2,
   "parent":{
     "name":"tiles",
-    "path":"folders/Root/world generation/tiles.yy",
+    "path":"folders/Root/main/world generation/tiles.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

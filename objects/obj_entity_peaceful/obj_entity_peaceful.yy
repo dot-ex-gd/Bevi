@@ -7,9 +7,12 @@
   "overriddenProperties":[],
   "parent":{
     "name":"entity",
-    "path":"folders/Root/entity.yy",
+    "path":"folders/Root/main/entity.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_culling",
+    "path":"objects/obj_culling/obj_culling.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

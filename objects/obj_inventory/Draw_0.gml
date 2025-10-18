@@ -28,7 +28,7 @@ var _cell_x_offset, _cell_y_offset;
 var _draw_cell_y_offset = -8;
 var _draw_cell_item_y_offset = -7;
 
-for(var _cell = 0; _cell < min(_cells, CellShowMax); _cell++){
+for(var _cell = 0; _cell < min(_cells, cellShowMax); _cell++){
 	if (_cell + cellSkip < _cells){
 		_cell_x_offset = _x_offset + (_cell_x * _inventory_cell_size);
 		_cell_y_offset = _y_offset + (_cell_y * _inventory_cell_size);

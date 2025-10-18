@@ -51,11 +51,33 @@ get_interactive = function(){
 
 #endregion
 
+#region CRAFTS
+keyCrafts = ord("I");
+
+isCraftsOpen = false;
+crafts_open = function(){
+	if (isInventoryOpen) { exit; }
+	isCraftsOpen = !isCraftsOpen;
+	
+	if (isCraftsOpen){
+		instance_create_depth(0, 0, 0, obj_inventory_craft);
+	}else{
+		instance_destroy(obj_inventory_craft);
+	}
+	
+	if (DEBUG){
+		show_debug_message($"Crafts open: {isCraftsOpen}");
+	}
+}
+
+#endregion
+
 #region INVENTORY
 keyInventory = ord("I");
 
 isInventoryOpen = false;
 inventory_open = function(){
+	if (isCraftsOpen) { exit; }
 	isInventoryOpen = !isInventoryOpen;
 	
 	if (isInventoryOpen){
@@ -131,8 +153,7 @@ check_collision = function(_dir_x, _dir_y){
 moevePermament = false;
 move = function(_dir_x, _dir_y){
 	if (_dir_x == 0 && _dir_y == 0) { exit; }
-	if (isInventoryOpen) { exit; }
-	
+
 	var _next_step = true;
 	
 	if (!interactive){

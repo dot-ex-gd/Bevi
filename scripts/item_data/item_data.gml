@@ -513,3 +513,5 @@ function item_find_flag(_item, _flag){
 	
 	return false;
 }
+
+crafts_init(); // init crafts after items

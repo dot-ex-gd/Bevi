@@ -28,9 +28,9 @@ if (keyboard_check_pressed(keyDown)){
 
 cellSelect = clamp(cellSelect, 0, _cells - 1);
 
-if ((cellSelect >= CellShowMax + cellSkip) || (cellSelect <= cellSkip)){
+if ((cellSelect >= cellShowMax + cellSkip) || (cellSelect <= cellSkip)){
 	cellSkip += _skip_delta;
-	cellSkip = clamp(cellSkip, 0, _cells - CellShowMax);
+	cellSkip = clamp(cellSkip, 0, _cells - cellShowMax);
 	cellSkip = max(0, cellSkip);
 }
 

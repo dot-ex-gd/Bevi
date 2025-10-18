@@ -4,7 +4,7 @@ image_alpha = 0;
 cellSkip = 0;
 cellSelect = 0;
 
-CellShowMax = 12;
+cellShowMax = 12;
 
 backAlpha = 0;
 

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"craft_data",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"craft_data",
+  "parent":{
+    "name":"inventory",
+    "path":"folders/Root/main/inventory.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

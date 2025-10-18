@@ -5,8 +5,13 @@ if (stepPoints >= 1){
 	
 	if (!_case_modifier){
 		var _move = true;
+		
 		if (keyboard_check_pressed(keyInteractive)){
 			interactive_state(interactive);
+			_move = false;
+		}
+		
+		if (isInventoryOpen || isCraftsOpen){
 			_move = false;
 		}
 		
@@ -14,12 +19,15 @@ if (stepPoints >= 1){
 			_dir_x = (keyboard_check(keyRight) - keyboard_check(keyLeft));
 			_dir_y = (keyboard_check(keyDown) - keyboard_check(keyUp));
 		}
-	}
-	
-	var _change_inventory_state = (keyboard_check_pressed(keyInventory));
-	if (_change_inventory_state){
-		if (!_case_modifier){
+		
+		var _change_inventory_state = (keyboard_check_pressed(keyInventory));
+		if (_change_inventory_state){
 			inventory_open();
+		}
+	}else{
+		var _change_inventory_state = (keyboard_check_pressed(keyCrafts));
+		if (_change_inventory_state){
+			crafts_open();
 		}
 	}
 	

@@ -1,0 +1,231 @@
+item_rock,Rock
+item_rock_dsc,Hard stone
+item_stick,Stick
+item_stick_dsc,A small stick
+item_workbench,Workbench
+item_workbench_dsc,Looks like a crafting spot
+item_stone_axe,Stone axe
+item_stone_axe_dcs,Allows you to shop wood comfortably
+item_stone_pickaxe,Stone pickaxe
+item_stone_pickaxe_dsc,Allows you to break stone
+item_stone_sword,Stone sword
+item_stone_sword_dsc,You fell the power
+item_peg_wool,Peg wool
+item_peg_wool_dsc,Soft and warm
+item_bed,Bed
+item_bed_dsc,Speed up time
+item_hearth_flower,Hearth flower
+item_hearth_flower_dsc,It beats
+item_hearth_flower_seed,Hearth flower seed
+item_hearth_flower_seed_dsc,Create your hearth
+item_mana_flower,Mana flower
+item_mana_flower_dsc,It looks strange
+item_mana_flower_seed,Mana flower seed
+item_mana_flower_seed_dsc,This is definitely a flower
+item_iron_ore,Iron ore
+item_iron_ore_dsc,I've seen this somewhere before
+item_iron_ingot,Iron ingot
+item_iron_ingot_dsc,New layer?
+item_gold_ore,Gold ore
+item_gold_ore_dsc,I think it will be better than iron
+item_gold_ingot,Gold ingot
+item_gold_ingot_dsc,Definitely yes
+item_bake,Bake
+item_bake_dsc,Melt this whole world
+item_bonfire,Bonfire
+item_bonfire_dsc,Helps you survive at night
+item_sand,Sand
+item_sand_dsc,"Like dust, but better"
+item_grass,Grass
+item_grass_dsc,For what?
+item_stone,Stone
+item_stone_dsc,"..."
+item_coal,Coal
+item_coal_dsc,Greatly speeds up remelting
+item_evil_eye,Evil eye
+item_evil_eye_dsc,it's alive
+item_log,Log
+item_log_dsc,Place a log near the fire for added ambiance
+item_desert_log,Desert log
+item_desert_log_dsc,Why does it exist?
+item_iron_helmet,Iron helmet
+item_iron_helmet_dsc,You feel protected
+item_iron_chestplate,Iron chestplate
+item_iron_chestplate_dsc,You feel protected
+item_iron_leggins,Iron leggins
+item_iron_leggins_dsc,You feel protected
+item_iron_boots,Iron boots
+item_iron_boots_dsc,You feel protected
+item_gold_helmet,Gold helmet
+item_gold_helmet_dsc,You feel protected
+item_gold_chestplate,Gold chestplate
+item_gold_chestplate_dsc,You feel protected
+item_gold_leggins,Gold leggins
+item_gold_leggins_dsc,You feel protected
+item_gold_boots,Gold boots
+item_gold_boots_dsc,You feel protected
+item_thorn_berry,Thorn berry
+item_thorn_berry_dsc,They are prickly
+item_block_wood,Wood block
+item_block_wood_dsc,Build your house
+item_block_stone,Stone block
+item_block_stone_dsc,It's definitely cold
+item_block_door,Door
+item_block_door_dsc,My defense
+item_tree_seed,Tree seed
+item_tree_seed_dsc,Give life to what you killed
+item_slime,Slime
+item_slime_dsc,It's all sticky and cold
+item_echo,Echo
+item_echo_dsc,Have you heard this?
+item_summoner_merged_slime,Merged Slime
+item_summoner_merged_slime_dsc,He wants freedom
+item_essence_of_night,Essence of night
+item_essence_of_night_dsc,You feel something strange
+item_essence_of_day,Essence of day
+item_essence_of_day_dsc,Is this a piece of sky?
+item_health_potion,Health potion
+item_health_potion_dsc,Restores health\nIt's not that tasty
+item_mana_potion,Mana potion
+item_mana_potion_dsc,Restores mana\nIt tastes like antifreeze
+item_health_recovery_bracelet,Health recovery bracelet
+item_health_recovery_bracelet_dsc,From somewhere he gets the strength to restore
+item_mana_recovery_bracelet,Mana recovery bracelet
+item_mana_recovery_bracelet_dsc,100% safe
+item_recovery_bracelet,Recovery bracelet
+item_recovery_bracelet_dsc,You feel the power of these two
+item_dark_creator,Dark creator
+item_dark_creator_dsc,I don't like this name
+item_glass,Glass
+item_glass_dsc,So transparent that it can be used as an invisible wall
+item_test_tube,Test tube
+item_test_tube_dsc,You can pour liquid into it
+item_test_tube_with_mana,Test tube with mana
+item_test_tube_with_mana_dsc,I think it restores mana,
+item_test_tube_with_health,Test tube with health
+item_test_tube_with_health_dsc,Restores health (maybe)
+item_test_tube_with_essence_of_night,Test tube with essence of night
+item_test_tube_with_essence_of_night_dsc,The heaviness of being
+item_test_tube_with_essence_of_day,Test tube with essence of day
+item_test_tube_with_essence_of_day_dsc,Feel this lightness
+
+
+text_weight,Weight
+text_kg,Kg
+text_x,x
+text_inventory,Inventory
+text_craft,Craft
+text_play,Play
+text_exit,Exit
+text_settings,Settings
+text_protection,Protection
+text_xp,xp
+text_hp,hp
+text_mana,mana
+text_darkness_thickens,The Darkness Thickens
+text_new_world,New world
+text_new_character,New character
+text_select_world,Select world
+text_select_character,Select character
+text_load,Load
+text_delete,Delete
+text_back,Back
+text_tiles_width,Width (tilse)
+text_tiles_height,Height (tiles)
+text_create,Create
+text_height_map_iterations,Height map iterations
+text_temperature_map_iterations,Temperature map iterations
+text_world_name,World name
+
+text_world_size,World size
+text_world_size_small,Small
+text_world_size_medium,Medium
+text_world_size_big,Big
+text_world_size_giant,Giant
+
+text_world_smooth,World smooth
+text_world_smooth_small,Small
+text_world_smooth_medium,Medium
+text_world_smooth_big,Big
+
+text_save,Save
+text_load,Load
+
+text_height_map_generation,Height map generation
+text_temperature_map_generation,Temperature map generation
+text_tile_fill,Filling tiles
+text_instances_generation,Instances generation
+text_managers_initializing,initialization of managers
+text_culling,Instances culling
+text_character_spawn_find,Character spawn point find
+
+text_dev_advice_count,24
+text_dev_advice,Advice
+text_dev_advice_1,Find me
+text_dev_advice_2,Slimes drop the same slime
+text_dev_advice_3,Sleep doesn't skip time
+text_dev_advice_4,The moon doesn't like the full moon
+text_dev_advice_5,The eclipse is near
+text_dev_advice_6,Язык можно изменить в настройках
+text_dev_advice_7,The previous advice is a lie
+text_dev_advice_8,Has the moon fallen yet?
+text_dev_advice_9,Sometimes you have to wait
+text_dev_advice_10,I don't know all the languages
+text_dev_advice_11,I think I heard someone last night
+text_dev_advice_12,Are you listening to me?
+text_dev_advice_13,Don't trust plants
+text_dev_advice_14,Dot[Ex]?
+text_dev_advice_15,1
+text_dev_advice_16,Hello world!
+text_dev_advice_17,His name is peg
+text_dev_advice_18,[age limit]
+text_dev_advice_19,"sudo rm -rf /Bevi"
+text_dev_advice_20,The sun doesn't like it when you look into its eyes
+text_dev_advice_21,Optimization does not exist
+text_dev_advice_22,Bugs are present
+text_dev_advice_23,Shift + R to restart
+text_dev_advice_24,No advice today
+
+text_dev_monologue_1,Welcome!
+text_dev_monologue_2,I am a dev
+text_dev_monologue_3,"You probably already understood..."
+text_dev_monologue_4,I'm tired and i'm very bored here
+text_dev_monologue_5,"And i decided..."
+text_dev_monologue_6,to create you
+text_dev_monologue_7,"Yes, this may sound strange"
+text_dev_monologue_8,"You don't mind, do you?"
+text_dev_monologue_9,"..."
+text_dev_monologue_10,"Of course, you can't speak"
+text_dev_monologue_11,Someday i will add this feature for you
+text_dev_monologue_12,Here you will find everything you need for comfortable survival
+text_dev_monologue_13,Try not to die
+text_dev_monologue_14,Find me
+
+text_tlanguage,Language
+text_language,English
+
+text_is_attack_mode,Attack mode
+text_yes,Yes
+text_no,No
+
+text_lunar_eclipse,Lunar eclipse
+text_solar_eclipse,Solar eclipse
+
+text_you_died,13
+text_you_died_1,You died :(
+text_you_died_2,Fail!
+text_you_died_3,Another time
+text_you_died_4,Don't go
+text_you_died_5,It was too fast
+text_you_died_6,I have no words
+text_you_died_7,And what was that?
+text_you_died_8,Are you serious?
+text_you_died_9,Didn't expect it
+text_you_died_10,"..."
+text_you_died_11,Don't make me angry.
+text_you_died_12,What!?
+text_you_died_13,"shift + r..."
+
+enemy_skorpion,Skorpion
+enemy_evil_eye,Evil eye
+enemy_thorn,Thorn

@@ -1,0 +1,231 @@
+item_rock,Камень
+item_rock_dsc,Твёрдый камень
+item_stick,Палка
+item_stick_dsc,Небольшая палка
+item_workbench,Верстак
+item_workbench_dsc,Похоже на место для крафта
+item_stone_axe,Каменный топор
+item_stone_axe_dcs,Позволяет рубить дерево с комфортом
+item_stone_pickaxe,Каменная кирка
+item_stone_pickaxe_dsc,Позволяет разбивать камень
+item_stone_sword,Каменный мечь
+item_stone_sword_dsc,Ты чувствуешь силу
+item_peg_wool,Мех пега
+item_peg_wool_dsc,Мягкий и тёплый
+item_bed,Кровать
+item_bed_dsc,Ускорь время
+item_hearth_flower,Сердечник
+item_hearth_flower_dsc,Оно бьётся
+item_hearth_flower_seed,Семена сердечника
+item_hearth_flower_seed_dsc,Создай своё сердце
+item_mana_flower,Цветок маны
+item_mana_flower_dsc,Выглядит странно
+item_mana_flower_seed,Семена цветка маны
+item_mana_flower_seed_dsc,Это определённо цветок
+item_iron_ore,Железная руда
+item_iron_ore_dsc,Где-то я это уже видел
+item_iron_ingot,Железный слиток
+item_iron_ingot_dsc,Новый слой?
+item_gold_ore,Золотая руда
+item_gold_ore_dsc,"Думаю, оно будет лучше железа"
+item_gold_ingot,Золотой слиток
+item_gold_ingot_dsc,Определённо да
+item_bake,Печь
+item_bake_dsc,Переплавь весь этот мир
+item_bonfire,Костёр
+item_bonfire_dsc,Помогает выжить ночью
+item_sand,Песок
+item_sand_dsc,"Как пыль, но лучше"
+item_grass,Трава
+item_grass_dsc,Зачем?
+item_stone,Камень
+item_stone_dsc,"..."
+item_coal,Уголь
+item_coal_dsc,Сильно ускоряет переплавку
+item_evil_eye,Злой глаз
+item_evil_eye_dsc,Оно живое
+item_log,Бревно
+item_log_dsc,Разложи бревно возле костра для большей атмосферы
+item_desert_log,Пустынное бревно
+item_desert_log_dsc,Зачем оно существует?
+item_iron_helmet,Железный шлем
+item_iron_helmet_dsc,Ты чувствуешь себя защищённым
+item_iron_chestplate,Железный нагрудник
+item_iron_chestplate_dsc,Ты чувствуешь себя защищённым
+item_iron_leggins,Железные поножи
+item_iron_leggins_dsc,Ты чувствуешь себя защищённым
+item_iron_boots,Железные ботинки
+item_iron_boots_dsc,Ты чувствуешь себя защищённым
+item_gold_helmet,Золотой шлем
+item_gold_helmet_dsc,Ты чувствуешь себя защищённым
+item_gold_chestplate,Золотой нагрудник
+item_gold_chestplate_dsc,Ты чувствуешь себя защищённым
+item_gold_leggins,Золотые поножи
+item_gold_leggins_dsc,Ты чувствуешь себя защищённым
+item_gold_boots,Злотые ботинки
+item_gold_boots_dsc,Ты чувствуешь себя защищённым
+item_thorn_berry,Ягоды шиповника
+item_thorn_berry_dsc,Они колючие
+item_block_wood,Блок дерева
+item_block_wood_dsc,Возведи свой дом
+item_block_stone,Блок камня
+item_block_stone_dsc,Оно определённо холодное
+item_block_door,Дверь
+item_block_door_dsc,Моя оборона
+item_tree_seed,Семечко дерева
+item_tree_seed_dsc,"Дай жизнь тому, что ты убил"
+item_slime,Слизь
+item_slime_dsc,Оно всё липкое и холодное
+item_echo,Эхо
+item_echo_dsc,Ты слышал это?
+item_summoner_merged_slime,Слившаяся Слизь
+item_summoner_merged_slime_dsc,Он хочет на свободу
+item_essence_of_night,Эссенция ночи
+item_essence_of_night_dsc,Ты чувствуешь что-то странное
+item_essence_of_day,Эссенция дня
+item_essence_of_day_dsc,Это кусок неба?
+item_health_potion,Зелье здоровья
+item_health_potion_dsc,Восстанавливает здоровье\nОно не такое уж и скусное
+item_mana_potion,Зелье маны
+item_mana_potion_dsc,Восстанавливает ману\nНа вкус как антифриз
+item_health_recovery_bracelet,Браслет восстановления здоровья
+item_health_recovery_bracelet_dsc,Откуда-то он достаёт силу для восстановления
+item_mana_recovery_bracelet,Браслет восстановления маны
+item_mana_recovery_bracelet_dsc,Безопасно на 100%
+item_recovery_bracelet,Браслет восстановления
+item_recovery_bracelet_dsc,Ты чувствуешь силу этих двоих
+item_dark_creator,Тёмный создатель
+item_dark_creator_dsc,Мне не нравится это название
+item_glass,Стекло
+item_glass_dsc,"Настолько прозрачено, что его можно использовать как невидимую стену"
+item_test_tube,Пробирка
+item_test_tube_dsc,В неё можно налить жидкость
+item_test_tube_with_mana,Пробирка с маной
+item_test_tube_with_mana_dsc,"Я думаю, что это восстанавливает ману"
+item_test_tube_with_health,Пробирка со здоровьем
+item_test_tube_with_health_dsc,Восстанавливает здоровье (может быть)
+item_test_tube_with_essence_of_night,Пробирка с эссенцией ночи
+item_test_tube_with_essence_of_night_dsc,Тяжесть бытия
+item_test_tube_with_essence_of_day,Пробирка с эссенцией дня
+item_test_tube_with_essence_of_day_dsc,Почувствуй эту лёгкость
+
+
+text_weight,Вес
+text_kg,Кг
+text_x,х
+text_inventory,Инвентарь
+text_craft,Создание
+text_play,Играть
+text_exit,Выйти
+text_settings,Настройки
+text_protection,Защита
+text_xp,ур
+text_hp,оз
+text_mana,мана
+text_darkness_thickens,Тьма Сгущается
+text_new_world,Новый мир
+text_new_character,Новый персонаж
+text_select_world,Выбрать мир
+text_select_character,Выбрать персонажа
+text_load,Загрузить
+text_delete,Удалить
+text_back,Назад
+text_tiles_width,Ширина (тайлы)
+text_tiles_height,Высота (тайлы)
+text_create,Создать
+text_height_map_iterations,Итерации карты высот
+text_temperature_map_iterations,Итерации карты температур
+text_world_name,Название мира
+
+text_world_size,Размер мира
+text_world_size_small,Маленький
+text_world_size_medium,Средний
+text_world_size_big,Большой
+text_world_size_giant,Гигантский
+
+text_world_smooth,Гладкость мира
+text_world_smooth_small,Небольшая
+text_world_smooth_medium,Средняя
+text_world_smooth_big,Большая
+
+text_save,Сохраниться
+text_load,Загрузиться
+
+text_height_map_generation,Генерация карты высот
+text_temperature_map_generation,Генерация карты температур
+text_tile_fill,Заполнение тайлов
+text_instances_generation,Генерация сущностей
+text_managers_initializing,Инициализация менеджеров
+text_culling,Отбраковка сущностей
+text_character_spawn_find,Поиск точки появления игрока
+
+text_dev_advice_count,24
+text_dev_advice,Совет
+text_dev_advice_1,Найди меня
+text_dev_advice_2,Из слаймов выпадает один вид слизи
+text_dev_advice_3,Сон не пропускает время
+text_dev_advice_4,Луна не любит полнолуние
+text_dev_advice_5,Затмение близко
+text_dev_advice_6,The language can be changed in the settings
+text_dev_advice_7,Предыдущий совет - ложь
+text_dev_advice_8,Луна уже упала?
+text_dev_advice_9,Иногда приходится ждать
+text_dev_advice_10,Я не знаю всех языков
+text_dev_advice_11,"Кажется, я слышал кого-то этой ночью"
+text_dev_advice_12,Ты меня слушаешь?
+text_dev_advice_13,Не верь растениям
+text_dev_advice_14,Dot[Ex]?
+text_dev_advice_15,2
+text_dev_advice_16,Привет мир!
+text_dev_advice_17,Его зовут Пег
+text_dev_advice_18,[возрастное ограничение]
+text_dev_advice_19,"sudo rm -rf /Bevi"
+text_dev_advice_20,"Солнцу не нравится, когда смотришь ему в глаза"
+text_dev_advice_21,Оптимизация не существует
+text_dev_advice_22,Баги присутствуют
+text_dev_advice_23,Shift + R для перезапуска
+text_dev_advice_24,Сегодня без советов
+
+text_dev_monologue_1,Добро пожаловать!
+text_dev_monologue_2,Я - разработчик
+text_dev_monologue_3,"Ты наверное уже понял..."
+text_dev_monologue_4,Я устал и мне очень скучно здесь
+text_dev_monologue_5,"И я решил..."
+text_dev_monologue_6,Создать тебя
+text_dev_monologue_7,"Да, это может прозвучать странно"
+text_dev_monologue_8,Ты же не против?
+text_dev_monologue_9,"..."
+text_dev_monologue_10,"Точно, ты не умеешь говорить"
+text_dev_monologue_11,Когда-нибудь я добавлю тебе эту возможность
+text_dev_monologue_12,Здесь есть всё для комфортного выживания
+text_dev_monologue_13,Постарайся не умереть
+text_dev_monologue_14,Найди меня
+
+text_tlanguage,Язык
+text_language,Русский
+
+text_is_attack_mode,Режим атаки
+text_yes,Да
+text_no,Нет
+
+text_lunar_eclipse,Лунное затвение
+text_solar_eclipse,Солнечное затмение
+
+text_you_died,13
+text_you_died_1,Ты умер :(
+text_you_died_2,Неудача!
+text_you_died_3,В другой раз
+text_you_died_4,Не уходи
+text_you_died_5,Это было слишком быстро
+text_you_died_6,У меня нету слов
+text_you_died_7,И что это было?
+text_you_died_8,Ты серьёзно?
+text_you_died_9,Не ожидал
+text_you_died_10,"..."
+text_you_died_11,Не зли меня.
+text_you_died_12,Что!?
+text_you_died_13,"shift + r..."
+
+enemy_skorpion,Скорпион
+enemy_evil_eye,Злой глаз
+enemy_thorn,Колючка

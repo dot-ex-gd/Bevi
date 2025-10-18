@@ -11,6 +11,7 @@
 
 #macro SAVE_DIR		""
 #macro WORLDS_DIR	"worlds/"
+#macro LOCALIZATION_DIR	"localization/"
 
 #macro DEPTH		depth = -y
 

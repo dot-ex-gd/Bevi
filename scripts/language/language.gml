@@ -88,7 +88,7 @@ function change_language(_lang_config){
 		show_debug_message($"temp sprite: {_sprite}");
 	}
 	
-	global.languageSprite = sprite_add($"{_id}{_sprite}", _image_num - 1, true, false, 0, 0);
+	global.languageSprite = sprite_add($"{_id}{_sprite}", _image_num - 1, false, false, 0, 0);
 	global.languageFont = font_add_sprite_ext(global.languageSprite, _letters, true, -1);
 	
 	if (DEBUG){
@@ -143,4 +143,3 @@ function get_languages(){
 
 get_languages();
 change_language(global.languagesConf[1]);
-show_message(get_text_localize("item_rock_dsc"));
